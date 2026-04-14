@@ -276,7 +276,7 @@ The ranking is event-type dependent. On the typhoon event Pohang, the baseline S
 
 \subsection{3.4 Event-wise maps and probability separability histograms}\label{event-wise-maps-and-probability-separability-histograms}
 
-Figures 1 and 2 show the three-panel per-event summary (probability raster, binary prediction with Sentinel-2 scars dilated 2 px for visibility, probability separability histogram) for Pohang 2022 and Yecheon 2023. The corresponding Chuncheon 2020 panel is not included in the main text; the equivalent raster artifacts are released for reader inspection (Online Resource 1). All panels are in lat/lon (EPSG:4326) with legends for predicted-unstable (grey), predicted-stable (white), and Sentinel-2 scar (firebrick). Histograms show the scar and non-scar probability distributions overlaid with the mean-separation value annotated.
+Figures 1 and 2 show the three-panel per-event summary (probability raster, binary prediction with Sentinel-2 scars dilated 2 px for visibility, probability separability histogram) for Pohang 2022 and Yecheon 2023. The corresponding Chuncheon 2020 panel is not included in the main text; the equivalent Chuncheon raster artifacts are released in the code repository for reader inspection (see Code availability), and the matching numeric metrics are in Online Resource 1. All panels are in lat/lon (EPSG:4326) with legends for predicted-unstable (grey), predicted-stable (white), and Sentinel-2 scar (firebrick). Histograms show the scar and non-scar probability distributions overlaid with the mean-separation value annotated.
 
 \begin{figure}
 \centering
@@ -360,7 +360,7 @@ Two additional observations hold across all three events:
   \textbf{On both monsoon events, slope \textgreater{} 20° as a standalone gate gives the best or second-best single-knob lift.} On Yecheon (large mixed-terrain, 9 000 km²) F7 delivers 1.42× at POD 0.268; on Chuncheon (small mountainous, 850 km²) F7 delivers 1.11× at POD 0.426. On the typhoon event (Pohang, small hillslope-dominated) F7 lift collapses to 1.00× (pure random) because the hillslope-dominated terrain has already been effectively filtered by the baseline prediction. The F7 pattern across the three events mirrors the ROC-level finding that slope-alone beats SHALSTAB on the monsoon-side AOIs but not on the typhoon-side AOI.
 \end{enumerate}
 
-\textbf{Standard precision-recall view (augmenting, not replacing, precision lift).} We additionally compute Average Precision (AP) using scikit-learn's average\_precision\_score function for each event (the PR-AUC summary and curves (Online Resource 1)):
+\textbf{Standard precision-recall view (augmenting, not replacing, precision lift).} We additionally compute Average Precision (AP) using scikit-learn's average\_precision\_score function for each event (the PR-AUC summary is in Online Resource 1; the precision-recall curves themselves are regenerable from the code repository):
 
 {\def\LTcaptype{none} % do not increment counter
 \begin{longtable}[]{@{}
