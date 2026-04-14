@@ -1,0 +1,40 @@
+/Users/eungyupark/anaconda3/lib/python3.11/site-packages/pysheds/io.py:134: UserWarning: No `nodata` value detected. Defaulting to 0.
+  warnings.warn('No `nodata` value detected. Defaulting to 0.')
+/Users/eungyupark/anaconda3/lib/python3.11/site-packages/pysheds/io.py:134: UserWarning: No `nodata` value detected. Defaulting to 0.
+  warnings.warn('No `nodata` value detected. Defaulting to 0.')
+
+======================================================================
+Case Runner — config.json
+======================================================================
+  Case ID: chuncheon_2020
+  Event: 2020-08-01 → 2020-08-08
+  AOI bbox: [127.6, 37.75, 127.95, 38.0]
+  Model: SHALSTAB
+  Params: {'friction_angle_deg': 35.0, 'cohesion_pa': 2000.0, 'soil_thickness_m': 1.5, 'transmissivity': 0.0001, 'scar_ndvi_drop': 0.15, 'scar_post_ndvi_max': 0.35, 'scar_post_days': 60, 'scar_pre_days': 90}
+
+✅ Result: {
+  "case_id": "chuncheon_2020",
+  "status": "success",
+  "config_ok": true,
+  "artifacts": {
+    "rain": "out/chuncheon_2020/rain.tif",
+    "scars": "out/chuncheon_2020/scars.tif",
+    "nidr": "out/chuncheon_2020/nidr.geojson",
+    "prediction": "out/chuncheon_2020/prediction.tif"
+  },
+  "metrics": {
+    "tp": 11137,
+    "fp": 906347,
+    "fn": 4434,
+    "tn": 337986,
+    "POD": 0.7152,
+    "FAR": 0.9879,
+    "CSI": 0.0121,
+    "F1": 0.0239,
+    "Precision": 0.0121,
+    "ROC_AUC": 0.4992,
+    "n_roc_points": 102
+  },
+  "n_trace_steps": 11,
+  "message": "Pipeline complete"
+}

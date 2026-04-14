@@ -1,0 +1,317 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.66555817072833,
+          37.81727683048062
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "강원특별자치도",
+        "sigungu": "춘천시",
+        "address": "강원특별자치도 춘천시 남산면",
+        "damage_m2": 13799.999999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60623220062976,
+          37.77967697840754
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "강원특별자치도",
+        "sigungu": "춘천시",
+        "address": "강원특별자치도 춘천시 남면",
+        "damage_m2": 4700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60623220062976,
+          37.77967697840754
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "강원특별자치도",
+        "sigungu": "춘천시",
+        "address": "강원특별자치도 춘천시 남면",
+        "damage_m2": 34100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.81555926664157,
+          37.90507598079793
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "강원특별자치도",
+        "sigungu": "춘천시",
+        "address": "강원특별자치도 춘천시 동면",
+        "damage_m2": 25400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60623220062976,
+          37.77967697840754
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "강원특별자치도",
+        "sigungu": "춘천시",
+        "address": "강원특별자치도 춘천시 남면",
+        "damage_m2": 20200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60623220062976,
+          37.77967697840754
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "강원특별자치도",
+        "sigungu": "춘천시",
+        "address": "강원특별자치도 춘천시 남면",
+        "damage_m2": 12200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.66555817072833,
+          37.81727683048062
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "강원특별자치도",
+        "sigungu": "춘천시",
+        "address": "강원특별자치도 춘천시 남산면",
+        "damage_m2": 9500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.76114439872859,
+          37.78216981436239
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "강원특별자치도",
+        "sigungu": "춘천시",
+        "address": "강원특별자치도 춘천시 동산면",
+        "damage_m2": 7500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.69422659901912,
+          37.89787123009613
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "강원특별자치도",
+        "sigungu": "춘천시",
+        "address": "강원특별자치도 춘천시 서면",
+        "damage_m2": 3200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60180374043978,
+          37.87764158907527
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "경기도",
+        "sigungu": "가평군",
+        "address": "경기도 가평군 가평읍",
+        "damage_m2": 5000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60180374043978,
+          37.87764158907527
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "경기도",
+        "sigungu": "가평군",
+        "address": "경기도 가평군 가평읍",
+        "damage_m2": 13700.000000000002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60180374043978,
+          37.87764158907527
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "경기도",
+        "sigungu": "가평군",
+        "address": "경기도 가평군 가평읍",
+        "damage_m2": 12700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60180374043978,
+          37.87764158907527
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "경기도",
+        "sigungu": "가평군",
+        "address": "경기도 가평군 가평읍",
+        "damage_m2": 9800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60180374043978,
+          37.87764158907527
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "경기도",
+        "sigungu": "가평군",
+        "address": "경기도 가평군 가평읍",
+        "damage_m2": 5600.000000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60180374043978,
+          37.87764158907527
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "경기도",
+        "sigungu": "가평군",
+        "address": "경기도 가평군 가평읍",
+        "damage_m2": 5100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60180374043978,
+          37.87764158907527
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "경기도",
+        "sigungu": "가평군",
+        "address": "경기도 가평군 가평읍",
+        "damage_m2": 4500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60180374043978,
+          37.87764158907527
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "경기도",
+        "sigungu": "가평군",
+        "address": "경기도 가평군 가평읍",
+        "damage_m2": 4400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.60180374043978,
+          37.87764158907527
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2020-01-01",
+        "sido": "경기도",
+        "sigungu": "가평군",
+        "address": "경기도 가평군 가평읍",
+        "damage_m2": 4000.0
+      }
+    }
+  ]
+}

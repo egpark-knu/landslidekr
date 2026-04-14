@@ -1,0 +1,40 @@
+fetch_nidr failed (non-fatal): timed out
+/Users/eungyupark/anaconda3/lib/python3.11/site-packages/pysheds/io.py:134: UserWarning: No `nodata` value detected. Defaulting to 0.
+  warnings.warn('No `nodata` value detected. Defaulting to 0.')
+/Users/eungyupark/anaconda3/lib/python3.11/site-packages/pysheds/io.py:134: UserWarning: No `nodata` value detected. Defaulting to 0.
+  warnings.warn('No `nodata` value detected. Defaulting to 0.')
+
+======================================================================
+Case Runner — config.json
+======================================================================
+  Case ID: pohang_2022
+  Event: 2022-09-05 → 2022-09-07
+  AOI bbox: [129.2, 36.0, 129.5, 36.2]
+  Model: SHALSTAB
+  Params: {'friction_angle_deg': 35.0, 'cohesion_pa': 2000.0, 'soil_thickness_m': 1.5, 'transmissivity': 0.0001}
+
+✅ Result: {
+  "case_id": "pohang_2022",
+  "status": "success",
+  "config_ok": true,
+  "artifacts": {
+    "rain": "out/pohang_2022/rain.tif",
+    "scars": "out/pohang_2022/scars.tif",
+    "prediction": "out/pohang_2022/prediction.tif"
+  },
+  "metrics": {
+    "tp": 0,
+    "fp": 609803,
+    "fn": 0,
+    "tn": 302581,
+    "POD": 0.0,
+    "FAR": 1.0,
+    "CSI": 0.0,
+    "F1": 0.0,
+    "Precision": 0.0,
+    "ROC_AUC": 0.0,
+    "n_roc_points": 30
+  },
+  "n_trace_steps": 11,
+  "message": "Pipeline complete"
+}

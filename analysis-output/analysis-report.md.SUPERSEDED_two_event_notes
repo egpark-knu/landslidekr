@@ -1,0 +1,98 @@
+# LandslideKR — Post-hoc FAR-filter Analysis Report
+
+Date: 2026-04-14 (three-event extension 2026-04-14 22:00 KST)
+Scope: Re-evaluate the three-event benchmark (Pohang 2022, Yecheon 2023, Chuncheon 2020) under 9 post-hoc filter configurations intended to reduce false alarms, and report precision lift over base rate — the operationally meaningful axis given the severe class imbalance (positives at 0.12 – 1.65 %).
+
+**Provenance note (2026-04-14).** This report was initially written for the two-event (Pohang, Yecheon) benchmark; the Chuncheon 2020 third event was added to the benchmark later the same day. The `far_filter_results.json` and `far_filter_results.csv` bundles in this directory are three-event (authoritative); the prose below retains its original two-event framing and should be read as the two-event core narrative. For the three-event synthesis, see the integrated manuscript `../draft/_integrated_v06_draft.md` §3.5 and appendix Table 6 (which use the three-event JSON/CSV directly).
+
+## 1. Analysis question
+
+Can post-hoc filters (hillslope mask, probability quantile gates, slope gates, compound) meaningfully reduce false alarms on the LandslideKR baseline predictions without collapsing detection recall? Which event-filter combinations yield operationally useful precision improvements?
+
+## 2. Data validated
+
+- `out/pohang_2022/prob_unstable.tif`, `consensus_label.tif`, `dem_utm.tif` — 912 384 valid pixels, 1 099 positives (0.12 %).
+- `out/extreme_rainfall_2023/prob_unstable.tif`, `consensus_label.tif`, `dem_utm.tif` — 11 113 520 valid pixels, 183 507 positives (1.65 %).
+- Sklearn ROC-AUC confirmed on raster re-reads: Pohang 0.612, Yecheon 0.449 (matches published log runs).
+- Unit of analysis: **pixel**, per event. Each pixel is scored independently; no run-level seeds because the SHALSTAB MC has already been averaged to a single `prob_unstable.tif` per event.
+- **Blocker for inferential statistics across methods on a per-pixel basis**: pixels are not independent (spatial autocorrelation). Reported numbers are descriptive only; no p-values or CIs are claimed at pixel level.
+
+## 3. Key finding — raw FAR is not the right communicator
+
+At positive-class rates of 0.12 % (Pohang) and 1.65 % (Yecheon), any filter that keeps > 2 % of pixels as predicted-unstable will have FAR ≈ 98 %. FAR varies trivially across all nine filters (Pohang 0.998 → 0.999; Yecheon 0.977 → 0.990) because the denominator (predicted_positives) is always dominated by the non-scar class. Reporting raw FAR as the FAR-reduction axis gives a false impression of stasis.
+
+The operationally meaningful axis is **precision lift over base rate**:
+
+> `lift = precision_in_filtered_region / base_rate_in_AOI`
+
+Lift > 1.0 means the filter concentrates true positives beyond random. Lift ≈ 1.0 means the filter is no better than random. Lift < 1.0 means the filter removes more true positives than false positives — it is actively harmful.
+
+## 4. Results
+
+### Pohang 2022 (base rate 0.1205 %)
+
+| Filter                           | POD   | Precision | Lift    | Kept-fraction |
+|----------------------------------|-------|-----------|---------|---------------|
+| F0 baseline                      | 0.914 | 0.00158   | 1.31×   | 69.6 %        |
+| F1 hillslope                     | 0.208 | 0.00174   | 1.44×   | 14.4 %        |
+| F2 prob top-10 %                 | 0.692 | 0.00156   | 1.30×   | 53.3 %        |
+| F3 prob top-5 %                  | 0.692 | 0.00156   | 1.30×   | 53.3 %        |
+| F4 prob top-1 %                  | 0.692 | 0.00156   | 1.30×   | 53.3 %        |
+| F5 F1 ∩ top-10 %                 | 0.065 | 0.00188   | **1.56×** | 4.15 %     |
+| F6 F1 ∩ top-5 %                  | 0.065 | 0.00188   | **1.56×** | 4.15 %     |
+| F7 slope > 20°                   | 0.049 | 0.00120   | 1.00×   | 4.93 %        |
+| F8 F1 ∩ slope > 20° ∩ prob > 0.9 | 0.023 | 0.00090   | 0.75×   | 3.04 %        |
+
+- **Best lift**: F5/F6 (hillslope + top quantile) at 1.56× — but POD drops to 0.065 (93 % of positives lost).
+- **Over-filtering hurts**: F8 lift = 0.75× (below random) — excessive compounding removes more TPs than FPs.
+- **F0 baseline lift = 1.31×** is already weak; the model has only modest discrimination over random on Pohang at the pixel level, in line with ROC-AUC 0.612.
+- **Quantile saturation**: F2/F3/F4 are identical. The SHALSTAB MC probability distribution has ≥10 % of pixels saturated at p = 1.0, so the top-1/5/10 % thresholds all collapse to the p = 1.0 tier. This is a bimodality artifact of the Monte Carlo ensemble, not a computational error.
+
+### Yecheon 2023 (base rate 1.6512 %)
+
+| Filter                           | POD   | Precision | Lift    | Kept-fraction |
+|----------------------------------|-------|-----------|---------|---------------|
+| F0 baseline                      | 0.484 | 0.01448   | 0.88×   | 55.2 %        |
+| F1 hillslope                     | 0.417 | 0.02115   | 1.28×   | 32.5 %        |
+| F2 prob top-10 %                 | 0.144 | 0.00968   | 0.59×   | 24.5 %        |
+| F3 prob top-5 %                  | 0.144 | 0.00968   | 0.59×   | 24.5 %        |
+| F4 prob top-1 %                  | 0.144 | 0.00968   | 0.59×   | 24.5 %        |
+| F5 F1 ∩ top-10 %                 | 0.097 | 0.01913   | 1.16×   | 8.37 %        |
+| F6 F1 ∩ top-5 %                  | 0.097 | 0.01913   | 1.16×   | 8.37 %        |
+| F7 slope > 20°                   | 0.268 | 0.02339   | **1.42×** | 18.9 %     |
+| F8 F1 ∩ slope > 20° ∩ prob > 0.9 | 0.122 | 0.02246   | 1.36×   | 8.95 %        |
+
+- **Baseline is worse than random** (lift 0.88×) — confirms the rank-inversion finding in §3.1 of the manuscript.
+- **Slope > 20° alone gives the best lift** (1.42×) with POD 0.268. Topographic gating outperforms SHALSTAB's own probability output.
+- **Hillslope mask alone (F1) rescues lift from 0.88 to 1.28×** while retaining POD 0.417.
+- **Probability quantile gating (F2-F4) makes Yecheon worse** — the top 24.5 % of probability values contain fewer scars per pixel than the baseline region. This is a direct consequence of the rank inversion.
+- **Quantile saturation**: same as Pohang, F2/F3/F4 collapse.
+
+## 5. Interpretation and what changes in belief
+
+- The "apply a threshold to reduce FAR" intuition fails on imbalanced landslide susceptibility: raw FAR is structurally pinned near 99 % and cannot be the headline metric.
+- The useful operational axis is **precision lift + recall + kept-fraction** reported jointly, as WildfireKR (IEEE Access 2026) does for Recall/IoU trade-offs.
+- Adding the hillslope mask is a Pareto-defensible move on Yecheon (lift 0.88 → 1.28, POD 0.484 → 0.417). On Pohang it costs more recall than it buys precision.
+- Slope > 20° is the most effective single-knob lift on Yecheon (1.42×) — this is the pixel-level analog of the §3.3 finding that slope-alone ranking AUC (0.669) beats SHALSTAB AUC (0.449).
+- The SHALSTAB Monte Carlo probability is **not a calibrated ranking** — bimodality at p = 0 and p = 1 means quantile gating above p = 0.5 does nothing. A calibrated replacement (isotonic regression per lithology; or logistic on the MC counts) is needed before probability thresholding can contribute to FAR control.
+
+## 6. Narrative update for the manuscript
+
+Add a subsection **§3.5 False-alarm reduction via post-hoc filters** after the current §3.3 post-hoc refinement table. Lead with the "FAR is structurally pinned by class imbalance" argument, then report Table 6 (the two sub-tables above merged) and Fig 4 (figure-01). Honesty clauses to include verbatim:
+
+- "Raw FAR is structurally pinned near 99 % at these positive-class rates and is not a useful operational knob on its own."
+- "Probability top-k quantile gating is degenerate at k ≥ 1 % because the SHALSTAB MC distribution saturates at p = 1.0; a calibration step would be required before quantile gating can contribute."
+- "The hillslope mask and a slope > 20° gate give the cleanest precision-lift gains on Yecheon. This mirrors the ROC-level slope-alone > SHALSTAB finding in §3.3."
+
+## 7. Limitations and blockers
+
+- Pixels are spatially autocorrelated; no inferential tests reported at pixel level.
+- Reference label asymmetry between events (Yecheon Sentinel-only, Pohang log-run) — all metrics inherit this provenance.
+- n = 2 events in the original FAR-filter narrative, extended to 3 in the released JSON/CSV; cross-event generalization is a working hypothesis, not a regime law.
+- Probability bimodality caps the utility of quantile-based filters; a calibration pipeline is not in scope for this analysis bundle.
+
+## 8. Files produced
+
+- `far_filter_results.json` — three-event (Pohang 2022, Yecheon 2023, Chuncheon 2020) × 9 filters, raw counts + derived metrics.
+- `far_filter_results.csv` — tidy table, same content.
+- `figures/figure-01-far-filter-comparison.png` — grouped bar chart of POD/FAR/CSI/F1/precision across filters per event.

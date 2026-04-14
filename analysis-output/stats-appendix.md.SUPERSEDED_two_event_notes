@@ -1,0 +1,69 @@
+# Statistical Appendix — FAR Filter Analysis
+
+**Scope note (2026-04-14 update).** This appendix was originally written for the two-event benchmark. The FAR-filter JSON/CSV bundles in this directory are three-event authoritative; the manuscript §3.5 / appendix Table 6 is the three-event synthesis. The prose below retains its two-event core narrative.
+
+## Descriptive statistics
+
+Per-event pixel counts:
+
+| Event | Valid pixels | Actual positives | Base rate |
+|---|---|---|---|
+| Pohang 2022 | 912 384 | 1 099 | 0.1205 % |
+| Yecheon 2023 | 11 113 520 | 183 507 | 1.6512 % |
+| Chuncheon 2020 | 1 259 904 | 15 571 | 1.2359 % |
+
+Quantile thresholds (q90, q95, q99) of `prob_unstable` on valid pixels:
+
+| Event | q90 | q95 | q99 |
+|---|---|---|---|
+| Pohang 2022 | 1.000 | 1.000 | 1.000 |
+| Yecheon 2023 | 1.000 | 1.000 | 1.000 |
+
+Interpretation: > 10 % of valid pixels per event have `prob_unstable = 1.0`. The MC ensemble produces a bimodal output, not a smooth rank. This is noted as a limitation on probability quantile filtering.
+
+## Metrics reported
+
+For each (event × filter) cell:
+- POD = TP / (TP + FN) = recall on actual positives
+- FAR = FP / (TP + FP) = complement of precision
+- CSI = TP / (TP + FP + FN)
+- F1  = 2 · precision · recall / (precision + recall)
+- Precision = TP / (TP + FP)
+- Lift = precision / base_rate
+- kept_fraction = (TP + FP) / N
+
+## Inferential statistics
+
+**Not reported at pixel level.** Pixels are spatially autocorrelated; naive per-pixel confidence intervals or significance tests assume independence and would be misleading. If cross-filter comparisons require formal significance, the appropriate unit is sub-AOI block (e.g., sub-basin) with n ≥ 20–30 blocks per event, using a paired non-parametric test. That analysis is outside the scope of this bundle.
+
+## Assumptions
+
+- Binary prediction threshold 0.5 for baseline (as in `prediction.tif`).
+- Hillslope mask: slope > 10° ∩ local relief > 30 m within a 33-pixel window.
+- Slope computed via Horn's 3-kernel on `dem_utm.tif`.
+- Quantile thresholds computed on valid pixels only per event.
+
+## Effect sizes (descriptive)
+
+Precision-lift deltas, F1 vs F0 baseline:
+
+| Event | ΔLift F1 − F0 | POD cost | Kept-fraction change |
+|---|---|---|---|
+| Pohang | +0.13 (1.31 → 1.44) | −0.706 | −55.1 pp |
+| Yecheon | +0.40 (0.88 → 1.28) | −0.067 | −22.7 pp |
+
+Precision-lift deltas, best-filter vs F0:
+
+| Event | Best filter | Best lift | ΔLift | POD at best | Kept-fraction at best |
+|---|---|---|---|---|---|
+| Pohang | F5/F6 | 1.56× | +0.25 | 0.065 | 4.15 % |
+| Yecheon | F7 | 1.42× | +0.54 | 0.268 | 18.9 % |
+
+## Multiple-comparison note
+
+9 filters × 2 events = 18 cells. We report raw descriptive metrics only. No significance testing is performed; no correction is applicable.
+
+## Blockers
+
+- Per-seed variance cannot be measured without re-running the Monte Carlo ensemble with multiple top-level seeds. Current `prob_unstable.tif` collapses 100 realizations with a fixed seed chain. This is a known limitation of the existing benchmark artifacts and is listed under Axis 3 (Stochastic Repeatability) of `docs/ROBUSTNESS_PLAN.md`.
+- Calibration of the Monte Carlo probability output is not in scope; bimodality at p = 0, 1 is reported as an empirical observation.

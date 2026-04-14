@@ -1,0 +1,18 @@
+
+======================================================================
+Case Runner — config.json
+======================================================================
+Traceback (most recent call last):
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/scripts/run_case.py", line 71, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/scripts/run_case.py", line 65, in main
+    result = run_case(args.config, dry_run=args.dry_run)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/scripts/run_case.py", line 31, in run_case
+    cfg = CaseConfig.from_json(config_path)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/landslide_kr/io/case_config.py", line 68, in from_json
+    event_window=EventWindow(**data["event_window"]),
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: EventWindow.__init__() got an unexpected keyword argument 'source'

@@ -1,0 +1,56 @@
+{
+  "case_id": "extreme_rainfall_2023",
+  "description": "2023 July extreme rainfall — Cheongju/Yeongju/Yecheon landslide clusters",
+  "event_window": {
+    "start": "2023-07-13",
+    "end": "2023-07-18"
+  },
+  "aoi": {
+    "bbox": [
+      127.6,
+      36.3,
+      128.9,
+      37.0
+    ],
+    "crs": "EPSG:4326",
+    "description": "Cheongju, Yeongju, Yecheon impacted zones"
+  },
+  "rainfall": {
+    "source": "GPM_IMERG_V07",
+    "cumulative_mm_reported": 580.0,
+    "notes": "Yecheon/Yeongju 6-day cumulative exceeded 500 mm in some stations"
+  },
+  "labels": {
+    "source": "NIDR + Sentinel-2 NDVI pre/post",
+    "raster_path": "data/labels/extreme_rainfall_2023_labels.tif",
+    "status": "to_collect"
+  },
+  "geology_path": "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_gis_korea/geodata/geology.gpkg",
+  "dem_root": "/Users/eungyupark/Dropbox/GeoAI/07_geodata/dem_30m_copernicus",
+  "dem_source_actual": "Local Copernicus DSM COG 30 m tiles from `dem_root` (Copernicus GLO-30 DSM). Main SHALSTAB DEM via `dem_mosaic.py`. GEE SRTM used only as slope gate inside Sentinel-2 scar detector.",
+  "gee_project": "mas-gmail-agent",
+  "model": {
+    "name": "SHALSTAB",
+    "params": {
+      "friction_angle_deg": 33.0,
+      "cohesion_pa": 2500.0,
+      "soil_thickness_m": 1.8,
+      "transmissivity": 0.0001,
+      "scar_ndvi_drop": 0.15,
+      "scar_post_ndvi_max": 0.35,
+      "scar_post_days": 60,
+      "scar_pre_days": 90,
+      "n_realizations": 100,
+      "seed": 42
+    }
+  },
+  "validation": {
+    "metrics": [
+      "IoU",
+      "Precision",
+      "Recall",
+      "F1",
+      "ROC_AUC"
+    ]
+  }
+}

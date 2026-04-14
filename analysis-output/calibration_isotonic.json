@@ -1,0 +1,68 @@
+{
+  "pohang": {
+    "name": "Pohang 2022",
+    "n_pixels": 912384,
+    "n_positives": 1099,
+    "base_rate": 0.0012045366863075197,
+    "p_saturation_at_1": 0.544841864828844,
+    "ROC_AUC_pre_calibration": 0.6117835945075769,
+    "ROC_AUC_post_calibration": 0.6176114458219146,
+    "separation_pre": 0.19833365962623295,
+    "separation_post": 0.0003183181955017137,
+    "top10pct_pre": {
+      "n_pixels": 486710,
+      "n_distinct_scores": 1,
+      "recall": 0.6915377616014559
+    },
+    "top10pct_post": {
+      "n_pixels": 638156,
+      "n_distinct_scores": 1,
+      "recall": 0.9199272065514104
+    },
+    "calibration_resolution_gain": 0
+  },
+  "yecheon": {
+    "name": "Yecheon 2023",
+    "n_pixels": 11113520,
+    "n_positives": 183507,
+    "base_rate": 0.016512050187519344,
+    "p_saturation_at_1": 0.2591125943895363,
+    "ROC_AUC_pre_calibration": 0.44896136247508744,
+    "ROC_AUC_post_calibration": 0.5015004900007503,
+    "separation_pre": -0.06990866382067185,
+    "separation_post": 1.2037948353277317e-06,
+    "top10pct_pre": {
+      "n_pixels": 2721818,
+      "n_distinct_scores": 1,
+      "recall": 0.14362939833357855
+    },
+    "top10pct_post": {
+      "n_pixels": 9540753,
+      "n_distinct_scores": 1,
+      "recall": 0.8614330788471285
+    },
+    "calibration_resolution_gain": 0
+  },
+  "chuncheon": {
+    "name": "Chuncheon 2020",
+    "n_pixels": 1259904,
+    "n_positives": 15571,
+    "base_rate": 0.012358878136746927,
+    "p_saturation_at_1": 0.32768528395814284,
+    "ROC_AUC_pre_calibration": 0.499200241042151,
+    "ROC_AUC_post_calibration": 0.5376459060826033,
+    "separation_pre": 0.006353909583948769,
+    "separation_post": 0.0010044781842525972,
+    "top10pct_pre": {
+      "n_pixels": 393085,
+      "n_distinct_scores": 1,
+      "recall": 0.29034744075525015
+    },
+    "top10pct_post": {
+      "n_pixels": 1166135,
+      "n_distinct_scores": 1,
+      "recall": 0.9999357780489371
+    },
+    "calibration_resolution_gain": 0
+  }
+}

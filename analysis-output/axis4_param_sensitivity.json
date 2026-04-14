@@ -1,0 +1,268 @@
+{
+  "pohang": {
+    "name": "Pohang 2022",
+    "corners": [
+      {
+        "ROC_AUC": 0.4406450608798703,
+        "separation": -374455607.58586925,
+        "n_valid": 912384,
+        "n_pos": 1099,
+        "corner": "phi_lo+c_lo+T_lo",
+        "phi": 28.0,
+        "c": 1000.0,
+        "T": 5e-05
+      },
+      {
+        "ROC_AUC": 0.4406450608798704,
+        "separation": -37445558.08696793,
+        "n_valid": 912384,
+        "n_pos": 1099,
+        "corner": "phi_lo+c_lo+T_hi",
+        "phi": 28.0,
+        "c": 1000.0,
+        "T": 0.0005
+      },
+      {
+        "ROC_AUC": 0.48004529925078604,
+        "separation": 20982000.137129016,
+        "n_valid": 912384,
+        "n_pos": 1099,
+        "corner": "phi_lo+c_hi+T_lo",
+        "phi": 28.0,
+        "c": 6000.0,
+        "T": 5e-05
+      },
+      {
+        "ROC_AUC": 0.480045297753036,
+        "separation": 2098199.779425692,
+        "n_valid": 912384,
+        "n_pos": 1099,
+        "corner": "phi_lo+c_hi+T_hi",
+        "phi": 28.0,
+        "c": 6000.0,
+        "T": 0.0005
+      },
+      {
+        "ROC_AUC": 0.4732290761833213,
+        "separation": -14219311.613380827,
+        "n_valid": 912384,
+        "n_pos": 1099,
+        "corner": "phi_hi+c_lo+T_lo",
+        "phi": 36.0,
+        "c": 1000.0,
+        "T": 5e-05
+      },
+      {
+        "ROC_AUC": 0.47322907568407124,
+        "separation": -1421931.1524545355,
+        "n_valid": 912384,
+        "n_pos": 1099,
+        "corner": "phi_hi+c_lo+T_hi",
+        "phi": 36.0,
+        "c": 1000.0,
+        "T": 0.0005
+      },
+      {
+        "ROC_AUC": 0.4854765613274255,
+        "separation": 30535406.476044893,
+        "n_valid": 912384,
+        "n_pos": 1099,
+        "corner": "phi_hi+c_hi+T_lo",
+        "phi": 36.0,
+        "c": 6000.0,
+        "T": 5e-05
+      },
+      {
+        "ROC_AUC": 0.4854765613274255,
+        "separation": 3053540.3005310358,
+        "n_valid": 912384,
+        "n_pos": 1099,
+        "corner": "phi_hi+c_hi+T_hi",
+        "phi": 36.0,
+        "c": 6000.0,
+        "T": 0.0005
+      }
+    ],
+    "ROC_AUC_min": 0.4406450608798703,
+    "ROC_AUC_max": 0.4854765613274255
+  },
+  "yecheon": {
+    "name": "Yecheon 2023",
+    "corners": [
+      {
+        "ROC_AUC": 0.5140746811768276,
+        "separation": 704421556.6157144,
+        "n_valid": 11113520,
+        "n_pos": 183507,
+        "corner": "phi_lo+c_lo+T_lo",
+        "phi": 28.0,
+        "c": 1000.0,
+        "T": 5e-05
+      },
+      {
+        "ROC_AUC": 0.5140746811391856,
+        "separation": 70442150.55511817,
+        "n_valid": 11113520,
+        "n_pos": 183507,
+        "corner": "phi_lo+c_lo+T_hi",
+        "phi": 28.0,
+        "c": 1000.0,
+        "T": 0.0005
+      },
+      {
+        "ROC_AUC": 0.422940864940881,
+        "separation": -12083438.01761137,
+        "n_valid": 11113520,
+        "n_pos": 183507,
+        "corner": "phi_lo+c_hi+T_lo",
+        "phi": 28.0,
+        "c": 6000.0,
+        "T": 5e-05
+      },
+      {
+        "ROC_AUC": 0.4229408649281673,
+        "separation": -1208343.717200717,
+        "n_valid": 11113520,
+        "n_pos": 183507,
+        "corner": "phi_lo+c_hi+T_hi",
+        "phi": 28.0,
+        "c": 6000.0,
+        "T": 0.0005
+      },
+      {
+        "ROC_AUC": 0.43703363461543,
+        "separation": 6831939.281745955,
+        "n_valid": 11113520,
+        "n_pos": 183507,
+        "corner": "phi_hi+c_lo+T_lo",
+        "phi": 36.0,
+        "c": 1000.0,
+        "T": 5e-05
+      },
+      {
+        "ROC_AUC": 0.4370336345431371,
+        "separation": 683193.8900262956,
+        "n_valid": 11113520,
+        "n_pos": 183507,
+        "corner": "phi_hi+c_lo+T_hi",
+        "phi": 36.0,
+        "c": 1000.0,
+        "T": 0.0005
+      },
+      {
+        "ROC_AUC": 0.400791213946969,
+        "separation": -12509733.794173758,
+        "n_valid": 11113520,
+        "n_pos": 183507,
+        "corner": "phi_hi+c_hi+T_lo",
+        "phi": 36.0,
+        "c": 6000.0,
+        "T": 5e-05
+      },
+      {
+        "ROC_AUC": 0.4007912139135645,
+        "separation": -1250973.287296913,
+        "n_valid": 11113520,
+        "n_pos": 183507,
+        "corner": "phi_hi+c_hi+T_hi",
+        "phi": 36.0,
+        "c": 6000.0,
+        "T": 0.0005
+      }
+    ],
+    "ROC_AUC_min": 0.4007912139135645,
+    "ROC_AUC_max": 0.5140746811768276
+  },
+  "chuncheon": {
+    "name": "Chuncheon 2020",
+    "corners": [
+      {
+        "ROC_AUC": 0.4790843173457245,
+        "separation": -110526132.76938224,
+        "n_valid": 1259904,
+        "n_pos": 15571,
+        "corner": "phi_lo+c_lo+T_lo",
+        "phi": 28.0,
+        "c": 1000.0,
+        "T": 5e-05
+      },
+      {
+        "ROC_AUC": 0.47908431747475344,
+        "separation": -11052612.6243639,
+        "n_valid": 1259904,
+        "n_pos": 15571,
+        "corner": "phi_lo+c_lo+T_hi",
+        "phi": 28.0,
+        "c": 1000.0,
+        "T": 0.0005
+      },
+      {
+        "ROC_AUC": 0.46494248091821616,
+        "separation": 45354094.40484464,
+        "n_valid": 1259904,
+        "n_pos": 15571,
+        "corner": "phi_lo+c_hi+T_lo",
+        "phi": 28.0,
+        "c": 6000.0,
+        "T": 5e-05
+      },
+      {
+        "ROC_AUC": 0.46494248104724495,
+        "separation": 4535409.060282262,
+        "n_valid": 1259904,
+        "n_pos": 15571,
+        "corner": "phi_lo+c_hi+T_hi",
+        "phi": 28.0,
+        "c": 6000.0,
+        "T": 0.0005
+      },
+      {
+        "ROC_AUC": 0.46464939259428684,
+        "separation": 36183836.642097056,
+        "n_valid": 1259904,
+        "n_pos": 15571,
+        "corner": "phi_hi+c_lo+T_lo",
+        "phi": 36.0,
+        "c": 1000.0,
+        "T": 5e-05
+      },
+      {
+        "ROC_AUC": 0.4646493916652789,
+        "separation": 3618383.3725569174,
+        "n_valid": 1259904,
+        "n_pos": 15571,
+        "corner": "phi_hi+c_lo+T_hi",
+        "phi": 36.0,
+        "c": 1000.0,
+        "T": 0.0005
+      },
+      {
+        "ROC_AUC": 0.45834235657793776,
+        "separation": 3229849.5037399605,
+        "n_valid": 1259904,
+        "n_pos": 15571,
+        "corner": "phi_hi+c_hi+T_lo",
+        "phi": 36.0,
+        "c": 6000.0,
+        "T": 5e-05
+      },
+      {
+        "ROC_AUC": 0.45834235742952834,
+        "separation": 322984.9146973742,
+        "n_valid": 1259904,
+        "n_pos": 15571,
+        "corner": "phi_hi+c_hi+T_hi",
+        "phi": 36.0,
+        "c": 6000.0,
+        "T": 0.0005
+      }
+    ],
+    "ROC_AUC_min": 0.45834235657793776,
+    "ROC_AUC_max": 0.47908431747475344
+  },
+  "pattern_summary": {
+    "n_corners": 8,
+    "n_corners_with_pohang_highest": 6,
+    "fraction_pattern_survives": 0.75
+  }
+}

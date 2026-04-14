@@ -1,0 +1,34 @@
+# Figure Catalog — FAR-filter analysis
+
+**Scope note (2026-04-14 update).** The figure described below was generated during the original two-event benchmark (Pohang, Yecheon). The three-event (+ Chuncheon) synthesis lives in the manuscript figures ( Figures 1–4) and in the three-event JSON/CSV bundles in this directory; this catalog retains the two-event figure description for provenance.
+
+## figure-01-far-filter-comparison.png
+
+- **Filename**: `figures/figure-01-far-filter-comparison.png`
+- **Purpose**: Show the joint behavior of POD / FAR / CSI / F1 / precision across 9 filter configurations for both events, motivating the switch from raw FAR to precision-lift as the operational axis.
+- **Data source**: `far_filter_results.json`, derived from `out/{pohang_2022,extreme_rainfall_2023}/{prob_unstable,consensus_label,dem_utm}.tif`.
+- **Plotted variables**:
+  - Two panels (left: Pohang, right: Yecheon).
+  - Grouped bars per filter (F0–F8), colored by metric (POD, FAR, CSI, F1, precision).
+  - X-axis: filter label; Y-axis: metric value ∈ [0, 1].
+- **Error bars**: not shown — the point estimate is the entire-AOI pixel count; no seed-level variance is computed in this analysis. An explicit note is added in the figure caption requirements below.
+- **Caption draft requirements**:
+  - State the base rate per event (0.12 % Pohang, 1.65 % Yecheon).
+  - State that FAR bars are near 99 % across all filters because of the class imbalance, and point the reader to Table 6 (precision lift) as the operational axis.
+  - Note that top-1/5/10 % filters (F2–F4) are visually identical because of probability saturation at p = 1.0.
+- **Key observation**: On Yecheon, F7 (slope > 20°) produces a visibly higher precision bar than F0 baseline despite smaller kept-fraction; on Pohang, no filter beats F0 on F1 score (precision × recall remain coupled).
+- **Interpretation checklist** (post-figure narrative must answer all three):
+  1. Why does this figure exist? — to transparently show that raw FAR does not discriminate filters at this class imbalance.
+  2. What exactly should the reader notice? — the FAR stasis + precision variation across filters, and that Yecheon's F7 is the single clearly beneficial knob.
+  3. What does that observation change? — it repositions FAR reduction from "threshold tuning" to "topographic gating", consistent with the broader slope > SHALSTAB finding on Yecheon.
+- **Known caveats**:
+  - No error bars; pixel counts are not independent.
+  - Bars at FAR ≈ 1.0 are visually saturated; the figure is intentionally honest about this.
+  - The figure does not show lift over base rate because a second panel would clutter the existing 5-metric group; lift is reported in the table instead.
+
+## Additional figure requirements for the manuscript (not yet rendered)
+
+To be produced in a follow-up if the author decides to promote the FAR analysis into §3.5:
+
+- **figure-02-precision-lift-vs-kept-fraction.png** — x: kept-fraction (log), y: precision lift, one marker per filter, colored by event. This communicates the precision-recall-like trade-off at a glance.
+- **figure-03-prob-histogram-bimodality.png** — show the `prob_unstable` histogram per event, highlight the spike at p = 1.0 that explains quantile saturation. This closes the quantile-gating limitation story.

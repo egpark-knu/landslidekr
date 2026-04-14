@@ -1,0 +1,4652 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.06149794798282,
+          36.44322812524864
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "상주시",
+        "address": "경상북도 상주시 내서면",
+        "damage_m2": 2100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.63634921078096,
+          36.91710833739083
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 단산면",
+        "damage_m2": 2100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.5706656123308,
+          36.780017946460006
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 장수면",
+        "damage_m2": 34200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.80518308515232,
+          36.9561356709558
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉성면",
+        "damage_m2": 13300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.74047530282144,
+          36.96688250009896
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 물야면",
+        "damage_m2": 14300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 2100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 41900.00000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.74047530282144,
+          36.96688250009896
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 물야면",
+        "damage_m2": 2200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.7746911890507,
+          36.885737083638304
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉화읍",
+        "damage_m2": 8200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.86032291251513,
+          36.865570459895785
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 명호면",
+        "damage_m2": 24500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.77125448309542,
+          36.856179575474336
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 상운면",
+        "damage_m2": 2300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.80518308515232,
+          36.9561356709558
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉성면",
+        "damage_m2": 8700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.77125448309542,
+          36.856179575474336
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 상운면",
+        "damage_m2": 2300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 8900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 9100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.7746911890507,
+          36.885737083638304
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉화읍",
+        "damage_m2": 2700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.7746911890507,
+          36.885737083638304
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉화읍",
+        "damage_m2": 10500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.74047530282144,
+          36.96688250009896
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 물야면",
+        "damage_m2": 11500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.7746911890507,
+          36.885737083638304
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉화읍",
+        "damage_m2": 2000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 13200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.86032291251513,
+          36.865570459895785
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 명호면",
+        "damage_m2": 14000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.80518308515232,
+          36.9561356709558
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉성면",
+        "damage_m2": 8200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.77125448309542,
+          36.856179575474336
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 상운면",
+        "damage_m2": 3200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.86032291251513,
+          36.865570459895785
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 명호면",
+        "damage_m2": 12000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 12700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 2700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.7746911890507,
+          36.885737083638304
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉화읍",
+        "damage_m2": 3200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.74047530282144,
+          36.96688250009896
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 물야면",
+        "damage_m2": 2400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.80518308515232,
+          36.9561356709558
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉성면",
+        "damage_m2": 9700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.7746911890507,
+          36.885737083638304
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉화읍",
+        "damage_m2": 3800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.86032291251513,
+          36.865570459895785
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 명호면",
+        "damage_m2": 3900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.74047530282144,
+          36.96688250009896
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 물야면",
+        "damage_m2": 4000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.7746911890507,
+          36.885737083638304
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉화읍",
+        "damage_m2": 6500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.74047530282144,
+          36.96688250009896
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 물야면",
+        "damage_m2": 4700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.74047530282144,
+          36.96688250009896
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 물야면",
+        "damage_m2": 5100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.80518308515232,
+          36.9561356709558
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉성면",
+        "damage_m2": 5400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.80518308515232,
+          36.9561356709558
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉성면",
+        "damage_m2": 7900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.80518308515232,
+          36.9561356709558
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉성면",
+        "damage_m2": 5300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.7746911890507,
+          36.885737083638304
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉화읍",
+        "damage_m2": 4500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.86032291251513,
+          36.865570459895785
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 명호면",
+        "damage_m2": 7000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.39671548526002,
+          36.68906706440315
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 용문면",
+        "damage_m2": 12300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.5026638602488,
+          36.724353409056285
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 감천면",
+        "damage_m2": 45000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.5026638602488,
+          36.724353409056285
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 감천면",
+        "damage_m2": 23800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.43015636358683,
+          36.73827365686236
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 은풍면",
+        "damage_m2": 90600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.5026638602488,
+          36.724353409056285
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 감천면",
+        "damage_m2": 15000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.43015636358683,
+          36.73827365686236
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 은풍면",
+        "damage_m2": 66000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 115300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 16900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.39671548526002,
+          36.68906706440315
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 용문면",
+        "damage_m2": 12000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.43015636358683,
+          36.73827365686236
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 은풍면",
+        "damage_m2": 2200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 16100.000000000002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.39671548526002,
+          36.68906706440315
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 용문면",
+        "damage_m2": 16500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.39671548526002,
+          36.68906706440315
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 용문면",
+        "damage_m2": 5300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.39671548526002,
+          36.68906706440315
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 용문면",
+        "damage_m2": 6700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 2500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.39671548526002,
+          36.68906706440315
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 용문면",
+        "damage_m2": 7000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.43015636358683,
+          36.73827365686236
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 은풍면",
+        "damage_m2": 4100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.43015636358683,
+          36.73827365686236
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 은풍면",
+        "damage_m2": 12000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.5026638602488,
+          36.724353409056285
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 감천면",
+        "damage_m2": 20200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 25500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 8500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 12400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.39671548526002,
+          36.68906706440315
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 용문면",
+        "damage_m2": 9500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 10100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 9400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 2200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.39671548526002,
+          36.68906706440315
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 용문면",
+        "damage_m2": 2100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.5026638602488,
+          36.724353409056285
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 감천면",
+        "damage_m2": 11700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.39671548526002,
+          36.68906706440315
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 용문면",
+        "damage_m2": 10100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 4800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.08050729418966,
+          36.74852942581526
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 문경읍",
+        "damage_m2": 2400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.30908872538842,
+          36.67016370477725
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 산북면",
+        "damage_m2": 2300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.30908872538842,
+          36.67016370477725
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 산북면",
+        "damage_m2": 2400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 2700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.02318220729273,
+          36.58298589713364
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 농암면",
+        "damage_m2": 2200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 3700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.30908872538842,
+          36.67016370477725
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 산북면",
+        "damage_m2": 3100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.08050729418966,
+          36.74852942581526
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 문경읍",
+        "damage_m2": 3100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.30908872538842,
+          36.67016370477725
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 산북면",
+        "damage_m2": 2200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 3800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.20694326219922,
+          36.61591721403618
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 우지동",
+        "damage_m2": 6800.000000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.30908872538842,
+          36.67016370477725
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 산북면",
+        "damage_m2": 6899.999999999999
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 5100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 4700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 18000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.30908872538842,
+          36.67016370477725
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 산북면",
+        "damage_m2": 5500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 9400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 8000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 6500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.08050729418966,
+          36.74852942581526
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 문경읍",
+        "damage_m2": 7700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 4700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 8500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 13799.999999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.30908872538842,
+          36.67016370477725
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 산북면",
+        "damage_m2": 7900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 6000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.08050729418966,
+          36.74852942581526
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 문경읍",
+        "damage_m2": 10600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 8500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.15934849962667,
+          36.53657756243967
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "상주시",
+        "address": "경상북도 상주시 이안면",
+        "damage_m2": 2000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.93124770403382,
+          36.431614559530026
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "상주시",
+        "address": "경상북도 상주시 화서면",
+        "damage_m2": 3200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.15934849962667,
+          36.53657756243967
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "상주시",
+        "address": "경상북도 상주시 이안면",
+        "damage_m2": 4000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.93124770403382,
+          36.431614559530026
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "상주시",
+        "address": "경상북도 상주시 화서면",
+        "damage_m2": 3200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.50191332634625,
+          36.79939849722854
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 봉현면",
+        "damage_m2": 21800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.52966637300096,
+          36.88322444463631
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 풍기읍",
+        "damage_m2": 14100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.52966637300096,
+          36.88322444463631
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 풍기읍",
+        "damage_m2": 10500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.5783942460352,
+          36.84079638444736
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 안정면",
+        "damage_m2": 10300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.5706656123308,
+          36.780017946460006
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 장수면",
+        "damage_m2": 3200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.50191332634625,
+          36.79939849722854
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 봉현면",
+        "damage_m2": 15700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.6647126383064,
+          36.92142797011421
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 부석면",
+        "damage_m2": 3500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.66706614864796,
+          36.844848952311594
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 상망동",
+        "damage_m2": 15200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.62552445167998,
+          36.82634849335379
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 영주동",
+        "damage_m2": 34000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.50191332634625,
+          36.79939849722854
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 봉현면",
+        "damage_m2": 20000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.52966637300096,
+          36.88322444463631
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 풍기읍",
+        "damage_m2": 3400.0000000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.50191332634625,
+          36.79939849722854
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 봉현면",
+        "damage_m2": 12400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.50191332634625,
+          36.79939849722854
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 봉현면",
+        "damage_m2": 17100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.50191332634625,
+          36.79939849722854
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 봉현면",
+        "damage_m2": 15700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 36800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 59700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 8200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 36900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.74047530282144,
+          36.96688250009896
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 물야면",
+        "damage_m2": 2500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 35400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 32599.999999999996
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 7700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 22799.999999999996
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 11299.999999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 5000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.80518308515232,
+          36.9561356709558
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉성면",
+        "damage_m2": 4500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.80518308515232,
+          36.9561356709558
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 봉성면",
+        "damage_m2": 2600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.89495247092498,
+          36.972812867077295
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "봉화군",
+        "address": "경상북도 봉화군 춘양면",
+        "damage_m2": 6600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 13899.999999999998
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.47511642942726,
+          36.832960422071935
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "예천군",
+        "address": "경상북도 예천군 효자면",
+        "damage_m2": 3400.0000000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35057605224648,
+          36.74663599856797
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "문경시",
+        "address": "경상북도 문경시 동로면",
+        "damage_m2": 4800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.15934849962667,
+          36.53657756243967
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "상주시",
+        "address": "경상북도 상주시 이안면",
+        "damage_m2": 3600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.94295690447122,
+          36.52554014633208
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "상주시",
+        "address": "경상북도 상주시 화북면",
+        "damage_m2": 2000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.50191332634625,
+          36.79939849722854
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 봉현면",
+        "damage_m2": 3600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.50191332634625,
+          36.79939849722854
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 봉현면",
+        "damage_m2": 11500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.52966637300096,
+          36.88322444463631
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 풍기읍",
+        "damage_m2": 3500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.50191332634625,
+          36.79939849722854
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 봉현면",
+        "damage_m2": 2800.0000000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.50191332634625,
+          36.79939849722854
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 봉현면",
+        "damage_m2": 3600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.50191332634625,
+          36.79939849722854
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 봉현면",
+        "damage_m2": 26000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.6647126383064,
+          36.92142797011421
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 부석면",
+        "damage_m2": 5000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.5706656123308,
+          36.780017946460006
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 장수면",
+        "damage_m2": 2100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.57570846451415,
+          36.935760315070524
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "경상북도",
+        "sigungu": "영주시",
+        "address": "경상북도 영주시 순흥면",
+        "damage_m2": 2900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.32276836205625,
+          36.88651605690596
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "단양군",
+        "address": "충청북도 단양군 단성면",
+        "damage_m2": 4500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.65481915465853,
+          36.95874263898834
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 음성읍",
+        "damage_m2": 5800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.77024868091857,
+          36.896129789963325
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 소이면",
+        "damage_m2": 4500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.64017753159304,
+          36.768907555978195
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 청안면",
+        "damage_m2": 8100.000000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.64017753159304,
+          36.768907555978195
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 청안면",
+        "damage_m2": 4800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.64017753159304,
+          36.768907555978195
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 청안면",
+        "damage_m2": 11100.000000000002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.64017753159304,
+          36.768907555978195
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 청안면",
+        "damage_m2": 7700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.64017753159304,
+          36.768907555978195
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 청안면",
+        "damage_m2": 3100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.74335144241425,
+          36.652688895538546
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 청천면",
+        "damage_m2": 7600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.8159773020106,
+          36.34665800720305
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "옥천군",
+        "address": "충청북도 옥천군 청산면",
+        "damage_m2": 4000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.62553110025283,
+          36.398241542932965
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "옥천군",
+        "address": "충청북도 옥천군 안내면",
+        "damage_m2": 28800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.66463175463248,
+          36.567764595816726
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "보은군",
+        "address": "충청북도 보은군 내북면",
+        "damage_m2": 2100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.02984282543605,
+          36.861478448308766
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 수안보면",
+        "damage_m2": 2000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.97771516710111,
+          36.945312683928094
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 직동",
+        "damage_m2": 2100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.05821767946617,
+          36.900008264524914
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 살미면",
+        "damage_m2": 2200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.02984282543605,
+          36.861478448308766
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 수안보면",
+        "damage_m2": 8700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35579359140954,
+          36.89659375175773
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "단양군",
+        "address": "충청북도 단양군 대강면",
+        "damage_m2": 4500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35579359140954,
+          36.89659375175773
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "단양군",
+        "address": "충청북도 단양군 대강면",
+        "damage_m2": 26600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35579359140954,
+          36.89659375175773
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "단양군",
+        "address": "충청북도 단양군 대강면",
+        "damage_m2": 12100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35579359140954,
+          36.89659375175773
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "단양군",
+        "address": "충청북도 단양군 대강면",
+        "damage_m2": 11800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35579359140954,
+          36.89659375175773
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "단양군",
+        "address": "충청북도 단양군 대강면",
+        "damage_m2": 2100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.38545953537795,
+          36.99534748425369
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "단양군",
+        "address": "충청북도 단양군 단양읍",
+        "damage_m2": 4500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35579359140954,
+          36.89659375175773
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "단양군",
+        "address": "충청북도 단양군 대강면",
+        "damage_m2": 7200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.38545953537795,
+          36.99534748425369
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "단양군",
+        "address": "충청북도 단양군 단양읍",
+        "damage_m2": 5000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.35579359140954,
+          36.89659375175773
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "단양군",
+        "address": "충청북도 단양군 대강면",
+        "damage_m2": 10000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.71403932364423,
+          36.88803832551889
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 원남면",
+        "damage_m2": 11700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.77024868091857,
+          36.896129789963325
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 소이면",
+        "damage_m2": 6000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.65481915465853,
+          36.95874263898834
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 음성읍",
+        "damage_m2": 14000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.77024868091857,
+          36.896129789963325
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 소이면",
+        "damage_m2": 6600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.77024868091857,
+          36.896129789963325
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 소이면",
+        "damage_m2": 4700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.77024868091857,
+          36.896129789963325
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 소이면",
+        "damage_m2": 3500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.71403932364423,
+          36.88803832551889
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 원남면",
+        "damage_m2": 3400.0000000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.71403932364423,
+          36.88803832551889
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 원남면",
+        "damage_m2": 3000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.71403932364423,
+          36.88803832551889
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 원남면",
+        "damage_m2": 2300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.77024868091857,
+          36.896129789963325
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 소이면",
+        "damage_m2": 1300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.65481915465853,
+          36.95874263898834
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 음성읍",
+        "damage_m2": 700.0000000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.65481915465853,
+          36.95874263898834
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 음성읍",
+        "damage_m2": 300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.65481915465853,
+          36.95874263898834
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 음성읍",
+        "damage_m2": 9200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.65481915465853,
+          36.95874263898834
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 음성읍",
+        "damage_m2": 10000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.77024868091857,
+          36.896129789963325
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 소이면",
+        "damage_m2": 12300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.71403932364423,
+          36.88803832551889
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 원남면",
+        "damage_m2": 4400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.77024868091857,
+          36.896129789963325
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "음성군",
+        "address": "충청북도 음성군 소이면",
+        "damage_m2": 4800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.80639955786111,
+          36.79492665299648
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 문광면",
+        "damage_m2": 800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.9497738516682,
+          36.88417738200288
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 장연면",
+        "damage_m2": 500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.74335144241425,
+          36.652688895538546
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 청천면",
+        "damage_m2": 500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.74335144241425,
+          36.652688895538546
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 청천면",
+        "damage_m2": 5000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.64017753159304,
+          36.768907555978195
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 청안면",
+        "damage_m2": 400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.75410480212258,
+          36.83458288161636
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 소수면",
+        "damage_m2": 5400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.75410480212258,
+          36.83458288161636
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 소수면",
+        "damage_m2": 5600.000000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.84157218705786,
+          36.83151448858404
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 괴산읍",
+        "damage_m2": 400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.65908054570818,
+          36.845126841480635
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 사리면",
+        "damage_m2": 6200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.74335144241425,
+          36.652688895538546
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 청천면",
+        "damage_m2": 6800.000000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.80639955786111,
+          36.79492665299648
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 문광면",
+        "damage_m2": 300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87021440586471,
+          36.79964020326969
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 칠성면",
+        "damage_m2": 3700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.75410480212258,
+          36.83458288161636
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 소수면",
+        "damage_m2": 1300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.96493754432453,
+          36.78622953962933
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 연풍면",
+        "damage_m2": 200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.75410480212258,
+          36.83458288161636
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 소수면",
+        "damage_m2": 900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.8528384527808,
+          36.884706326389946
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 불정면",
+        "damage_m2": 200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.65908054570818,
+          36.845126841480635
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 사리면",
+        "damage_m2": 2000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87021440586471,
+          36.79964020326969
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 칠성면",
+        "damage_m2": 200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.74335144241425,
+          36.652688895538546
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 청천면",
+        "damage_m2": 900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87021440586471,
+          36.79964020326969
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 칠성면",
+        "damage_m2": 4200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.88810047423812,
+          36.8399400682906
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 감물면",
+        "damage_m2": 200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.8528384527808,
+          36.884706326389946
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 불정면",
+        "damage_m2": 100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.80639955786111,
+          36.79492665299648
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 문광면",
+        "damage_m2": 3700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.64017753159304,
+          36.768907555978195
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 청안면",
+        "damage_m2": 800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.84157218705786,
+          36.83151448858404
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 괴산읍",
+        "damage_m2": 700.0000000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.84157218705786,
+          36.83151448858404
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 괴산읍",
+        "damage_m2": 900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.8528384527808,
+          36.884706326389946
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 불정면",
+        "damage_m2": 800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.88810047423812,
+          36.8399400682906
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 감물면",
+        "damage_m2": 7000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.84157218705786,
+          36.83151448858404
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 괴산읍",
+        "damage_m2": 500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.88810047423812,
+          36.8399400682906
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "괴산군",
+        "address": "충청북도 괴산군 감물면",
+        "damage_m2": 8500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.63404724846124,
+          36.837059100262756
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "증평군",
+        "address": "충청북도 증평군 도안면",
+        "damage_m2": 15700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.63404724846124,
+          36.837059100262756
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "증평군",
+        "address": "충청북도 증평군 도안면",
+        "damage_m2": 10500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.63404724846124,
+          36.837059100262756
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "증평군",
+        "address": "충청북도 증평군 도안면",
+        "damage_m2": 3100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.63404724846124,
+          36.837059100262756
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "증평군",
+        "address": "충청북도 증평군 도안면",
+        "damage_m2": 600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.63404724846124,
+          36.837059100262756
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "증평군",
+        "address": "충청북도 증평군 도안면",
+        "damage_m2": 200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.63404724846124,
+          36.837059100262756
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "증평군",
+        "address": "충청북도 증평군 도안면",
+        "damage_m2": 200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.62553110025283,
+          36.398241542932965
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "옥천군",
+        "address": "충청북도 옥천군 안내면",
+        "damage_m2": 900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.75382354173418,
+          36.403207314561726
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "보은군",
+        "address": "충청북도 보은군 삼승면",
+        "damage_m2": 4700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.66463175463248,
+          36.567764595816726
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "보은군",
+        "address": "충청북도 보은군 내북면",
+        "damage_m2": 6400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.63375937255465,
+          36.51751142201869
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "보은군",
+        "address": "충청북도 보은군 회인면",
+        "damage_m2": 5900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.7034055587618,
+          36.427130769686286
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "보은군",
+        "address": "충청북도 보은군 수한면",
+        "damage_m2": 5600.000000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.7034055587618,
+          36.427130769686286
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "보은군",
+        "address": "충청북도 보은군 수한면",
+        "damage_m2": 400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.74910173142692,
+          36.45622136695707
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "보은군",
+        "address": "충청북도 보은군 탄부면",
+        "damage_m2": 4100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.7034055587618,
+          36.427130769686286
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "보은군",
+        "address": "충청북도 보은군 수한면",
+        "damage_m2": 3900.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.71804442626842,
+          36.506725359396086
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "보은군",
+        "address": "충청북도 보은군 보은읍",
+        "damage_m2": 3700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.7034055587618,
+          36.427130769686286
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "보은군",
+        "address": "충청북도 보은군 수한면",
+        "damage_m2": 700.0000000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.2348601546368,
+          36.88173291343548
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "제천시",
+        "address": "충청북도 제천시 덕산면",
+        "damage_m2": 3400.0000000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.23551621242308,
+          36.931036027878335
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "제천시",
+        "address": "충청북도 제천시 수산면",
+        "damage_m2": 3000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.23551621242308,
+          36.931036027878335
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "제천시",
+        "address": "충청북도 제천시 수산면",
+        "damage_m2": 9800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.93246311678698,
+          36.9388445226744
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 단월동",
+        "damage_m2": 10400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.7712703850307,
+          36.98061053714794
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 신니면",
+        "damage_m2": 8000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.008271759357,
+          36.97085130646637
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 종민동",
+        "damage_m2": 9600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.95238614496964,
+          36.9982800847051
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 연수동",
+        "damage_m2": 1800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.05821767946617,
+          36.900008264524914
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 살미면",
+        "damage_m2": 2000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.05821767946617,
+          36.900008264524914
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 살미면",
+        "damage_m2": 1000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.02984282543605,
+          36.861478448308766
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 수안보면",
+        "damage_m2": 4400.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.02428383765914,
+          36.9680780623516
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 목벌동",
+        "damage_m2": 20099.999999999996
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.9283636311204,
+          36.93448863493822
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 풍동",
+        "damage_m2": 3100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87645027329279,
+          36.96750678000323
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 대소원면",
+        "damage_m2": 2800.0000000000005
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.05821767946617,
+          36.900008264524914
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 살미면",
+        "damage_m2": 2700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87645027329279,
+          36.96750678000323
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 대소원면",
+        "damage_m2": 2600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.05821767946617,
+          36.900008264524914
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 살미면",
+        "damage_m2": 21500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.94659689647051,
+          36.95776656389849
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 호암동",
+        "damage_m2": 20800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87645027329279,
+          36.96750678000323
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 대소원면",
+        "damage_m2": 4000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.97940273226558,
+          36.973448006585585
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 안림동",
+        "damage_m2": 12600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.76774666624962,
+          36.98977585027981
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 주덕읍",
+        "damage_m2": 3000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.76774666624962,
+          36.98977585027981
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 주덕읍",
+        "damage_m2": 600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.02984282543605,
+          36.861478448308766
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 수안보면",
+        "damage_m2": 700.0000000000001
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87645027329279,
+          36.96750678000323
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 대소원면",
+        "damage_m2": 2000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87645027329279,
+          36.96750678000323
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 대소원면",
+        "damage_m2": 1000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.9327546678829,
+          36.998306991715125
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 금릉동",
+        "damage_m2": 800.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87645027329279,
+          36.96750678000323
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 대소원면",
+        "damage_m2": 1100.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.02984282543605,
+          36.861478448308766
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 수안보면",
+        "damage_m2": 1400.0000000000002
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.89046343560418,
+          36.96106747381657
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 용관동",
+        "damage_m2": 1000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87645027329279,
+          36.96750678000323
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 대소원면",
+        "damage_m2": 500.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87645027329279,
+          36.96750678000323
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 대소원면",
+        "damage_m2": 2700.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87645027329279,
+          36.96750678000323
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 대소원면",
+        "damage_m2": 2000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87645027329279,
+          36.96750678000323
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 대소원면",
+        "damage_m2": 1000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.02984282543605,
+          36.861478448308766
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 수안보면",
+        "damage_m2": 1000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.05821767946617,
+          36.900008264524914
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 살미면",
+        "damage_m2": 300.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.92890988106731,
+          36.971090928325374
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 지현동",
+        "damage_m2": 200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.05821767946617,
+          36.900008264524914
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 살미면",
+        "damage_m2": 200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.05821767946617,
+          36.900008264524914
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 살미면",
+        "damage_m2": 200.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.76774666624962,
+          36.98977585027981
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 주덕읍",
+        "damage_m2": 600.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.7712703850307,
+          36.98061053714794
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 신니면",
+        "damage_m2": 1000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          128.05821767946617,
+          36.900008264524914
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 살미면",
+        "damage_m2": 4000.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          127.87645027329279,
+          36.96750678000323
+        ]
+      },
+      "properties": {
+        "occurrence_date": "2023-01-01",
+        "sido": "충청북도",
+        "sigungu": "충주시",
+        "address": "충청북도 충주시 대소원면",
+        "damage_m2": 11500.0
+      }
+    }
+  ]
+}

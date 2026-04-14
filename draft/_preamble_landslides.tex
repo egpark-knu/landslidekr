@@ -1,0 +1,100 @@
+% Springer Landslides-style preamble (sn-jnl substitute since template not on disk)
+\documentclass[11pt,a4paper]{article}
+
+% XeTeX / Tectonic — use macOS system fonts with Unicode-symbol fallback
+\usepackage{fontspec}
+\setmainfont{Times New Roman}[
+  Path = /System/Library/Fonts/Supplemental/ ,
+  Extension = .ttf ,
+  UprightFont = * ,
+  ItalicFont = * Italic ,
+  BoldFont = * Bold ,
+  BoldItalicFont = * Bold Italic ,
+]
+\setsansfont{Helvetica}[
+  Path = /System/Library/Fonts/ ,
+  Extension = .ttc ,
+  UprightFont = * ,
+]
+\setmonofont{Menlo}[
+  Path = /System/Library/Fonts/ ,
+  Extension = .ttc ,
+  UprightFont = * ,
+  Scale = 0.85 ,
+]
+% Symbol fallback for ∪ ∩ ≥ ≤ etc. — use Apple's Symbol font
+\newfontfamily\symbolfont{Apple Symbols}[Path = /System/Library/Fonts/, Extension = .ttf]
+\usepackage{newunicodechar}
+\newunicodechar{∪}{{\symbolfont ∪}}
+\newunicodechar{∩}{{\symbolfont ∩}}
+\newunicodechar{≥}{{\symbolfont ≥}}
+\newunicodechar{≤}{{\symbolfont ≤}}
+\newunicodechar{≈}{{\symbolfont ≈}}
+\newunicodechar{·}{{\symbolfont ·}}
+\newunicodechar{²}{$^{2}$}
+\newunicodechar{³}{$^{3}$}
+\newunicodechar{−}{-}
+\newunicodechar{×}{{\symbolfont ×}}
+\newunicodechar{✓}{{\symbolfont ✓}}
+\usepackage[margin=2.5cm]{geometry}
+
+% Pandoc longtable workaround: define a 'none' counter so \def\LTcaptype{none} doesn't error
+\newcounter{none}
+\usepackage{setspace}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{caption}
+\usepackage[hyphens]{url}
+\usepackage[unicode]{hyperref}
+\usepackage{xcolor}
+\usepackage{lineno}
+\usepackage{authblk}
+\usepackage{titlesec}
+
+% Pandoc-emitted tightlist
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={Event-type-dependent applicability of a steady-state physical landslide model: a three-event Korean retrospective benchmark with reproducible execution traces},
+  pdfauthor={Eungyu Park},
+}
+
+% Section title formatting (Landslides-like)
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{0.7em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{0.7em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\itshape}{\thesubsubsection}{0.7em}{}
+\titlespacing*{\section}{0pt}{1.5\baselineskip}{0.7\baselineskip}
+\titlespacing*{\subsection}{0pt}{1.2\baselineskip}{0.5\baselineskip}
+
+% Caption styling
+\captionsetup{font=small,labelfont=bf,labelsep=period}
+
+% Submission style: 1.5 line spacing, line numbers for reviewer reference
+\onehalfspacing
+\linenumbers
+
+% Title block
+\title{\bfseries Event-type-dependent applicability of a steady-state physical landslide model:\\ a three-event Korean retrospective benchmark with reproducible execution traces}
+
+\author[1]{Eungyu Park\thanks{Corresponding author: \texttt{egpark@knu.ac.kr}}}
+\affil[1]{Department of Geology, Kyungpook National University, Daegu, Republic of Korea}
+\affil[ ]{\textit{In preparation for submission to} \textsc{Landslides} (Springer)}
+
+\date{2026-04-14}
+
+\begin{document}
+
+\maketitle
+
+\thispagestyle{empty}
+\setcounter{page}{1}

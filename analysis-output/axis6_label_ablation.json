@@ -1,0 +1,84 @@
+{
+  "yecheon": {
+    "name": "Yecheon 2023",
+    "n_nidr_records_total_4prov": 693,
+    "n_nidr_records_in_bbox": 273,
+    "variants": {
+      "A": {
+        "n_pos": 183507,
+        "n_pos_pct": 1.6512050187519345,
+        "ROC_AUC": 0.44896136247508744,
+        "separation": -0.06990866382067185
+      },
+      "B": {
+        "n_pos": 231,
+        "n_pos_pct": 0.0020785493704964762,
+        "ROC_AUC": 0.6077288601700142,
+        "separation": 0.13332560415567563
+      },
+      "C": {
+        "n_pos": 183735,
+        "n_pos_pct": 1.6532565739747622,
+        "ROC_AUC": 0.449163006224812,
+        "separation": -0.06964989827128565
+      },
+      "D": {
+        "n_pos": 3,
+        "n_pos_pct": 2.6994147668785406e-05,
+        "ROC_AUC": 0.400208577836641,
+        "separation": -0.18273782222102092
+      }
+    }
+  },
+  "chuncheon": {
+    "name": "Chuncheon 2020",
+    "n_nidr_records_total_2prov": 541,
+    "n_nidr_records_in_bbox": 18,
+    "variants": {
+      "A": {
+        "n_pos": 15571,
+        "n_pos_pct": 1.2358878136746927,
+        "ROC_AUC": 0.499200241042151,
+        "separation": 0.006353909583948769
+      },
+      "B": {
+        "n_pos": 17,
+        "n_pos_pct": 0.0013493091537132987,
+        "ROC_AUC": 0.6346411132389603,
+        "separation": 0.16755845475168007
+      },
+      "C": {
+        "n_pos": 15588,
+        "n_pos_pct": 1.237237122828406,
+        "ROC_AUC": 0.49934977705010786,
+        "separation": 0.006532089860846524
+      },
+      "D": {
+        "skipped": true
+      }
+    }
+  },
+  "pohang": {
+    "name": "Pohang 2022",
+    "n_nidr_records_in_bbox": 0,
+    "note": "All Pohang 2022 NIDR records geocode to Guryongpo-eup town centroid (129.568°E, 35.999°N), east of published bbox.",
+    "variants": {
+      "A": {
+        "n_pos": 1099,
+        "n_pos_pct": 0.1205,
+        "ROC_AUC": 0.6118,
+        "separation": 0.1983,
+        "note": "Variant A equals the §3.1 Pohang baseline exactly (Sentinel-only label)."
+      },
+      "B": {
+        "skipped": "n_nidr_records_in_bbox = 0 — all Pohang-filtered NIDR records geocode to Guryongpo-eup (129.568°E, 35.999°N) east of the published bbox; NIDR-augmented variants cannot be constructed."
+      },
+      "C": {
+        "skipped": "n_nidr_records_in_bbox = 0 — all Pohang-filtered NIDR records geocode to Guryongpo-eup (129.568°E, 35.999°N) east of the published bbox; NIDR-augmented variants cannot be constructed."
+      },
+      "D": {
+        "skipped": "n_nidr_records_in_bbox = 0 — all Pohang-filtered NIDR records geocode to Guryongpo-eup (129.568°E, 35.999°N) east of the published bbox; NIDR-augmented variants cannot be constructed."
+      }
+    }
+  }
+}

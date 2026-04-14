@@ -1,0 +1,41 @@
+Pipeline failed
+Traceback (most recent call last):
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/landslide_kr/preprocess/topo.py", line 40, in compute_topo
+    import richdem as rd
+ModuleNotFoundError: No module named 'richdem'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/landslide_kr/agent/orchestrator.py", line 484, in run
+    artifacts["prediction"] = self.step_run_model(dry_run, rain_tif=rain_path_real)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/landslide_kr/agent/orchestrator.py", line 323, in step_run_model
+    topo = compute_topo(dem_tif)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/landslide_kr/preprocess/topo.py", line 42, in compute_topo
+    raise ImportError(
+ImportError: richdem required for topo preprocessing: No module named 'richdem'. Install: pip install richdem
+
+======================================================================
+Case Runner — config.json
+======================================================================
+  Case ID: pohang_2022
+  Event: 2022-09-05 → 2022-09-07
+  AOI bbox: [129.2, 36.0, 129.5, 36.2]
+  Model: SHALSTAB
+  Params: {'friction_angle_deg': 35.0, 'cohesion_pa': 2000.0, 'soil_thickness_m': 1.5, 'transmissivity': 0.0001}
+
+✅ Result: {
+  "case_id": "pohang_2022",
+  "status": "failed",
+  "config_ok": true,
+  "artifacts": {
+    "rain": "out/pohang_2022/rain.tif",
+    "scars": "out/pohang_2022/scars.tif",
+    "nidr": "out/pohang_2022/nidr.geojson"
+  },
+  "metrics": null,
+  "n_trace_steps": 5,
+  "message": "richdem required for topo preprocessing: No module named 'richdem'. Install: pip install richdem"
+}

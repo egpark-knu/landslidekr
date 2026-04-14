@@ -1,0 +1,23 @@
+{
+  "Pohang 2022": {
+    "average_precision": 0.0016,
+    "base_rate": 0.001205,
+    "ap_over_base_rate": 1.291,
+    "n_valid": 912384,
+    "n_positive": 1099
+  },
+  "Yecheon 2023": {
+    "average_precision": 0.0139,
+    "base_rate": 0.016512,
+    "ap_over_base_rate": 0.844,
+    "n_valid": 11113520,
+    "n_positive": 183507
+  },
+  "Chuncheon 2020": {
+    "average_precision": 0.0121,
+    "base_rate": 0.012359,
+    "ap_over_base_rate": 0.979,
+    "n_valid": 1259904,
+    "n_positive": 15571
+  }
+}

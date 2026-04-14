@@ -1,0 +1,225 @@
+{
+  "pohang_2022": {
+    "case": "pohang_2022",
+    "parameters": {
+      "slope_min_deg": 10.0,
+      "relief_min_m": 30.0,
+      "exclude_lithology": [
+        "alluvium"
+      ]
+    },
+    "masks": {
+      "hillslope_fraction": 0.2989256716470258,
+      "scar_in_hillslope_pct": 25.295723384895357
+    },
+    "baseline": {
+      "name": "baseline_full_prob",
+      "n_valid": 912384,
+      "n_positive": 1099,
+      "tp": 1005,
+      "fp": 633635,
+      "fn": 94,
+      "tn": 277650,
+      "POD": 0.9145,
+      "FAR": 0.9984,
+      "CSI": 0.0016,
+      "F1": 0.0032,
+      "Precision": 0.0016,
+      "ROC_AUC": 0.6118,
+      "AP": 0.00156,
+      "top1_precision": 0.00156,
+      "top1_recall": 0.6915,
+      "mean_scar_prob": 0.8867,
+      "mean_nonscar_prob": 0.6884,
+      "separation": 0.1983
+    },
+    "refined": {
+      "name": "masked_slope>10.0_relief>30.0",
+      "n_valid": 912384,
+      "n_positive": 1099,
+      "tp": 214,
+      "fp": 115676,
+      "fn": 885,
+      "tn": 795609,
+      "POD": 0.1947,
+      "FAR": 0.9982,
+      "CSI": 0.0018,
+      "F1": 0.0037,
+      "Precision": 0.0018,
+      "ROC_AUC": 0.5196,
+      "AP": 0.00134,
+      "top1_precision": 0.00187,
+      "top1_recall": 0.061,
+      "mean_scar_prob": 0.177,
+      "mean_nonscar_prob": 0.1264,
+      "separation": 0.0505
+    },
+    "slope_alone": {
+      "name": "slope_alone",
+      "n_valid": 912384,
+      "n_positive": 1099,
+      "tp": 0,
+      "fp": 2706,
+      "fn": 1099,
+      "tn": 908579,
+      "POD": 0.0,
+      "FAR": 1.0,
+      "CSI": 0.0,
+      "F1": 0.0,
+      "Precision": 0.0,
+      "ROC_AUC": 0.506,
+      "AP": 0.00108,
+      "top1_precision": 0.0,
+      "top1_recall": 0.0,
+      "mean_scar_prob": 0.0641,
+      "mean_nonscar_prob": 0.0848,
+      "separation": -0.0206
+    },
+    "slope_x_relief": {
+      "name": "slope_x_relief",
+      "n_valid": 912384,
+      "n_positive": 1099,
+      "tp": 0,
+      "fp": 350,
+      "fn": 1099,
+      "tn": 910935,
+      "POD": 0.0,
+      "FAR": 1.0,
+      "CSI": 0.0,
+      "F1": 0.0,
+      "Precision": 0.0,
+      "ROC_AUC": 0.5274,
+      "AP": 0.00115,
+      "top1_precision": 0.00011,
+      "top1_recall": 0.0009,
+      "mean_scar_prob": 0.0065,
+      "mean_nonscar_prob": 0.0109,
+      "separation": -0.0044
+    },
+    "out_refined_tif": "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/out/pohang_2022/prob_refined.tif"
+  },
+  "extreme_rainfall_2023": {
+    "case": "extreme_rainfall_2023",
+    "parameters": {
+      "slope_min_deg": 10.0,
+      "relief_min_m": 30.0,
+      "exclude_lithology": [
+        "alluvium"
+      ]
+    },
+    "masks": {
+      "hillslope_fraction": 0.6735739891591503,
+      "scar_in_hillslope_pct": 88.964453672067
+    },
+    "baseline": {
+      "name": "baseline_full_prob",
+      "n_valid": 11113520,
+      "n_positive": 183507,
+      "tp": 88774,
+      "fp": 6043493,
+      "fn": 94733,
+      "tn": 4886520,
+      "POD": 0.4838,
+      "FAR": 0.9855,
+      "CSI": 0.0143,
+      "F1": 0.0281,
+      "Precision": 0.0145,
+      "ROC_AUC": 0.449,
+      "AP": 0.01394,
+      "top1_precision": 0.00968,
+      "top1_recall": 0.1436,
+      "mean_scar_prob": 0.464,
+      "mean_nonscar_prob": 0.5339,
+      "separation": -0.0699
+    },
+    "refined": {
+      "name": "masked_slope>10.0_relief>30.0",
+      "n_valid": 11113520,
+      "n_positive": 183507,
+      "tp": 74614,
+      "fp": 3429748,
+      "fn": 108893,
+      "tn": 7500265,
+      "POD": 0.4066,
+      "FAR": 0.9787,
+      "CSI": 0.0207,
+      "F1": 0.0405,
+      "Precision": 0.0213,
+      "ROC_AUC": 0.593,
+      "AP": 0.02003,
+      "top1_precision": 0.01927,
+      "top1_recall": 0.097,
+      "mean_scar_prob": 0.3914,
+      "mean_nonscar_prob": 0.302,
+      "separation": 0.0894
+    },
+    "slope_alone": {
+      "name": "slope_alone",
+      "n_valid": 11113520,
+      "n_positive": 183507,
+      "tp": 137,
+      "fp": 35099,
+      "fn": 183370,
+      "tn": 10894914,
+      "POD": 0.0007,
+      "FAR": 0.9961,
+      "CSI": 0.0006,
+      "F1": 0.0013,
+      "Precision": 0.0039,
+      "ROC_AUC": 0.6691,
+      "AP": 0.02648,
+      "top1_precision": 0.01605,
+      "top1_recall": 0.0097,
+      "mean_scar_prob": 0.2472,
+      "mean_nonscar_prob": 0.1829,
+      "separation": 0.0642
+    },
+    "slope_x_relief": {
+      "name": "slope_x_relief",
+      "n_valid": 11113520,
+      "n_positive": 183507,
+      "tp": 0,
+      "fp": 1996,
+      "fn": 183507,
+      "tn": 10928017,
+      "POD": 0.0,
+      "FAR": 1.0,
+      "CSI": 0.0,
+      "F1": 0.0,
+      "Precision": 0.0,
+      "ROC_AUC": 0.6411,
+      "AP": 0.02406,
+      "top1_precision": 0.02399,
+      "top1_recall": 0.0145,
+      "mean_scar_prob": 0.0282,
+      "mean_nonscar_prob": 0.0205,
+      "separation": 0.0077
+    },
+    "out_refined_tif": "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/out/extreme_rainfall_2023/prob_refined.tif"
+  },
+  "chuncheon_2020": {
+    "name": "Chuncheon 2020",
+    "n_valid_pixels": 1259904,
+    "n_positive": 15571,
+    "base_rate_pct": 1.236,
+    "methods": {
+      "baseline_shalstab_mc": {
+        "ROC_AUC": 0.4992
+      },
+      "slope_alone": {
+        "ROC_AUC": 0.5466,
+        "method": "Horn 3x3 slope normalized to [0,1]"
+      },
+      "hillslope_masked_shalstab": {
+        "ROC_AUC": 0.5501,
+        "method": "slope > 10\u00b0 AND local relief > 30 m in 33-px window"
+      },
+      "slope_x_relief": {
+        "ROC_AUC": 0.5358,
+        "method": "slope_norm \u00d7 (relief / relief_max)"
+      }
+    },
+    "valid_mask": "isfinite(prob_unstable) \u2014 matches Table 2 n_valid 1,259,904",
+    "computed_at": "2026-04-14T21:15:00+0900"
+  }
+}

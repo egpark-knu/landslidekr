@@ -1,0 +1,13 @@
+event,variant,n_pos,n_pos_pct,ROC_AUC,separation,note
+pohang,A,1099,0.1205,0.6118,0.1983,Variant A equals the §3.1 Pohang baseline exactly (Sentinel-only label).
+pohang,B,,,,,"n_nidr_records_in_bbox = 0 — all Pohang-filtered NIDR records geocode to Guryongpo-eup (129.568°E, 35.999°N) east of the published bbox; NIDR-augmented variants cannot be constructed."
+pohang,C,,,,,"n_nidr_records_in_bbox = 0 — all Pohang-filtered NIDR records geocode to Guryongpo-eup (129.568°E, 35.999°N) east of the published bbox; NIDR-augmented variants cannot be constructed."
+pohang,D,,,,,"n_nidr_records_in_bbox = 0 — all Pohang-filtered NIDR records geocode to Guryongpo-eup (129.568°E, 35.999°N) east of the published bbox; NIDR-augmented variants cannot be constructed."
+yecheon,A,183507,1.6512050187519345,0.44896136247508744,-0.06990866382067185,
+yecheon,B,231,0.0020785493704964762,0.6077288601700142,0.13332560415567563,
+yecheon,C,183735,1.6532565739747622,0.449163006224812,-0.06964989827128565,
+yecheon,D,3,2.6994147668785406e-05,0.400208577836641,-0.18273782222102092,
+chuncheon,A,15571,1.2358878136746927,0.499200241042151,0.006353909583948769,
+chuncheon,B,17,0.0013493091537132987,0.6346411132389603,0.16755845475168007,
+chuncheon,C,15588,1.237237122828406,0.49934977705010786,0.006532089860846524,
+chuncheon,D,,,,,True

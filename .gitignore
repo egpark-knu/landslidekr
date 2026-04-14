@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# LaTeX intermediates
+*.aux
+*.out
+*.log
+!out/*.log
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.bbl
+*.blg
+
+# Large rasters (regeneratable via landslide_kr pipeline + GEE credentials)
+*.tif
+*.tif.aux.xml
+!figures/*.png
+# Exception: keep small Pohang demo rasters if they're under 1MB (currently none)
+
+# Large external inputs (licensed / user-local)
+data/
+geodata/
+
+# MAS orchestration scratch — not part of the release
+communication/
+
+# Superseded working drafts
+draft/_working_fragments/
+draft/_body_check.tex
+draft/_body_only.tex
+draft/_body_only_from_intro.tex
+
+# IDE
+.vscode/
+.idea/
+
+# Local secrets (never commit)
+.env
+*.key
+*credentials*.json
+!.mas/*.example.json

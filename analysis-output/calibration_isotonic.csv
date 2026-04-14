@@ -1,0 +1,4 @@
+event,base_rate,saturation_p1,ROC_AUC_pre,ROC_AUC_post,sep_pre,sep_post,top10_distinct_pre,top10_distinct_post,top10_recall_pre,top10_recall_post
+pohang,0.001205,0.5448,0.6118,0.6176,+0.1983,+0.0003,1,1,0.692,0.920
+yecheon,0.016512,0.2591,0.4490,0.5015,-0.0699,+0.0000,1,1,0.144,0.861
+chuncheon,0.012359,0.3277,0.4992,0.5376,+0.0064,+0.0010,1,1,0.290,1.000

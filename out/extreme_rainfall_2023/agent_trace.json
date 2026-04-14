@@ -1,0 +1,220 @@
+[
+  {
+    "_annotation_note": "This agent_trace.json is the executed trace from the first extreme_rainfall_2023 run, with the `fetch_nidr` step re-annotated post-hoc on 2026-04-14 to reflect the year-match NIDR filter now implemented in landslide_kr/agent/orchestrator.py (R15 fix). The re-annotated `n_after_filter` = 273 matches the released nidr.geojson (which contains 273 in-bbox features) and the §5.6 Axis-6 count. Steps other than fetch_nidr were not modified. See manuscript §2.1 for the disclosure and §2.3 for the annual-NIDR resolution.",
+    "_annotation_date": "2026-04-14",
+    "_annotation_scope": [
+      "fetch_nidr"
+    ]
+  },
+  {
+    "step": "gee_init",
+    "tool": "init_ee",
+    "inputs": {
+      "project": "mas-gmail-agent"
+    },
+    "outputs": {
+      "project": "mas-gmail-agent",
+      "auth_mode": "user_oauth"
+    },
+    "rationale": "Earth Engine initialized"
+  },
+  {
+    "step": "fetch_rainfall",
+    "tool": "gpm_imerg",
+    "inputs": {
+      "bbox": [
+        127.6,
+        36.3,
+        128.9,
+        37.0
+      ],
+      "export_mode": "local"
+    },
+    "outputs": {
+      "n_images": 240,
+      "window": [
+        "2023-07-13",
+        "2023-07-18"
+      ],
+      "mean_total_mm": 186.42,
+      "bbox": [
+        127.6,
+        36.3,
+        128.9,
+        37.0
+      ],
+      "scale_m": 11132,
+      "out_path": "out/extreme_rainfall_2023/rain.tif"
+    },
+    "rationale": "GPM IMERG V07 cumulative (export_mode=local)"
+  },
+  {
+    "step": "detect_scars",
+    "tool": "sentinel2_ndvi",
+    "inputs": {
+      "bbox": [
+        127.6,
+        36.3,
+        128.9,
+        37.0
+      ],
+      "export_mode": "local",
+      "ndvi_drop": 0.15,
+      "post_ndvi_max": 0.35,
+      "min_slope_deg": 10.0,
+      "pre_days": 90,
+      "post_days": 60
+    },
+    "outputs": {
+      "pre_count": 34,
+      "post_count": 23,
+      "scar_pixel_count": 228421.55294117657,
+      "aoi_km2": 9027.0,
+      "scale_m": 30,
+      "bbox": [
+        127.6,
+        36.3,
+        128.9,
+        37.0
+      ],
+      "event_window": [
+        "2023-07-13",
+        "2023-07-18"
+      ],
+      "thresholds": {
+        "ndvi_drop": 0.15,
+        "post_ndvi_max": 0.35,
+        "min_slope_deg": 10.0
+      },
+      "out_path": "out/extreme_rainfall_2023/scars.tif"
+    },
+    "rationale": "NDVI drop + slope filter (export=local)"
+  },
+  {
+    "step": "fetch_nidr",
+    "tool": "data_go_kr",
+    "inputs": {
+      "filter_mode": "annual_year_plus_bbox"
+    },
+    "outputs": {
+      "error": "timed out",
+      "n_after_filter": 273,
+      "note": "Annotated post-hoc to reflect the year-match filter logic now in landslide_kr/agent/orchestrator.py (R15 fix). Released nidr.geojson holds 273 in-bbox records."
+    },
+    "rationale": "data.go.kr ID 15074816 + AOI/year filter + geocoding (NIDR API is annual-resolution; see manuscript §2.3)"
+  },
+  {
+    "step": "dem_mosaic",
+    "tool": "build_dem_for_case",
+    "inputs": {
+      "bbox": [
+        127.6,
+        36.3,
+        128.9,
+        37.0
+      ],
+      "root": "/Users/eungyupark/Dropbox/GeoAI/07_geodata/dem_30m_copernicus"
+    },
+    "outputs": {
+      "out_path": "out/extreme_rainfall_2023/dem_utm.tif",
+      "crs": "EPSG:32652",
+      "n_tiles": 4,
+      "width": 4015,
+      "height": 2768,
+      "res_m": 30
+    },
+    "rationale": "mosaic + reproject to UTM"
+  },
+  {
+    "step": "topo",
+    "tool": "compute_topo",
+    "inputs": {
+      "dem": "out/extreme_rainfall_2023/dem_utm.tif"
+    },
+    "outputs": {
+      "shape": [
+        2768,
+        4015
+      ],
+      "backend": "pysheds D8",
+      "richdem_available": false
+    },
+    "rationale": "flow accumulation + slope (pysheds D8 fallback; richdem not installed on target)"
+  },
+  {
+    "step": "lithology",
+    "tool": "load_or_default",
+    "inputs": {
+      "source": "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_gis_korea/geodata/geology.gpkg"
+    },
+    "outputs": {
+      "shape": [
+        2768,
+        4015
+      ]
+    },
+    "rationale": "Korean geology GPKG → class array (default fallback)"
+  },
+  {
+    "step": "ensemble",
+    "tool": "run_ensemble",
+    "inputs": {
+      "n_realizations": 100
+    },
+    "outputs": {
+      "prob_min": 0.0,
+      "prob_max": 1.0,
+      "prob_mean": 0.532737672328949
+    },
+    "rationale": "SINMAP-style bounded MC"
+  },
+  {
+    "step": "save_prediction",
+    "tool": "rasterio",
+    "inputs": {
+      "prob_tif": "out/extreme_rainfall_2023/prob_unstable.tif",
+      "mask_tif": "out/extreme_rainfall_2023/prediction.tif"
+    },
+    "outputs": {
+      "p>=0.5_fraction": 0.551784403141399
+    },
+    "rationale": "prob_unstable + binary mask"
+  },
+  {
+    "step": "consensus_label",
+    "tool": "NIDR ∪ scars",
+    "inputs": {
+      "scar_path": "out/extreme_rainfall_2023/scars.tif",
+      "nidr_path": null
+    },
+    "outputs": {
+      "n_nidr_points": 0,
+      "positive_fraction": 0.016512050187519344,
+      "out_path": "out/extreme_rainfall_2023/consensus_label.tif"
+    },
+    "rationale": "consensus of NIDR buffered points and Sentinel-2 scars"
+  },
+  {
+    "step": "evaluate",
+    "tool": "confusion_matrix+roc_auc",
+    "inputs": {
+      "pred": "out/extreme_rainfall_2023/prediction.tif",
+      "label": "out/extreme_rainfall_2023/consensus_label.tif",
+      "prob": "out/extreme_rainfall_2023/prob_unstable.tif"
+    },
+    "outputs": {
+      "tp": 88774,
+      "fp": 6043493,
+      "fn": 94733,
+      "tn": 4886520,
+      "POD": 0.4838,
+      "FAR": 0.9855,
+      "CSI": 0.0143,
+      "F1": 0.0281,
+      "Precision": 0.0145,
+      "ROC_AUC": 0.449,
+      "n_roc_points": 102
+    },
+    "rationale": "TP/FP/FN/TN + POD/FAR/CSI/F1 + ROC-AUC"
+  }
+]

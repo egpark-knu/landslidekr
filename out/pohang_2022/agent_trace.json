@@ -1,0 +1,74 @@
+[
+  {
+    "step": "fetch_rainfall",
+    "tool": "gpm_imerg",
+    "inputs": {
+      "bbox": [
+        129.2,
+        36.0,
+        129.5,
+        36.2
+      ],
+      "start": "2022-09-05",
+      "end": "2022-09-07"
+    },
+    "outputs": {
+      "out_path": "out/pohang_2022/rain.tif",
+      "dry_run": true
+    },
+    "rationale": "dry-run: skipping GEE call"
+  },
+  {
+    "step": "detect_scars",
+    "tool": "sentinel2_ndvi",
+    "inputs": {
+      "bbox": [
+        129.2,
+        36.0,
+        129.5,
+        36.2
+      ]
+    },
+    "outputs": {
+      "out_path": "out/pohang_2022/scars.tif",
+      "dry_run": true
+    },
+    "rationale": "dry-run: skipping GEE call"
+  },
+  {
+    "step": "fetch_nidr",
+    "tool": "data_go_kr",
+    "inputs": {
+      "bbox": [
+        129.2,
+        36.0,
+        129.5,
+        36.2
+      ]
+    },
+    "outputs": {
+      "out_path": "out/pohang_2022/nidr.geojson",
+      "dry_run": true
+    },
+    "rationale": "dry-run: skipping API call"
+  },
+  {
+    "step": "run_model",
+    "tool": "SHALSTAB",
+    "inputs": {
+      "friction_angle_deg": 35.0,
+      "cohesion_pa": 2000.0,
+      "soil_thickness_m": 1.5,
+      "transmissivity": 0.0001,
+      "scar_ndvi_drop": 0.15,
+      "scar_post_ndvi_max": 0.35,
+      "scar_post_days": 60,
+      "scar_pre_days": 90
+    },
+    "outputs": {
+      "out_path": "out/pohang_2022/prediction.tif",
+      "dry_run": true
+    },
+    "rationale": "dry-run: skipping model execution"
+  }
+]

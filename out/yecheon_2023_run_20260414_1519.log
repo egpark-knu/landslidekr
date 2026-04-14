@@ -1,0 +1,40 @@
+detect_scars failed (non-fatal): Total request size (226139472 bytes) must be less than or equal to 50331648 bytes.
+fetch_nidr failed (non-fatal): timed out
+/Users/eungyupark/anaconda3/lib/python3.11/site-packages/pysheds/io.py:134: UserWarning: No `nodata` value detected. Defaulting to 0.
+  warnings.warn('No `nodata` value detected. Defaulting to 0.')
+/Users/eungyupark/anaconda3/lib/python3.11/site-packages/pysheds/io.py:134: UserWarning: No `nodata` value detected. Defaulting to 0.
+  warnings.warn('No `nodata` value detected. Defaulting to 0.')
+
+======================================================================
+Case Runner — config.json
+======================================================================
+  Case ID: extreme_rainfall_2023
+  Event: 2023-07-13 → 2023-07-18
+  AOI bbox: [127.6, 36.3, 128.9, 37.0]
+  Model: SHALSTAB
+  Params: {'friction_angle_deg': 33.0, 'cohesion_pa': 2500.0, 'soil_thickness_m': 1.8, 'transmissivity': 0.0001, 'scar_ndvi_drop': 0.15, 'scar_post_ndvi_max': 0.35, 'scar_post_days': 60, 'scar_pre_days': 90, 'n_realizations': 100, 'seed': 42}
+
+✅ Result: {
+  "case_id": "extreme_rainfall_2023",
+  "status": "success",
+  "config_ok": true,
+  "artifacts": {
+    "rain": "out/extreme_rainfall_2023/rain.tif",
+    "prediction": "out/extreme_rainfall_2023/prediction.tif"
+  },
+  "metrics": {
+    "tp": 0,
+    "fp": 6132267,
+    "fn": 0,
+    "tn": 4981253,
+    "POD": 0.0,
+    "FAR": 1.0,
+    "CSI": 0.0,
+    "F1": 0.0,
+    "Precision": 0.0,
+    "ROC_AUC": 0.0,
+    "n_roc_points": 0
+  },
+  "n_trace_steps": 11,
+  "message": "Pipeline complete"
+}

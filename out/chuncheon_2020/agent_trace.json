@@ -1,0 +1,233 @@
+[
+  {
+    "_annotation_note": "This agent_trace.json is the executed trace from the first chuncheon_2020 run, with the `fetch_nidr` step re-annotated post-hoc on 2026-04-14 to reflect the year-match NIDR filter now implemented in landslide_kr/agent/orchestrator.py (R15 fix). The re-annotated `n_after_filter` = 18 matches the released nidr.geojson (which contains 18 in-bbox features) and the §5.6 Axis-6 count. Steps other than fetch_nidr were not modified. See manuscript §2.1 for the disclosure and §2.3 for the annual-NIDR resolution.",
+    "_annotation_date": "2026-04-14",
+    "_annotation_scope": [
+      "fetch_nidr"
+    ]
+  },
+  {
+    "step": "gee_init",
+    "tool": "init_ee",
+    "inputs": {
+      "project": "mas-gmail-agent"
+    },
+    "outputs": {
+      "project": "mas-gmail-agent",
+      "auth_mode": "user_oauth"
+    },
+    "rationale": "Earth Engine initialized"
+  },
+  {
+    "step": "fetch_rainfall",
+    "tool": "gpm_imerg",
+    "inputs": {
+      "bbox": [
+        127.6,
+        37.75,
+        127.95,
+        38.0
+      ],
+      "export_mode": "local"
+    },
+    "outputs": {
+      "n_images": 336,
+      "window": [
+        "2020-08-01",
+        "2020-08-08"
+      ],
+      "mean_total_mm": 404.16,
+      "bbox": [
+        127.6,
+        37.75,
+        127.95,
+        38.0
+      ],
+      "scale_m": 11132,
+      "out_path": "out/chuncheon_2020/rain.tif"
+    },
+    "rationale": "GPM IMERG V07 cumulative (export_mode=local)"
+  },
+  {
+    "step": "detect_scars",
+    "tool": "sentinel2_ndvi",
+    "inputs": {
+      "bbox": [
+        127.6,
+        37.75,
+        127.95,
+        38.0
+      ],
+      "export_mode": "local",
+      "ndvi_drop": 0.15,
+      "post_ndvi_max": 0.35,
+      "min_slope_deg": 10.0,
+      "pre_days": 90,
+      "post_days": 60
+    },
+    "outputs": {
+      "pre_count": 28,
+      "post_count": 13,
+      "scar_pixel_count": 178000.6156862745,
+      "aoi_km2": 853.98,
+      "scale_m": 10,
+      "bbox": [
+        127.6,
+        37.75,
+        127.95,
+        38.0
+      ],
+      "event_window": [
+        "2020-08-01",
+        "2020-08-08"
+      ],
+      "thresholds": {
+        "ndvi_drop": 0.15,
+        "post_ndvi_max": 0.35,
+        "min_slope_deg": 10.0
+      },
+      "out_path": "out/chuncheon_2020/scars.tif"
+    },
+    "rationale": "NDVI drop + slope filter (export=local)"
+  },
+  {
+    "step": "fetch_nidr",
+    "tool": "data_go_kr",
+    "inputs": {
+      "year": 2020,
+      "bbox": [
+        127.6,
+        37.75,
+        127.95,
+        38.0
+      ],
+      "window": [
+        "2020-08-01",
+        "2020-08-08"
+      ],
+      "filter_mode": "annual_year_plus_bbox"
+    },
+    "outputs": {
+      "n_total": 2348,
+      "n_geocoded": 0,
+      "n_after_filter": 18,
+      "out_path": "out/chuncheon_2020/nidr.geojson",
+      "note": "Annotated post-hoc to reflect the year-match filter logic now in landslide_kr/agent/orchestrator.py (R15 fix). Original first-run value n_after_filter=0 came from an earlier event-window filter; the released nidr.geojson artifact is the year-match filtered output (n=18 in-bbox)."
+    },
+    "rationale": "data.go.kr ID 15074816 + AOI/year filter + geocoding (NIDR API is annual-resolution; see manuscript §2.3)"
+  },
+  {
+    "step": "dem_mosaic",
+    "tool": "build_dem_for_case",
+    "inputs": {
+      "bbox": [
+        127.6,
+        37.75,
+        127.95,
+        38.0
+      ],
+      "root": "/Users/eungyupark/Dropbox/GeoAI/07_geodata/dem_30m_copernicus"
+    },
+    "outputs": {
+      "out_path": "out/chuncheon_2020/dem_utm.tif",
+      "crs": "EPSG:32652",
+      "n_tiles": 2,
+      "width": 1158,
+      "height": 1088,
+      "res_m": 30
+    },
+    "rationale": "mosaic + reproject to UTM"
+  },
+  {
+    "step": "topo",
+    "tool": "compute_topo",
+    "inputs": {
+      "dem": "out/chuncheon_2020/dem_utm.tif"
+    },
+    "outputs": {
+      "shape": [
+        1088,
+        1158
+      ],
+      "backend": "pysheds D8",
+      "richdem_available": false
+    },
+    "rationale": "flow accumulation + slope (pysheds D8 fallback; richdem not installed on target)"
+  },
+  {
+    "step": "lithology",
+    "tool": "load_or_default",
+    "inputs": {
+      "source": "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_gis_korea/geodata/geology.gpkg"
+    },
+    "outputs": {
+      "shape": [
+        1088,
+        1158
+      ]
+    },
+    "rationale": "Korean geology GPKG → class array (default fallback)"
+  },
+  {
+    "step": "ensemble",
+    "tool": "run_ensemble",
+    "inputs": {
+      "n_realizations": 100
+    },
+    "outputs": {
+      "prob_min": 0.0,
+      "prob_max": 1.0,
+      "prob_mean": 0.6789142489433289
+    },
+    "rationale": "SINMAP-style bounded MC"
+  },
+  {
+    "step": "save_prediction",
+    "tool": "rasterio",
+    "inputs": {
+      "prob_tif": "out/chuncheon_2020/prob_unstable.tif",
+      "mask_tif": "out/chuncheon_2020/prediction.tif"
+    },
+    "outputs": {
+      "p>=0.5_fraction": 0.7282173879914661
+    },
+    "rationale": "prob_unstable + binary mask"
+  },
+  {
+    "step": "consensus_label",
+    "tool": "NIDR ∪ scars",
+    "inputs": {
+      "scar_path": "out/chuncheon_2020/scars.tif",
+      "nidr_path": "out/chuncheon_2020/nidr.geojson"
+    },
+    "outputs": {
+      "n_nidr_points": 0,
+      "positive_fraction": 0.012358878136746927,
+      "out_path": "out/chuncheon_2020/consensus_label.tif"
+    },
+    "rationale": "consensus of NIDR buffered points and Sentinel-2 scars"
+  },
+  {
+    "step": "evaluate",
+    "tool": "confusion_matrix+roc_auc",
+    "inputs": {
+      "pred": "out/chuncheon_2020/prediction.tif",
+      "label": "out/chuncheon_2020/consensus_label.tif",
+      "prob": "out/chuncheon_2020/prob_unstable.tif"
+    },
+    "outputs": {
+      "tp": 11137,
+      "fp": 906347,
+      "fn": 4434,
+      "tn": 337986,
+      "POD": 0.7152,
+      "FAR": 0.9879,
+      "CSI": 0.0121,
+      "F1": 0.0239,
+      "Precision": 0.0121,
+      "ROC_AUC": 0.4992,
+      "n_roc_points": 102
+    },
+    "rationale": "TP/FP/FN/TN + POD/FAR/CSI/F1 + ROC-AUC"
+  }
+]

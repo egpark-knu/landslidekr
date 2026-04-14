@@ -1,0 +1,54 @@
+{
+  "case_id": "pohang_2022",
+  "description": "Pohang heavy rainfall landslides triggered by Typhoon Hinnamnor (2022-09-05~07)",
+  "event_window": {
+    "start": "2022-09-05",
+    "end": "2022-09-07"
+  },
+  "aoi": {
+    "bbox": [
+      129.2,
+      36.0,
+      129.5,
+      36.2
+    ],
+    "crs": "EPSG:4326",
+    "description": "Pohang city + adjacent mountainous area"
+  },
+  "rainfall": {
+    "source": "GPM_IMERG_V07",
+    "cumulative_mm_reported": 412.0,
+    "notes": "Reported max 24-h rainfall in Pohang station"
+  },
+  "labels": {
+    "source": "NIDR + Sentinel-2 NDVI pre/post",
+    "raster_path": "data/labels/pohang_2022_labels.tif",
+    "status": "to_collect"
+  },
+  "geology_path": "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_gis_korea/geodata/geology.gpkg",
+  "dem_root": "/Users/eungyupark/Dropbox/GeoAI/07_geodata/dem_30m_copernicus",
+  "dem_source_actual": "Local Copernicus DSM COG 30 m tiles from `dem_root` (Copernicus GLO-30 DSM, pre-downloaded). Main SHALSTAB DEM pipeline via `landslide_kr/preprocess/dem_mosaic.py::build_dem_for_case`. GEE SRTM (USGS/SRTMGL1_003) is used only inside the Sentinel-2 scar detector as an incidental slope gate (`scar ∧ slope > 10°`), not as the main DEM.",
+  "gee_project": "mas-gmail-agent",
+  "model": {
+    "name": "SHALSTAB",
+    "params": {
+      "friction_angle_deg": 35.0,
+      "cohesion_pa": 2000.0,
+      "soil_thickness_m": 1.5,
+      "transmissivity": 0.0001,
+      "scar_ndvi_drop": 0.15,
+      "scar_post_ndvi_max": 0.35,
+      "scar_post_days": 60,
+      "scar_pre_days": 90
+    }
+  },
+  "validation": {
+    "metrics": [
+      "IoU",
+      "Precision",
+      "Recall",
+      "F1",
+      "ROC_AUC"
+    ]
+  }
+}

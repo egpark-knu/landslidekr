@@ -1,0 +1,51 @@
+Pipeline failed
+Traceback (most recent call last):
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/landslide_kr/agent/orchestrator.py", line 469, in run
+    artifacts["nidr"] = self.step_fetch_nidr(dry_run)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/landslide_kr/agent/orchestrator.py", line 165, in step_fetch_nidr
+    records = fetch_records(year=year)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/landslide_kr/io/nidr_loader.py", line 106, in fetch_records
+    with urllib.request.urlopen(url, timeout=30) as resp:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/anaconda3/lib/python3.11/urllib/request.py", line 216, in urlopen
+    return opener.open(url, data, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/anaconda3/lib/python3.11/urllib/request.py", line 525, in open
+    response = meth(req, response)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/anaconda3/lib/python3.11/urllib/request.py", line 634, in http_response
+    response = self.parent.error(
+               ^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/anaconda3/lib/python3.11/urllib/request.py", line 563, in error
+    return self._call_chain(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/anaconda3/lib/python3.11/urllib/request.py", line 496, in _call_chain
+    result = func(*args)
+             ^^^^^^^^^^^
+  File "/Users/eungyupark/anaconda3/lib/python3.11/urllib/request.py", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 500: Internal Server Error
+
+======================================================================
+Case Runner — config.json
+======================================================================
+  Case ID: pohang_2022
+  Event: 2022-09-05 → 2022-09-07
+  AOI bbox: [129.2, 36.0, 129.5, 36.2]
+  Model: SHALSTAB
+  Params: {'friction_angle_deg': 35.0, 'cohesion_pa': 2000.0, 'soil_thickness_m': 1.5, 'transmissivity': 0.0001}
+
+✅ Result: {
+  "case_id": "pohang_2022",
+  "status": "failed",
+  "config_ok": true,
+  "artifacts": {
+    "rain": "out/pohang_2022/rain.tif",
+    "scars": "out/pohang_2022/scars.tif"
+  },
+  "metrics": null,
+  "n_trace_steps": 3,
+  "message": "HTTP Error 500: Internal Server Error"
+}

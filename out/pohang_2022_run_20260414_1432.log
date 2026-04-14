@@ -1,0 +1,57 @@
+Pipeline failed
+Traceback (most recent call last):
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/landslide_kr/collectors/gpm_imerg_rainfall.py", line 40, in cumulative_rainfall_mm
+    ee.Number(1).getInfo()
+    ^^^^^^^^^^^^
+  File "/Users/eungyupark/anaconda3/lib/python3.11/site-packages/ee/computedobject.py", line 29, in __call__
+    return type.__call__(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/anaconda3/lib/python3.11/site-packages/ee/ee_number.py", line 35, in __init__
+    self.initialize()
+  File "/Users/eungyupark/anaconda3/lib/python3.11/site-packages/ee/ee_number.py", line 51, in initialize
+    apifunction.ApiFunction.importApi(cls, cls.name(), cls.name())
+  File "/Users/eungyupark/anaconda3/lib/python3.11/site-packages/ee/_utils.py", line 39, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/anaconda3/lib/python3.11/site-packages/ee/apifunction.py", line 199, in importApi
+    cls.initialize()
+  File "/Users/eungyupark/anaconda3/lib/python3.11/site-packages/ee/apifunction.py", line 163, in initialize
+    signatures = data.getAlgorithms()
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/anaconda3/lib/python3.11/site-packages/ee/data.py", line 1434, in getAlgorithms
+    _get_cloud_projects()
+  File "/Users/eungyupark/anaconda3/lib/python3.11/site-packages/ee/data.py", line 292, in _get_cloud_projects
+    raise ee_exception.EEException(_NOT_INITIALIZED_MESSAGE)
+ee.ee_exception.EEException: Earth Engine client library not initialized. See http://goo.gle/ee-auth.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/landslide_kr/agent/orchestrator.py", line 457, in run
+    artifacts["rain"] = self.step_fetch_rainfall(dry_run)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/landslide_kr/agent/orchestrator.py", line 117, in step_fetch_rainfall
+    meta = cumulative_rainfall_mm(bbox, start, end, out, export_mode=export_mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/landslide_kr/collectors/gpm_imerg_rainfall.py", line 42, in cumulative_rainfall_mm
+    raise RuntimeError(
+RuntimeError: Earth Engine not initialized: Earth Engine client library not initialized. See http://goo.gle/ee-auth.. Run: ee.Authenticate(); ee.Initialize(project='<your-gee-project>').
+
+======================================================================
+Case Runner — config.json
+======================================================================
+  Case ID: pohang_2022
+  Event: 2022-09-05 → 2022-09-07
+  AOI bbox: [129.2, 36.0, 129.5, 36.2]
+  Model: SHALSTAB
+  Params: {'friction_angle_deg': 35.0, 'cohesion_pa': 2000.0, 'soil_thickness_m': 1.5, 'transmissivity': 0.0001}
+
+✅ Result: {
+  "case_id": "pohang_2022",
+  "status": "failed",
+  "config_ok": true,
+  "artifacts": {},
+  "metrics": null,
+  "n_trace_steps": 0,
+  "message": "Earth Engine not initialized: Earth Engine client library not initialized. See http://goo.gle/ee-auth.. Run: ee.Authenticate(); ee.Initialize(project='<your-gee-project>')."
+}
