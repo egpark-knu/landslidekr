@@ -2,7 +2,13 @@
 
 **Purpose.** This file is the single-point handoff for picking up the manuscript when reviewer comments arrive (anywhere from 2 weeks to 6 months after submission). It consolidates everything a fresh-context agent needs to respond without re-deriving decisions.
 
-**Last updated.** 2026-04-14 23:25 KST (pre-submission freeze).
+**Last updated.** 2026-04-15 03:35 KST (R24 triple-APPROVED; submission-prep assets staged).
+
+**Post-R20 change log (for review-response drafting, post-APPROVED work):**
+- **R21–R24** — Online Resource scope leaks closed. OR1 restricted to numeric/vector artifacts only (JSON/CSV/configs/agent_trace.json/nidr.geojson/logs); Chuncheon rasters + PR-AUC curves moved to code repository under Code availability; Code availability explicitly lists 10 analysis/recomputation/figure scripts. All numerics unchanged.
+- **R24 triple-APPROVED** (2026-04-15 03:28 KST) — codex-fresh memoryless + gemini-fresh memoryless + codex-98 adversarial, all APPROVED in same round.
+- **Submission assets staged** — `COVER_LETTER.md`, `SUGGESTED_REVIEWERS.md`, `draft/landslidekr.bib` (6 DOI-verified entries), `draft/sn-jnl.cls` + `draft/sn-basic.bst` (Springer bundle v3.1 Dec 2024). sn-jnl port deferred until user command; current tectonic PDF is submission-ready-as-reviewer-proof.
+- **Latest PDF.** `draft/_LandslideKR_v0.8.1_journal.pdf` 9.95 MiB (R24 build) — GitHub HEAD `f18b15a`.
 
 ---
 
