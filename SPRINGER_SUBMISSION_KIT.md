@@ -116,8 +116,10 @@ Current draft structure already matches Springer's required ordering:
 4. Upload:
    - Main manuscript `.tex` + `.bib` + `.cls` (sn-jnl) — OR `.pdf` (current PDF is already submission-ready as a reviewer proof)
    - Figure files (`figures/*.png`, 4 files)
-   - Supplementary material (Online Resource 2 — operational detail): the `docs/` folder contents (`PIPELINE_DETAIL.md`, `NIDR_API_SPEC.md`, `ROBUSTNESS_PLAN.md`, `SAR_INTEGRATION_PLAN.md`, `VWORLD_KEY_GUIDE.md`) compressed as one zip
-   - Supplementary material (Online Resource 1 — backing artifacts): a zip of `analysis-output/*.json`, `analysis-output/*.csv`, `cases/*/config.json`, `out/*/agent_trace.json`, `out/*/nidr.geojson`, `out/*.log`
+   - Supplementary material (Online Resource 1 — numeric backing artifacts): a zip of `analysis-output/*.json`, `analysis-output/*.csv`, `cases/*/config.json`, `out/*/agent_trace.json`, `out/*/nidr.geojson`, `out/*.log`, and the Pohang executed run log
+   - Supplementary material (Online Resource 2 — pipeline reference + operational detail): `docs/PIPELINE_DETAIL.md` + `docs/NIDR_API_SPEC.md` + `docs/VWORLD_KEY_GUIDE.md` compressed as one zip (the AgentTrace step schema, NIDR API spec, and VWorld-key acquisition guide that the manuscript §2.1 and §2.3 cross-reference)
+   - Supplementary material (Online Resource 3 — seven-axis robustness evaluation plan): `docs/ROBUSTNESS_PLAN.md` as a single PDF or DOCX (the design document §5.1–§5.9 cross-reference for deferred axes)
+   - Supplementary material (Online Resource 4 — SAR integration plan, future work): `docs/SAR_INTEGRATION_PLAN.md` as a single PDF or DOCX (the §6 SAR-future-work cross-reference)
 5. Cover letter (draft to follow in `COVER_LETTER.md`).
 6. Suggested reviewers: 3 names with institutional affiliations + emails (draft to follow in `SUGGESTED_REVIEWERS.md`).
 7. Competing interests: the Declarations block is already drafted as none.
