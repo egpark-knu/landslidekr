@@ -598,6 +598,24 @@ The LandslideKR orchestrator is released as enabling infrastructure, not as a ph
 
 Code, per-event traces and logs (Pohang: dry-run JSON + executed log; Yecheon and Chuncheon: executed JSON), figures, the seven-axis robustness evaluation plan with executed-versus-deferred axes clearly marked, the FAR / precision-lift / PR-AUC analysis bundle, the SAR-integration plan (future work only), and the VWorld-key acquisition guide are released together with the manuscript as a single reproducibility package; readers can re-execute the three-event benchmark end-to-end from the released configs and code, and the working-hypothesis status of the typology mapping leaves an obvious natural next step --- validation on additional independent Korean events under frozen numeric preregistration --- for a follow-on paper.
 
+\section{Declarations}\label{declarations}
+
+\textbf{Funding.} Not applicable.
+
+\textbf{Competing interests.} The author declares no competing financial or non-financial interests relevant to the content of this article.
+
+\textbf{Ethics approval and consent to participate.} Not applicable --- this study uses only publicly available Earth-observation data (GPM IMERG, Sentinel-2, Copernicus DSM) and publicly released Korean administrative landslide reports (NIDR, data.go.kr service ID 15074816); no human subjects or animal experiments are involved.
+
+\textbf{Consent for publication.} Not applicable.
+
+\textbf{Data availability.} All datasets used are publicly available: GPM IMERG V07 precipitation and Sentinel-2 L2A imagery via Google Earth Engine; Copernicus GLO-30 DSM as pre-downloaded COG tiles; KIGAM 1:50 000 Korean geology vector (Korea Institute of Geoscience and Mineral Resources); NIDR administrative-area landslide records via the Korean public-data portal (data.go.kr service ID 15074816) and VWorld geocoder 2.0 (vworld.kr). Per-event processed outputs (AgentTrace JSON records, NIDR geocoded GeoJSON, run logs) and the three-event analysis bundles (FAR-filter JSON/CSV, Axis 3/4/6 JSON/CSV, isotonic calibration JSON, post-hoc refinement JSON) are released in the code repository below. Large intermediate raster outputs (per-event probability rasters, DEM UTM mosaics) are regeneratable from the released configs and are therefore not redistributed; the pipeline reproduces them end-to-end from the public data sources.
+
+\textbf{Code availability.} The full LandslideKR orchestrator code, per-event configurations, analysis scripts, executed traces, and the manuscript source are publicly available at \textbf{\url{https://github.com/egpark-knu/landslidekr}}. The repository includes the runtime fallback chain for topographic preprocessing (richdem → pysheds → numpy), the year-match NIDR filter documented in §2.3, and the four-variant Axis-6 label-ablation script. A pinned archive of the submission-associated release will be deposited to Zenodo with a DOI upon acceptance.
+
+\textbf{Materials availability.} Not applicable --- no new physical materials were generated.
+
+\textbf{Author contributions.} E.P. conceived the study, designed the benchmark, implemented the LandslideKR orchestrator and analysis code, executed the three-event runs, prepared the figures and tables, and wrote the manuscript.
+
 \section{References}\label{references}
 
 Baum, R. L., Savage, W. Z., \& Godt, J. W. (2008). \emph{TRIGRS --- A Fortran program for transient rainfall infiltration and grid-based regional slope-stability analysis, version 2.0}. U.S. Geological Survey Open-File Report 2008-1159. https://pubs.usgs.gov/of/2008/1159/
