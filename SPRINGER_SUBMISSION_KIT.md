@@ -126,12 +126,19 @@ Current draft structure already matches Springer's required ordering:
 
 ## 6. What to do right now before submission
 
-- [ ] Download `sn-jnl.cls` + `sn-basic.bst` from Springer / Overleaf.
-- [ ] Port `draft/_LandslideKR_v0.8.1_journal.tex` to use `\documentclass[sn-basic]{sn-jnl}` (minimal edit; current preamble's fontspec + packages remain compatible).
-- [ ] Re-render with the sn-jnl class and verify figure placement.
+- [x] Download `sn-jnl.cls` + `sn-basic.bst` from Springer / Overleaf. — **done 2026-04-15; bundle extracted to `draft/sn-jnl-template/sn-article-template/` (sn-jnl.cls v3.1 Dec 2024).**
+- [x] Draft cover letter — **done; `COVER_LETTER.md` v0.1 at project root, user review required before dispatch.**
+- [x] Draft suggested-reviewers list — **done; `SUGGESTED_REVIEWERS.md` v0.1 at project root, scaffolded with topical fit rationale; user fills names/emails/ORCIDs before dispatch.**
+- [x] Create BibTeX file — **done; `draft/landslidekr.bib` with 6 DOI-verified entries + one in-press WildfireKR note.**
+- [ ] **Port manuscript to sn-jnl class** — current `.tex` uses custom preamble + inline author-year citations `[Author, Year]`. Full port requires:
+  1. New `_LandslideKR_snjnl.tex` with `\documentclass[pdflatex,sn-basic]{sn-jnl}` and sn-jnl title macros (`\title`, `\author*`, `\affil`, `\abstract{}`, `\keywords{}`).
+  2. Convert inline cites `[Montgomery and Dietrich, 1994]` → `\citep{montgomery1994}` throughout body (6 citations; keys match `landslidekr.bib`).
+  3. Remove hand-rolled References section; add `\bibliography{landslidekr}` at end.
+  4. Build with pdflatex + bibtex + pdflatex + pdflatex (not tectonic — BibTeX toolchain required for sn-basic).
+  5. Copy `sn-jnl.cls` + `sn-basic.bst` next to the .tex in the submission directory.
+  6. Verify figure placement (4 PNGs from `figures/`) renders correctly under sn-jnl.
+  **Deferred because the current PDF (9.95 MiB, tectonic-built) is submission-ready as a reviewer proof; Springer Editorial Manager accepts PDF-only in initial submission. Full port can run on editor request or on explicit user command.**
 - [ ] Trim abstract to 250 words if editor asks.
-- [ ] Draft cover letter (one page; I will prepare `COVER_LETTER.md` on request).
-- [ ] Draft suggested-reviewers list (I will prepare `SUGGESTED_REVIEWERS.md` on request).
 - [ ] Deposit a Zenodo DOI for the v0.8.1 GitHub release upon acceptance.
 
 ## 7. Where the GitHub URL now appears

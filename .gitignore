@@ -50,3 +50,6 @@ draft/_body_only_from_intro.tex
 *.key
 *credentials*.json
 !.mas/*.example.json
+
+# Springer template bundle (re-downloadable)
+draft/sn-jnl-template/
