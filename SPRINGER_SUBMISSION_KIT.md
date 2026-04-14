@@ -134,7 +134,7 @@ Current draft structure already matches Springer's required ordering:
   1. New `_LandslideKR_snjnl.tex` with `\documentclass[pdflatex,sn-basic]{sn-jnl}` and sn-jnl title macros (`\title`, `\author*`, `\affil`, `\abstract{}`, `\keywords{}`).
   2. Convert inline cites `[Montgomery and Dietrich, 1994]` → `\citep{montgomery1994}` throughout body (6 citations; keys match `landslidekr.bib`).
   3. Remove hand-rolled References section; add `\bibliography{landslidekr}` at end.
-  4. Build with pdflatex + bibtex + pdflatex + pdflatex (not tectonic — BibTeX toolchain required for sn-basic).
+  4. Build: two supported toolchains — (a) **pdflatex + bibtex + pdflatex + pdflatex** (standard, requires texlive); (b) **tectonic + inline `thebibliography` environment** (no bibtex; replace `\bibliography{landslidekr}` in the .tex with a hand-rolled `\begin{thebibliography}{9} \bibitem{montgomery1994}...` block generated from `landslidekr.bib`; this is tectonic-buildable and was confirmed on 2026-04-15 by test-building `draft/sn-jnl-template/sn-article-template/sn-article.tex` which compiles under tectonic to a valid sn-jnl PDF — only the reference template's EPS figure fails, which our PNG-only manuscript sidesteps).
   5. Copy `sn-jnl.cls` + `sn-basic.bst` next to the .tex in the submission directory.
   6. Verify figure placement (4 PNGs from `figures/`) renders correctly under sn-jnl.
   **Deferred because the current PDF (9.95 MiB, tectonic-built) is submission-ready as a reviewer proof; Springer Editorial Manager accepts PDF-only in initial submission. Full port can run on editor request or on explicit user command.**
