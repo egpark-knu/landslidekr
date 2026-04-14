@@ -70,7 +70,7 @@ Pohang and Yecheon are the two anchor events, chosen to be structurally distinct
 
 ## 3.1 Baseline SHALSTAB Monte Carlo ensemble across three events
 
-Baseline labels are event-window Sentinel-scar only for all three events. An NIDR-augmented label-source sensitivity check is reported separately in §5.6. Numeric backing (per-event AgentTrace `evaluate` steps, Pohang run log, offline raster recomputation scripts) is in Online Resource 1; the pipeline-step schema that produces these numbers is in Online Resource 2.
+Baseline labels are event-window Sentinel-scar only for all three events. An NIDR-augmented label-source sensitivity check is reported separately in §5.6. Numeric backing (per-event AgentTrace `evaluate` steps, Pohang run log, and the JSON/CSV analysis artifacts that feed the tables and figures in this section) is in Online Resource 1; the pipeline-step schema that produces these numbers is in Online Resource 2; the offline raster recomputation scripts themselves are distributed with the code repository (see Code availability).
 
 **Table 2** reports the confusion-matrix metrics, ROC-AUC, and probability-separability statistics per event.
 
