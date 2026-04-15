@@ -58,7 +58,9 @@ Throughout this work SHALSTAB is used only as a hillslope-steady-state instabili
 
 ## Table 1. Lithology-class Monte Carlo parameter bounds (literature-grounded)
 
-| Class | Friction angle $\phi$ ($^\circ$) | Cohesion c (Pa) | Transmissivity T (m$^{2}$/s) | Soil depth z (m) | Rationale |
+\nopagebreak
+
+|| Class | Friction angle $\phi$ ($^\circ$) | Cohesion c (Pa) | Transmissivity T (m$^{2}$/s) | Soil depth z (m) | Rationale |
 |---|---|---|---|---|---|
 | granite | 28 – 38 | 2 000 – 10 000 | 1 $\times 10^{-4}$ – 1 $\times 10^{-3}$ | 0.8 – 2.5 | Park et al. (2013) Pohang-area residual soil; tight $\phi$, high-floor cohesion and transmissivity |
 | volcanic | 30 – 40 | 2 000 – 12 000 | 1 $\times 10^{-4}$ – 1 $\times 10^{-3}$ | 0.5 – 2.0 | Weathered volcanic (Jeju, SE Korea ridges) |
@@ -80,7 +82,9 @@ Table 2 summarizes the planned versus executed label source per event.
 
 ## Table 2. Label provenance (executed vs planned)
 
-| Event | Planned label | Executed label | Reason for gap |
+\nopagebreak
+
+|| Event | Planned label | Executed label | Reason for gap |
 |---|---|---|---|
 | Pohang 2022 | NIDR 30 m point buffer $\cup$ Sentinel-2 scar | Sentinel-2 scar (baseline) | NIDR records do not fall within the published bbox; §5.6 ablation excludes Pohang |
 | Yecheon 2023 | NIDR 30 m point buffer $\cup$ Sentinel-2 scar | Sentinel-2 scar (baseline) | NIDR-augmented label-layer ablation in §5.6 (273 in-bbox points) |
@@ -94,7 +98,9 @@ Table 3 summarizes the three events' rainfall typology, AOI size, terrain, and e
 
 ## Table 3. Three-event configuration: rainfall typology, AOI size, terrain, and label provenance.
 
-| Event | Type | Date | AOI | Rainfall peak | Lithology mix | Reported-run label | Status |
+\nopagebreak
+
+|| Event | Type | Date | AOI | Rainfall peak | Lithology mix | Reported-run label | Status |
 |---|---|---|---|---|---|---|---|
 | Pohang 2022 (Typhoon Hinnamnor) | Typhoon | 5–7 Sep 2022 (IMERG 2-day window) | ~600 km$^{2}$ | 412 mm / 24 h reported at Pohang station; 96 mm peak pixel, 91 mm AOI-mean over IMERG window | granite-dominated | Sentinel-2 scar (NIDR town centroids fall east of bbox; §5.6) | Executed |
 | Yecheon 2023 (Monsoon) | Monsoon | 13–18 Jul 2023 (IMERG 5-day window) | ~9 000 km$^{2}$ | ~580 mm cumulative reported at Yecheon station; 216 mm peak pixel, 188 mm AOI-mean over IMERG window | sedimentary + metamorphic + alluvium | Sentinel-2 scar (baseline) + 273 NIDR points in §5.6 ablation | Executed |
@@ -112,7 +118,9 @@ Table 4 reports the confusion-matrix metrics, ROC-AUC, and probability-separabil
 
 ## Table 4. Baseline confusion-matrix metrics, ROC-AUC, and probability-separability statistics for the per-event SHALSTAB Monte Carlo ensemble (n=100 realizations per pixel).
 
-| Metric | Pohang 2022 | Yecheon 2023 | Chuncheon 2020 |
+\nopagebreak
+
+|| Metric | Pohang 2022 | Yecheon 2023 | Chuncheon 2020 |
 |---|---|---|---|
 | N valid pixels | 912 384 | 11 113 520 | 1 259 904 |
 | Positives (scar) | 1 099 (0.120 %) | 183 507 (1.651 %) | 15 571 (1.236 %) |
@@ -145,7 +153,9 @@ Three alternative scorings are computed on the same DEM and evaluated against th
 
 ## Table 5. Post-hoc refinement comparison: ROC-AUC of baseline SHALSTAB MC versus three alternative scoring methods (hillslope-masked, slope alone, slope $\times$ relief) per event.
 
-| Method | Pohang 2022 | Yecheon 2023 | Chuncheon 2020 |
+\nopagebreak
+
+|| Method | Pohang 2022 | Yecheon 2023 | Chuncheon 2020 |
 |---|---|---|---|
 | Baseline SHALSTAB MC | 0.612 | 0.449 | 0.499 |
 | Hillslope-masked SHALSTAB | 0.520 | 0.593 | 0.550 |
@@ -157,7 +167,7 @@ The ranking is event-type dependent. On the typhoon event Pohang, the baseline S
 
 ## 3.4 Event-wise maps and probability separability histograms
 
-Figs. 1 and 2 show the three-panel per-event summary (probability raster, binary prediction with Sentinel-2 scars dilated 2 px for visibility, probability separability histogram) for Pohang 2022 and Yecheon 2023. The corresponding Chuncheon 2020 panel is not included in the main text; the equivalent Chuncheon raster artifacts are released in the code repository for reader inspection (see Code availability), and the matching numeric metrics are in Online Resource 1. All panels are in lat/lon (EPSG:4326) with legends for predicted-unstable (grey), predicted-stable (white), and Sentinel-2 scar (firebrick). Histograms show the scar and non-scar probability distributions overlaid with the mean-separation value annotated.
+Figures 1 and 2 show the three-panel per-event summary (probability raster, binary prediction with Sentinel-2 scars dilated 2 px for visibility, probability separability histogram) for Pohang 2022 and Yecheon 2023. The corresponding Chuncheon 2020 panel is not included in the main text; the equivalent Chuncheon raster artifacts are released in the code repository for reader inspection (see Code availability), and the matching numeric metrics are in Online Resource 1. All panels are in lat/lon (EPSG:4326) with legends for predicted-unstable (grey), predicted-stable (white), and Sentinel-2 scar (firebrick). Histograms show the scar and non-scar probability distributions overlaid with the mean-separation value annotated.
 
 ![](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig1_pohang_2022.png){#fig:1 width=95%}
 
@@ -219,7 +229,9 @@ Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is stru
 
 **Table 6a.** Pohang 2022 (base rate 0.1205 %)
 
-| Filter | POD | Precision | Lift | Kept-fraction |
+\nopagebreak
+
+|| Filter | POD | Precision | Lift | Kept-fraction |
 |---|---|---|---|---|
 | F0 baseline | 0.914 | 0.00158 | 1.31$\times$ | 69.6 % |
 | F1 hillslope | 0.208 | 0.00174 | 1.44$\times$ | 14.4 % |
@@ -405,7 +417,7 @@ Code, per-event traces and logs (Pohang: dry-run JSON + executed log; Yecheon an
 
 **Funding.** This work was supported by the National Research Foundation of Korea (NRF) grant funded by the Korea government (Ministry of Science and ICT, MSIT) under Grant RS-2023-002772264.
 
-Competing interests. The author declares no competing financial or non-financial interests relevant to the content of this article.
+Competing interests. The authors declare no competing financial or non-financial interests relevant to the content of this article.
 
 Ethics approval and consent to participate. Not applicable, this study uses only publicly available Earth-observation data (GPM IMERG, Sentinel-2, Copernicus DSM) and publicly released Korean administrative landslide reports (NIDR, data.go.kr service ID 15074816); no human subjects or animal experiments are involved.
 
@@ -443,5 +455,3 @@ Pack, R. T., Tarboton, D. G., & Goodwin, C. N. (1998). The SINMAP approach to te
 Park, H. J., Lee, J. H., & Woo, I. (2013). Assessment of rainfall-induced shallow landslide susceptibility using a GIS-based probabilistic approach. *Engineering Geology*, 161, 1–15. https://doi.org/10.1016/j.enggeo.2013.04.011
 
 Park, E. (2026). WildfireKR: An LLM-agent-orchestrated reproducible wildfire-spread benchmark for Korea. *IEEE Access* (in press). Open-access preprint and code: https://github.com/eungyupark/wildfire_kr.
-
----

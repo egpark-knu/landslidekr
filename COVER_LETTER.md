@@ -5,7 +5,9 @@
 ---
 
 **To:** Editor-in-Chief, *Landslides* (Springer Nature)
-**From:** Eungyu Park, Department of Geology, Kyungpook National University, Daegu, Republic of Korea
+**From:** Eungyu Park (corresponding), Taeyu Kim, Jangwon Park
+School of Earth System Sciences, Kyungpook National University, Daegu, Republic of Korea
+GeoAI Alignment, Inc., Daegu, Republic of Korea
 **Email:** egpark@knu.ac.kr
 **Date:** [submission date]
 
@@ -38,7 +40,7 @@ I am pleased to submit the enclosed manuscript for consideration in *Landslides*
 
 **Suggested reviewers.** A short list of suggested reviewers with institutional affiliations and publication-aligned rationale is provided in the separate Suggested Reviewers form.
 
-I confirm that I am the sole author of this manuscript, that no co-authors need to be added, and that I have read and agree to the journal's editorial policies.
+I confirm that all listed authors have contributed substantially to this work and have read and agree to the journal's editorial policies. Eungyu Park is the corresponding author.
 
 Thank you for considering this submission. I look forward to the editorial decision.
 
