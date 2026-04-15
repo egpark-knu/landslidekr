@@ -2,19 +2,19 @@
 
 ## Abstract
 
-We report a three-event Korean retrospective benchmark of a lithology-conditional Monte Carlo SHALSTAB ensemble across one typhoon (Pohang 2022, ~600 km², hillslope-dominated) and two monsoon events (Yecheon 2023, ~9 000 km², mixed-terrain; Chuncheon 2020, ~850 km², small mountainous) that together separate rainfall typology from area-of-interest size and terrain mix. Pre-event landslide nowcasting in monsoon-dominated East Asia depends on physical models whose hillslope-steady-state assumption is rarely tested across structurally distinct rainfall events on the same operational pipeline, and Korea has no published reproducible multi-event benchmark of this kind. We evaluate against an event-window Sentinel-2 NDVI-change scar reference, with an annual administrative-area NIDR-report augmentation reported separately as a label-source sensitivity check in §5.6 and release the eleven-step traced data-and-compute orchestrator that produces the per-event rasters and core confusion-matrix-plus-ROC-AUC evaluation outputs, with the additional decile and probability-separability statistics computed in the offline analysis bundle. SHALSTAB shows ROC-AUC 0.612 with positive scar/non-scar mean-probability separation +0.198 on the typhoon event, is rank-inverted on the large monsoon AOI (ROC-AUC 0.449, separation −0.070), and is essentially random on the small monsoon AOI (ROC-AUC 0.499, separation +0.006), while a topographic predictor (slope alone) reaches ROC-AUC 0.669 on the large monsoon AOI; raw false-alarm rate is structurally pinned near 99 % at the observed positive-class rates of 0.12–1.65 % so we report precision lift over base rate jointly with recall and kept-fraction. The three-event divergence motivates an agentic model-selection layer as future work, but the executed contribution of this paper is the open benchmark and the disclosed re-executable infrastructure, not a demonstrated agent capability.
+We report a three-event Korean retrospective benchmark of a lithology-conditional Monte Carlo SHALSTAB ensemble across one typhoon (Pohang 2022, ~600 km$^{2}$, hillslope-dominated) and two monsoon events (Yecheon 2023, ~9 000 km$^{2}$, mixed-terrain; Chuncheon 2020, ~850 km$^{2}$, small mountainous) that together separate rainfall typology from area-of-interest size and terrain mix. Pre-event landslide nowcasting in monsoon-dominated East Asia depends on physical models whose hillslope-steady-state assumption is rarely tested across structurally distinct rainfall events on the same operational pipeline, and Korea has no published reproducible multi-event benchmark of this kind. We evaluate against an event-window Sentinel-2 NDVI-change scar reference, with an annual administrative-area NIDR-report augmentation reported separately as a label-source sensitivity check in §5.6 and release the eleven-step traced data-and-compute orchestrator that produces the per-event rasters and core confusion-matrix-plus-ROC-AUC evaluation outputs, with the additional decile and probability-separability statistics computed in the offline analysis bundle. SHALSTAB shows ROC-AUC 0.612 with positive scar/non-scar mean-probability separation +0.198 on the typhoon event, is rank-inverted on the large monsoon AOI (ROC-AUC 0.449, separation −0.070), and is essentially random on the small monsoon AOI (ROC-AUC 0.499, separation +0.006), while a topographic predictor (slope alone) reaches ROC-AUC 0.669 on the large monsoon AOI; raw false-alarm rate is structurally pinned near 99 % at the observed positive-class rates of 0.12–1.65 % so we report precision lift over base rate jointly with recall and kept-fraction. The three-event divergence motivates an agentic model-selection layer as future work, but the executed contribution of this paper is the open benchmark and the disclosed re-executable infrastructure, not a demonstrated agent capability.
 
 Keywords: shallow rainfall-triggered landslides; SHALSTAB; Monte Carlo ensemble; Korean monsoon; Typhoon Hinnamnor; Sentinel-2 NDVI-change; reproducible benchmark; agent-orchestrated pipeline; precision lift
 
 # 1. Introduction
 
-Shallow rainfall-triggered landslides are a dominant geohazard across mountainous, monsoon-dominated East Asia, and pre-event nowcasting depends on physical models whose hillslope-steady-state assumption is rarely tested across structurally distinct rainfall typologies on the same operational pipeline. Korea offers a clean test set. Typhoon Hinnamnor produced short-duration high-intensity rainfall on a ~600 km² hillslope-dominated catchment around Pohang in September 2022. The 2023 central-Korea monsoon delivered multi-day distributed heavy rainfall across a ~9 000 km² mixed-terrain region spanning Yecheon, Yeongju, and Cheongju (IMERG-computed 188 mm AOI-mean, 216 mm peak pixel over the 13–18 July event window; ~580 mm cumulative reported at Yecheon station). The 2020 Gangwon monsoon hit a ~850 km² small mountainous AOI around Chuncheon. Together these three events separate rainfall typology (typhoon vs monsoon) from area-of-interest size and terrain mix, allowing one binary factor to be disambiguated from the other in a way no single event can.
+Shallow rainfall-triggered landslides are a dominant geohazard across mountainous, monsoon-dominated East Asia, and pre-event nowcasting depends on physical models whose hillslope-steady-state assumption is rarely tested across structurally distinct rainfall typologies on the same operational pipeline. Korea offers a clean test set. Typhoon Hinnamnor produced short-duration high-intensity rainfall on a ~600 km$^{2}$ hillslope-dominated catchment around Pohang in September 2022. The 2023 central-Korea monsoon delivered multi-day distributed heavy rainfall across a ~9 000 km$^{2}$ mixed-terrain region spanning Yecheon, Yeongju, and Cheongju (IMERG-computed 188 mm AOI-mean, 216 mm peak pixel over the 13–18 July event window; ~580 mm cumulative reported at Yecheon station). The 2020 Gangwon monsoon hit a ~850 km$^{2}$ small mountainous AOI around Chuncheon. Together these three events separate rainfall typology (typhoon vs monsoon) from area-of-interest size and terrain mix, allowing one binary factor to be disambiguated from the other in a way no single event can.
 
 This event-type-versus-AOI question is not yet answered in the published Korean literature. SHALSTAB [Montgomery and Dietrich, 1994], TRIGRS [Baum et al., 2008], and SINMAP [Pack et al., 1998] compute slope-instability indices from topography, soil strength, and pore pressure; they are interpretable and physically grounded but parameter-sensitive at scales where the hillslope assumption breaks down. Machine-learning classifiers trained on regional landslide inventories [Merghadi et al., 2020] report high accuracies but lose interpretability and generalize poorly when training sets are small or spatially biased. Neither tradition has converged on a preferred workflow for Korean nowcasting across heterogeneous rainfall typologies, and neither has released a reproducible Korean multi-event benchmark whose execution provenance is documented per event.
 
 We produce that benchmark by running a lithology-conditional Monte Carlo SHALSTAB ensemble through an open, traced LLM-agent data-and-compute orchestrator (LandslideKR) that does not choose among physical models. The orchestrator's eleven-step pipeline is detailed in §2.1; its role here is enabling infrastructure, not autonomous decision-making. Reference labels are a positive-evidence proxy, Sentinel-2 NDVI-change scars optionally joined with administrative-area NIDR reports, not field-verified ground truth. Per-event label provenance is documented in §2.3 (in the executed runs all three events evaluate against Sentinel-scar-only labels, for distinct reasons).
 
-Running this pipeline on the three events yields a sharp three-way contrast. SHALSTAB shows positive scar/non-scar separation on the typhoon event (Pohang ROC-AUC 0.612, separation +0.198, top-percentile recall 69 %), is rank-inverted on the large monsoon AOI (Yecheon ROC-AUC 0.449, separation −0.070, top-percentile recall 14 %), and is essentially random on the small monsoon AOI (Chuncheon ROC-AUC 0.499, separation +0.006). A topographic predictor (slope alone) outperforms baseline SHALSTAB on both monsoon AOIs (slope-alone ROC-AUC 0.669 on Yecheon; hillslope-masked SHALSTAB 0.550 on Chuncheon). At the observed positive-class rates of 0.12–1.65 % the raw false-alarm rate is structurally pinned near 99 %, so we report precision lift over base rate jointly with recall and kept-fraction. The mechanism for the Yecheon inversion (§3.2) is that SHALSTAB's steady-state upslope-area term inflates probability on low-elevation valley pixels where the hillslope assumption fails, while the actual scars cluster on steep higher-elevation slopes, a confounder that a simpler slope predictor avoids on the large AOI but that is absent on Pohang's hillslope-dominated 600 km² catchment.
+Running this pipeline on the three events yields a sharp three-way contrast. SHALSTAB shows positive scar/non-scar separation on the typhoon event (Pohang ROC-AUC 0.612, separation +0.198, top-percentile recall 69 %), is rank-inverted on the large monsoon AOI (Yecheon ROC-AUC 0.449, separation −0.070, top-percentile recall 14 %), and is essentially random on the small monsoon AOI (Chuncheon ROC-AUC 0.499, separation +0.006). A topographic predictor (slope alone) outperforms baseline SHALSTAB on both monsoon AOIs (slope-alone ROC-AUC 0.669 on Yecheon; hillslope-masked SHALSTAB 0.550 on Chuncheon). At the observed positive-class rates of 0.12–1.65 % the raw false-alarm rate is structurally pinned near 99 %, so we report precision lift over base rate jointly with recall and kept-fraction. The mechanism for the Yecheon inversion (§3.2) is that SHALSTAB's steady-state upslope-area term inflates probability on low-elevation valley pixels where the hillslope assumption fails, while the actual scars cluster on steep higher-elevation slopes, a confounder that a simpler slope predictor avoids on the large AOI but that is absent on Pohang's hillslope-dominated 600 km$^{2}$ catchment.
 
 The contribution is narrow. We release an open three-event Korean retrospective benchmark of Monte Carlo SHALSTAB with full execution provenance, three-event diagnostic evidence that a single steady-state physical model has divergent skill across Korean rainfall–landslide events, and the LandslideKR orchestrator that makes the benchmark replicable. The three-event divergence motivates an in-pipeline agentic model-selection layer as future work; we do not claim that capability in this release. The executed contribution is the open benchmark and the disclosed re-executable infrastructure.
 
@@ -33,19 +33,33 @@ The pipeline has four functional blocks: forcing and label inputs (GPM IMERG V07
 
 ## 2.2 SHALSTAB with Lithology-Conditional Monte Carlo
 
-The physical model is the steady-state slope-stability formulation of Montgomery and Dietrich (1994). For each pixel the model computes a critical steady-state rainfall-to-transmissivity ratio (implementation: the SHALSTAB stability function (Code Availability)):
+The physical model is the steady-state slope-stability formulation of Montgomery and Dietrich (1994). For each pixel the model computes a critical steady-state rainfall-to-transmissivity ratio (implementation: the SHALSTAB stability function, Eq. (1), see Code Availability):
 
 $$
-\frac{q_{cr}}{T} \;=\; \frac{b}{a}\,\sin\theta \left[\, \frac{\rho_s}{\rho_w}\!\left(1 - \frac{\tan\theta}{\tan\phi}\right) \;+\; \frac{c}{\rho_w\, g\, z\, \cos^2\theta\, \tan\phi} \,\right]
+\frac{q_{cr}}{T} = \frac{b}{a}\,\sin\theta \left[\, \frac{\rho_s}{\rho_w}\!\left(1 - \frac{\tan\theta}{\tan\phi}\right) + \frac{c}{\rho_w\, g\, z\, \cos^2\theta\, \tan\phi} \,\right] \qquad (1)
 $$
 
-where θ is the local slope, φ the friction angle, c the cohesion, T the soil transmissivity, z the vertical soil thickness, a the upslope contributing area, b the contour length of the pixel, ρ_s and ρ_w the soil and water densities, and g the gravitational acceleration. The observed forcing ratio is q / T where q is the effective steady-state recharge (converted from GPM IMERG V07 event-cumulative precipitation over the event duration). Instability is declared when q / T ≥ q_cr / T; the model-output stability index is $(q/T)/(q_{cr}/T)$. Pixels with stability ≥ 1 are unstable under the specified steady-state forcing. The critical forcing ratio is converted into an instability probability by a SINMAP-style bounded Monte Carlo procedure: for each pixel we draw n=100 joint realizations of (φ, c, T, z) from the lithology-conditional bounds in Table 4 (φ, c, z uniform; T log-uniform, i.e., uniform in log-transmissivity) and count the fraction of realizations in which that pixel is unstable. The resulting per-pixel probability is the output written as the per-pixel probability-of-instability raster.
+where $\theta$ is the local slope, $\phi$ the friction angle, c the cohesion, T the soil transmissivity, z the vertical soil thickness, a the upslope contributing area, b the contour length of the pixel, $\rho_s$ and $\rho_w$ the soil and water densities, and g the gravitational acceleration. The observed forcing ratio is q / T where q is the effective steady-state recharge (converted from GPM IMERG V07 event-cumulative precipitation over the event duration). Instability is declared when q / T ≥ q_cr / T; the model-output stability index is $(q/T)/(q_{cr}/T)$. Pixels with stability ≥ 1 are unstable under the specified steady-state forcing. The critical forcing ratio is converted into an instability probability by a SINMAP-style bounded Monte Carlo procedure: for each pixel we draw n=100 joint realizations of ($\phi$, c, T, z) from the lithology-conditional bounds in Table 4 ($\phi$, c, z uniform; T log-uniform, i.e., uniform in log-transmissivity) and count the fraction of realizations in which that pixel is unstable. The resulting per-pixel probability is the output written as the per-pixel probability-of-instability raster.
 
 Lithology classes are the five SHALSTAB-relevant Korean rock categories (granite, volcanic, sedimentary, metamorphic, alluvium). The parameter bounds in Table 4 are grounded in Park et al. (2013) and the Korean slope-stability literature. The granite cohesion floor and transmissivity ceiling were adjusted once during this study to reduce a probability-saturation artifact observed in early Pohang runs (the adjustment is annotated inline in `lithology_params.py`); this single post-hoc relaxation means Table 4 is not a strict preregistration of the parameter box. All other lithology-class bounds, the ensemble size n = 100, and the random seed were fixed before Yecheon or Chuncheon were executed, and the bounds are not retuned on the observed scar sets of any event. The alluvium class carries larger bounds on transmissivity and smaller bounds on cohesion, and the granite class carries the tightest bounds on friction angle.
 
-The Monte Carlo count n=100 was chosen to be consistent across events; §5.3 reports the stochastic repeatability of the point estimates under re-seeding, and §5.4 reports the sensitivity of the event-level ROC-AUC to (φ, c, T) grid moves within the Table 4 bounds.
+The Monte Carlo count n=100 was chosen to be consistent across events; §5.3 reports the stochastic repeatability of the point estimates under re-seeding, and §5.4 reports the sensitivity of the event-level ROC-AUC to ($\phi$, c, T) grid moves within the Table 4 bounds.
 
 Throughout this work SHALSTAB is used only as a hillslope-steady-state instability model; no dynamic transient solver (TRIGRS) is invoked, and the agent does not adaptively switch between SHALSTAB and alternatives.
+
+
+## Table 4. Lithology-class Monte Carlo parameter bounds (literature-grounded)
+
+| Class | Friction angle $\phi$ (°) | Cohesion c (Pa) | Transmissivity T (m$^{2}$/s) | Soil depth z (m) | Rationale |
+|---|---|---|---|---|---|
+| granite | 28 – 38 | 2 000 – 10 000 | 1 × 10$^{-4}$ – 1 × 10$^{-3}$ | 0.8 – 2.5 | Park et al. (2013) Pohang-area residual soil; tight $\phi$, high-floor cohesion and transmissivity |
+| volcanic | 30 – 40 | 2 000 – 12 000 | 1 × 10$^{-4}$ – 1 × 10$^{-3}$ | 0.5 – 2.0 | Weathered volcanic (Jeju, SE Korea ridges) |
+| sedimentary | 22 – 34 | 500 – 5 000 | 2 × 10$^{-5}$ – 2 × 10$^{-4}$ | 1.0 – 3.0 | Mudstone / sandstone residual |
+| metamorphic | 26 – 36 | 1 500 – 8 000 | 3 × 10$^{-5}$ – 3 × 10$^{-4}$ | 0.8 – 2.5 | Gneiss / schist residual |
+| alluvium | 25 – 35 | 500 – 3 000 | 5 × 10$^{-4}$ – 5 × 10$^{-3}$ | 1.5 – 5.0 | Colluvium / fluvial, stable on low slopes |
+| default (fallback) | 28 – 36 | 1 000 – 6 000 | 5 × 10$^{-5}$ – 5 × 10$^{-4}$ | 0.8 – 2.5 | Used when lithology layer unavailable |
+
+Soil density is uniform across classes at 1 600 – 2 000 kg m$^{-3}$. Transmissivity is sampled in log-space; all other parameters are sampled uniformly within the stated bounds. n = 100 realizations per pixel.
 
 ## 2.3 Reference Label Construction
 
@@ -54,15 +68,26 @@ The reference label is a positive-evidence proxy, not field-verified ground trut
 The §3.1 baseline label is event-window Sentinel-scar only in all three reported runs. The NIDR-augmented ablation (§5.6) is a label-source sensitivity check: because NIDR is annual, the NIDR label layer represents administrative-area annual landslide presence within the AOI rather than event-window-confirmed landslides, and any ROC-AUC recovery under NIDR augmentation must be read with that caveat.
 
 
+
+## Table 5. Label provenance (executed vs planned)
+
+| Event | Planned label | Executed label | Reason for gap |
+|---|---|---|---|
+| Pohang 2022 | NIDR 30 m point buffer ∪ Sentinel-2 scar | Sentinel-2 scar (baseline) | NIDR records do not fall within the published bbox; §5.6 ablation excludes Pohang |
+| Yecheon 2023 | NIDR 30 m point buffer ∪ Sentinel-2 scar | Sentinel-2 scar (baseline) | NIDR-augmented label-layer ablation in §5.6 (273 in-bbox points) |
+| Chuncheon 2020 | NIDR 30 m point buffer ∪ Sentinel-2 scar | Sentinel-2 scar only | NIDR records joined in the §5.6 (Axis 6) NIDR-augmented ablation; the §3.1 Table 2 baseline retains the Sentinel-only label for cross-event comparability |
+
 ## 2.4 Events
 
 Three events comprise the benchmark. Each is in the NIDR record and has cloud-free Sentinel-2 availability in the 60-day post window (with a 90-day pre window for the matched composite).
 
+## Table 1. Three-event configuration: rainfall typology, AOI size, terrain, and label provenance.
+
 | Event | Type | Date | AOI | Rainfall peak | Lithology mix | Reported-run label | Status |
 |---|---|---|---|---|---|---|---|
-| Pohang 2022 (Typhoon Hinnamnor) | Typhoon | 5–7 Sep 2022 (IMERG 2-day window) | ~600 km² | 412 mm / 24 h reported at Pohang station; 96 mm peak pixel, 91 mm AOI-mean over IMERG window | granite-dominated | Sentinel-2 scar (NIDR town centroids fall east of bbox; §5.6) | Executed |
-| Yecheon 2023 (Monsoon) | Monsoon | 13–18 Jul 2023 (IMERG 5-day window) | ~9 000 km² | ~580 mm cumulative reported at Yecheon station; 216 mm peak pixel, 188 mm AOI-mean over IMERG window | sedimentary + metamorphic + alluvium | Sentinel-2 scar (baseline) + 273 NIDR points in §5.6 ablation | Executed |
-| Chuncheon 2020 (Monsoon) | Monsoon | 1–8 Aug 2020 (IMERG 7-day window) | ~850 km² | 461 mm peak pixel, 403 mm AOI-mean over IMERG window | granite + metamorphic (KIGAM 1:50 000) | Sentinel-2 scar (baseline) + 18 NIDR points in §5.6 ablation | Executed |
+| Pohang 2022 (Typhoon Hinnamnor) | Typhoon | 5–7 Sep 2022 (IMERG 2-day window) | ~600 km$^{2}$ | 412 mm / 24 h reported at Pohang station; 96 mm peak pixel, 91 mm AOI-mean over IMERG window | granite-dominated | Sentinel-2 scar (NIDR town centroids fall east of bbox; §5.6) | Executed |
+| Yecheon 2023 (Monsoon) | Monsoon | 13–18 Jul 2023 (IMERG 5-day window) | ~9 000 km$^{2}$ | ~580 mm cumulative reported at Yecheon station; 216 mm peak pixel, 188 mm AOI-mean over IMERG window | sedimentary + metamorphic + alluvium | Sentinel-2 scar (baseline) + 273 NIDR points in §5.6 ablation | Executed |
+| Chuncheon 2020 (Monsoon) | Monsoon | 1–8 Aug 2020 (IMERG 7-day window) | ~850 km$^{2}$ | 461 mm peak pixel, 403 mm AOI-mean over IMERG window | granite + metamorphic (KIGAM 1:50 000) | Sentinel-2 scar (baseline) + 18 NIDR points in §5.6 ablation | Executed |
 
 Pohang and Yecheon are the two anchor events, chosen to be structurally distinct on rainfall typology, AOI size, and terrain mix. Chuncheon 2020 is the third point designed to separate rainfall typology from AOI size and terrain: it agrees with Yecheon on typology (monsoon) but with Pohang on scale and terrain (small mountainous). The Chuncheon design is not a true preregistration: as disclosed in the released case configuration (Online Resource 1), the bounding box, event window, model parameters, ensemble seed, and the qualitative predictions A/B/C (Pohang-like / Yecheon-like / intermediate) were committed to disk before execution, but the specific numeric cutoffs used to map the executed result onto those three classes were added after the executed numbers were observed. We therefore treat the Chuncheon outcome as a retrospective diagnostic that is consistent with the working hypothesis, not as a preregistered test. Three events is sufficient to disambiguate one binary contrast, not to establish a regime law, the working-hypothesis status of the typology mapping is preserved throughout §§4–7.
 
@@ -73,6 +98,8 @@ Pohang and Yecheon are the two anchor events, chosen to be structurally distinct
 Baseline labels are event-window Sentinel-scar only for all three events. An NIDR-augmented label-source sensitivity check is reported separately in §5.6. Numeric backing (per-event AgentTrace `evaluate` steps, Pohang run log, and the JSON/CSV analysis artifacts that feed the tables and figures in this section) is in Online Resource 1; the pipeline-step schema that produces these numbers is in Online Resource 2; the offline raster recomputation scripts themselves are distributed with the code repository (see Code availability).
 
 Table 2 reports the confusion-matrix metrics, ROC-AUC, and probability-separability statistics per event.
+
+## Table 2. Baseline confusion-matrix metrics, ROC-AUC, and probability-separability statistics for the per-event SHALSTAB Monte Carlo ensemble (n=100 realizations per pixel).
 
 | Metric | Pohang 2022 | Yecheon 2023 | Chuncheon 2020 |
 |---|---|---|---|
@@ -104,6 +131,8 @@ We do not repeat this diagnosis for Pohang (where the ranking is positive) or Ch
 ## 3.3 Post-hoc refinement with alternative scorings
 
 Three alternative scorings are computed on the same DEM and evaluated against the same Sentinel-2 scar reference label as §3.1: hillslope-masked SHALSTAB (slope > 10° intersected with local relief > 30 m in a 33-pixel window), slope alone (Horn slope normalized to [0, 1]), and slope × relief (slope score multiplied by relief normalized). All four scorings are evaluated with the same scikit-learn ROC-AUC function on the same set of valid pixels per event.
+
+## Table 3. Post-hoc refinement comparison: ROC-AUC of baseline SHALSTAB MC versus three alternative scoring methods (hillslope-masked, slope alone, slope × relief) per event.
 
 | Method | Pohang 2022 | Yecheon 2023 | Chuncheon 2020 |
 |---|---|---|---|
@@ -148,7 +177,7 @@ Headline precision-lift results (Table 6; full numbers in the FAR-filter results
 Two additional observations hold across all three events:
 
 1. Probability quantile gating is degenerate. The SHALSTAB Monte Carlo probability distribution is bimodal (peaks at p = 0 and p = 1); more than 10 % of pixels saturate at p = 1.0 per event, so the top-10 %, top-5 %, and top-1 % quantile thresholds collapse to the same p = 1.0 tier and produce identical metrics. Post-hoc isotonic calibration (§5.8, executed) is a within-sample diagnostic (fit and scored on the same per-event Sentinel labels) with material within-sample ROC uplift on the monsoon events but no effect on the upper-tail degeneracy.
-2. On both monsoon events, slope > 20° as a standalone gate gives the best or second-best single-knob lift. On Yecheon (large mixed-terrain, 9 000 km²) F7 delivers 1.42× at POD 0.268; on Chuncheon (small mountainous, 850 km²) F7 delivers 1.11× at POD 0.426. On the typhoon event (Pohang, small hillslope-dominated) F7 lift collapses to 1.00× (pure random) because the hillslope-dominated terrain has already been effectively filtered by the baseline prediction. The F7 pattern across the three events mirrors the ROC-level finding that slope-alone beats SHALSTAB on the monsoon-side AOIs but not on the typhoon-side AOI.
+2. On both monsoon events, slope > 20° as a standalone gate gives the best or second-best single-knob lift. On Yecheon (large mixed-terrain, 9 000 km$^{2}$) F7 delivers 1.42× at POD 0.268; on Chuncheon (small mountainous, 850 km$^{2}$) F7 delivers 1.11× at POD 0.426. On the typhoon event (Pohang, small hillslope-dominated) F7 lift collapses to 1.00× (pure random) because the hillslope-dominated terrain has already been effectively filtered by the baseline prediction. The F7 pattern across the three events mirrors the ROC-level finding that slope-alone beats SHALSTAB on the monsoon-side AOIs but not on the typhoon-side AOI.
 
 Standard precision-recall view (augmenting, not replacing, precision lift). We additionally compute Average Precision (AP) using scikit-learn's average_precision_score function for each event (the PR-AUC summary is in Online Resource 1; the precision-recall curves themselves are regenerable from the code repository):
 
@@ -162,17 +191,66 @@ AP and precision-lift give the same qualitative reading per event, Pohang above 
 
 ![Precision-lift over base rate across the nine post-hoc filters (F0–F8) per event. Dashed horizontal line at 1× marks parity with the event-specific base rate; bars above 1× indicate above-base-rate precision. Kept-fraction (the proportion of AOI pixels passing the filter) is overlaid for each bar to flag filters whose lift gains are offset by heavy recall loss. On both monsoon events F7 (slope > 20°) gives the highest or near-highest single-knob lift (Yecheon 1.42×, Chuncheon 1.11×), narrowly edging Chuncheon F1 (hillslope mask) at 1.08×; on the typhoon event (Pohang) F7 collapses to 1.00× because the hillslope-dominated AOI is already effectively filtered at baseline.](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig6_precision_lift.png){#fig:4 width=95%}
 
+
+## Table 6. FAR-filter precision-lift (source: the FAR-filter results (Online Resource 1))
+
+Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is structurally pinned near 99 %; we report precision lift over base rate jointly with POD and kept-fraction.
+
+### Pohang 2022 (base rate 0.1205 %)
+
+| Filter | POD | Precision | Lift | Kept-fraction |
+|---|---|---|---|---|
+| F0 baseline | 0.914 | 0.00158 | 1.31× | 69.6 % |
+| F1 hillslope | 0.208 | 0.00174 | 1.44× | 14.4 % |
+| F2 prob top-10 % | 0.692 | 0.00156 | 1.30× | 53.3 % |
+| F3 prob top-5 % | 0.692 | 0.00156 | 1.30× | 53.3 % |
+| F4 prob top-1 % | 0.692 | 0.00156 | 1.30× | 53.3 % |
+| F5 F1 ∩ top-10 % | 0.065 | 0.00188 | 1.56× | 4.15 % |
+| F6 F1 ∩ top-5 % | 0.065 | 0.00188 | 1.56× | 4.15 % |
+| F7 slope > 20° | 0.049 | 0.00120 | 1.00× | 4.93 % |
+| F8 F1 ∩ slope > 20° ∩ prob > 0.9 | 0.023 | 0.00090 | 0.75× | 3.04 % |
+
+### Yecheon 2023 (base rate 1.6512 %)
+
+| Filter | POD | Precision | Lift | Kept-fraction |
+|---|---|---|---|---|
+| F0 baseline | 0.484 | 0.01448 | 0.88× | 55.2 % |
+| F1 hillslope | 0.417 | 0.02115 | 1.28× | 32.5 % |
+| F2 prob top-10 % | 0.144 | 0.00968 | 0.59× | 24.5 % |
+| F3 prob top-5 % | 0.144 | 0.00968 | 0.59× | 24.5 % |
+| F4 prob top-1 % | 0.144 | 0.00968 | 0.59× | 24.5 % |
+| F5 F1 ∩ top-10 % | 0.097 | 0.01913 | 1.16× | 8.37 % |
+| F6 F1 ∩ top-5 % | 0.097 | 0.01913 | 1.16× | 8.37 % |
+| F7 slope > 20° | 0.268 | 0.02339 | 1.42× | 18.9 % |
+| F8 F1 ∩ slope > 20° ∩ prob > 0.9 | 0.122 | 0.02246 | 1.36× | 8.95 % |
+
+### Chuncheon 2020 (base rate 1.2359 %)
+
+| Filter | POD | Precision | Lift | Kept-fraction |
+|---|---|---|---|---|
+| F0 baseline | 0.715 | 0.01207 | 0.98× | 72.82 % |
+| F1 hillslope | 0.581 | 0.01338 | 1.08× | 53.66 % |
+| F2 prob top-10 % | 0.290 | 0.01153 | 0.93× | 31.20 % |
+| F3 prob top-5 % | 0.290 | 0.01153 | 0.93× | 31.20 % |
+| F4 prob top-1 % | 0.290 | 0.01153 | 0.93× | 31.20 % |
+| F5 F1 ∩ top-10 % | 0.180 | 0.01346 | 1.09× | 16.61 % |
+| F6 F1 ∩ top-5 % | 0.180 | 0.01346 | 1.09× | 16.61 % |
+| F7 slope > 20° | 0.426 | 0.01371 | 1.11× | 38.44 % |
+| F8 F1 ∩ slope > 20° ∩ prob > 0.9 | 0.195 | 0.01307 | 1.06× | 18.39 % |
+
+Note: F2 / F3 / F4 are identical per event because the SHALSTAB MC probability distribution is bimodal (peaks at p = 0 and p = 1); the top-1 / 5 / 10 % quantile thresholds all collapse to the p = 1.0 tier. This is reported as a calibration limitation in §5.8.
+
 ## 3.6 Three-event contrast and the working hypothesis
 
-We summarize the three-event pattern as a working hypothesis, not a regime law. Across this benchmark, rainfall typology appears more explanatory than AOI size or terrain mix for SHALSTAB skill: SHALSTAB has meaningful discrimination on Pohang (typhoon, 600 km², hillslope-dominated; ROC-AUC 0.612, separation +0.198, AP / base 1.29×), is rank-inverted on Yecheon (monsoon, 9 000 km², mixed-terrain; ROC-AUC 0.449, separation −0.070, AP / base 0.84×), and is at random on Chuncheon (monsoon, 850 km², small mountainous; ROC-AUC 0.499, separation +0.006, AP / base 0.98×).
+We summarize the three-event pattern as a working hypothesis, not a regime law. Across this benchmark, rainfall typology appears more explanatory than AOI size or terrain mix for SHALSTAB skill: SHALSTAB has meaningful discrimination on Pohang (typhoon, 600 km$^{2}$, hillslope-dominated; ROC-AUC 0.612, separation +0.198, AP / base 1.29×), is rank-inverted on Yecheon (monsoon, 9 000 km$^{2}$, mixed-terrain; ROC-AUC 0.449, separation −0.070, AP / base 0.84×), and is at random on Chuncheon (monsoon, 850 km$^{2}$, small mountainous; ROC-AUC 0.499, separation +0.006, AP / base 0.98×).
 
 The Chuncheon outcome is the key test. Chuncheon agrees with Yecheon on rainfall typology (monsoon) but with Pohang on AOI size and terrain (small mountainous). If AOI size and terrain were the dominant signal, Chuncheon would have patterned like Pohang; instead it patterned closer to Yecheon. We treat this as a working hypothesis pending additional independent events and a retrospective diagnostic rather than a confirmatory test, and we retain the released case configuration as documentation of the prediction classes used. The §5.6 label-layer ablation (executed) provides a label-sensitivity check within the monsoon subset only: under NIDR-augmented labels Yecheon and Chuncheon ROC-AUCs both recover (to 0.608 and 0.635 respectively; see §5.6 for small-N caveats). The typhoon event is excluded from the ablation (no NIDR records in the published Pohang bbox), so Axis 6 demonstrates that the Sentinel-only monsoon-side rank inversion and near-random result are partly label-driven; it does not test whether the typhoon-vs-monsoon contrast itself persists under NIDR labels.
 
 # 4. Discussion
 
-Primary finding (baseline, Sentinel-event-window labels). SHALSTAB is a steady-state hillslope-hydrology model [Montgomery and Dietrich, 1994]; its central assumption is most defensible for short-duration high-intensity rainfall on hillslope-dominated topography. The typhoon event (Pohang 2022, ~600 km² hillslope-dominated AOI, ~412 mm over 24 hours) is where the assumption is least violated, and baseline SHALSTAB discriminates scars from non-scars there (ROC-AUC 0.612, separation +0.198, top-1 % recall 69 %). Both monsoon events under event-window Sentinel-only labels sit at or below random (Yecheon 0.449 rank-inverted; Chuncheon 0.499 near-random). Against the Sentinel-event-window reference the three-event pattern is therefore that rainfall typology is the most consistent single predictor of SHALSTAB skill across this benchmark: typhoon → discriminative, monsoon → not.
+Primary finding (baseline, Sentinel-event-window labels). SHALSTAB is a steady-state hillslope-hydrology model [Montgomery and Dietrich, 1994]; its central assumption is most defensible for short-duration high-intensity rainfall on hillslope-dominated topography. The typhoon event (Pohang 2022, ~600 km$^{2}$ hillslope-dominated AOI, ~412 mm over 24 hours) is where the assumption is least violated, and baseline SHALSTAB discriminates scars from non-scars there (ROC-AUC 0.612, separation +0.198, top-1 % recall 69 %). Both monsoon events under event-window Sentinel-only labels sit at or below random (Yecheon 0.449 rank-inverted; Chuncheon 0.499 near-random). Against the Sentinel-event-window reference the three-event pattern is therefore that rainfall typology is the most consistent single predictor of SHALSTAB skill across this benchmark: typhoon → discriminative, monsoon → not.
 
-Auxiliary layer 1, AOI composition interacts with typology. On the large mixed-terrain monsoon AOI (Yecheon, 9 000 km², extensive Nakdong-tributary floodplains) the steady-state assumption breaks along two axes simultaneously: the integration scale of $a/b$ includes floodplain pixels that are not hillslopes (so the upslope-area term behaves as a confounder rather than a hillslope-hydrology signal), and the multi-day rainfall distribution is not summarized by one steady-state recharge. The §3.2 elevation-decile stratification makes the $a/b$ confounder visible: the model's mean probability decreases with elevation while the observed scar rate increases. This supports the typology finding but is not a separate claim, it describes how typology plus AOI composition interact on the largest AOI. The 850 km² small-mountainous Chuncheon AOI lacks this floodplain confound, so AOI composition is not a sufficient mechanism by itself; Chuncheon still patterns closer to Yecheon than to Pohang under the Sentinel label, which is what led us to prefer typology over AOI size as the primary explanatory axis.
+Auxiliary layer 1, AOI composition interacts with typology. On the large mixed-terrain monsoon AOI (Yecheon, 9 000 km$^{2}$, extensive Nakdong-tributary floodplains) the steady-state assumption breaks along two axes simultaneously: the integration scale of $a/b$ includes floodplain pixels that are not hillslopes (so the upslope-area term behaves as a confounder rather than a hillslope-hydrology signal), and the multi-day rainfall distribution is not summarized by one steady-state recharge. The §3.2 elevation-decile stratification makes the $a/b$ confounder visible: the model's mean probability decreases with elevation while the observed scar rate increases. This supports the typology finding but is not a separate claim, it describes how typology plus AOI composition interact on the largest AOI. The 850 km$^{2}$ small-mountainous Chuncheon AOI lacks this floodplain confound, so AOI composition is not a sufficient mechanism by itself; Chuncheon still patterns closer to Yecheon than to Pohang under the Sentinel label, which is what led us to prefer typology over AOI size as the primary explanatory axis.
 
 Auxiliary layer 2, label-source sensitivity partially recovers monsoon skill. The §5.6 NIDR-augmented label-layer ablation replaces the event-window Sentinel scar raster with the annual administrative-area NIDR footprint (§2.3 disclosure: NIDR records are year-level, not event-day) and finds that SHALSTAB ROC-AUC recovers substantially on both monsoon events (Yecheon 0.449 → 0.608; Chuncheon 0.499 → 0.635), while Pohang is excluded (`n_nidr_records_in_bbox = 0`). Because the NIDR layer is annual rather than event-window-specific, this is a label-source sensitivity check rather than an event-window validation, it does not falsify the Sentinel-based baseline but shows that part of the monsoon-side rank inversion and near-random result is label-driven (Sentinel-specific floodplain/agricultural/cloud-shadow false positives) rather than a pure model failure. We therefore keep the typology claim at working-hypothesis strength and explicitly avoid stronger causal language: the Sentinel-event-window three-event pattern is what the baseline supports, and the NIDR ablation indicates that the magnitude of the monsoon deficit under Sentinel labels overstates the monsoon deficit that would be seen under human-reported labels.
 
@@ -203,6 +281,10 @@ Against the obvious question of why this work is called an agent paper rather th
 
 # 5. Agent Robustness Evaluation
 
+![Seven-axis robustness evaluation framework. Hub-and-spoke conceptual diagram of the seven axes that probe different sources of variability in physical-model prediction quality. Color code reflects execution status in this release: green = executed (Axes 3, 4, 6), peach = partially executed (Axis 2), gray = deferred to follow-on work (Axes 1, 5, 7). Axes 3, 4, and 6 are reported in §5.3, §5.4, and §5.6 respectively; deferred axes are described in Online Resource 3.](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig5_axes_overview.png){#fig:5 width=85%}
+
+Figure 5 visualises the seven axes, their dependencies, and which were executed in this release.
+
 Section structure mirrors the design in the released robustness plan (Online Resource 3). We clearly mark which axes are executed in this release and which are deferred to follow-on work. The plan itself is not a released result package; the contents of this section are.
 
 ## 5.1 LLM-backend robustness (Axis 1, deferred)
@@ -227,7 +309,7 @@ ROC-AUC CV is below 0.6 % on all three events; AP CV is below 1.0 %; POD CV is b
 
 ## 5.4 Parameter sensitivity (Axis 4, executed)
 
-Status: executed. We swept the SHALSTAB parameter triple (φ, c, T) at the eight corner combinations (low/high on each axis) of the Table 4 default-lithology bounds (see §2.2 for the provenance and the single granite-bound adjustment), holding soil thickness and density at midpoints and all other inputs (DEM, topo, rainfall, scar reference) constant. Twenty-four deterministic SHALSTAB runs (3 events × 8 corners) were evaluated against the same Sentinel-scar reference label as §3.1. The headline event-ranking pattern, Pohang ROC-AUC highest among the three events, survives in 6 of the 8 corners (75 %); the two failing corners are both at low friction angle combined with low cohesion (φ_lo + c_lo), where Yecheon's ROC briefly exceeds Pohang's. Within each event the across-corner ROC range is small (Pohang 0.441 – 0.485, Yecheon 0.401 – 0.514, Chuncheon 0.458 – 0.479), and Yecheon and Chuncheon stay at or below 0.55 in every corner tested. The headline finding "rainfall typology more explanatory than AOI for SHALSTAB skill" is therefore robust against parameter-corner variation in the (φ, c, T) box, conditional on parameters being above the lower bound on cohesion or friction angle. ROC absolute values differ from §3.1 because Axis 4 uses the single default-lithology fallback rather than the per-pixel lithology array.
+Status: executed. We swept the SHALSTAB parameter triple ($\phi$, c, T) at the eight corner combinations (low/high on each axis) of the Table 4 default-lithology bounds (see §2.2 for the provenance and the single granite-bound adjustment), holding soil thickness and density at midpoints and all other inputs (DEM, topo, rainfall, scar reference) constant. Twenty-four deterministic SHALSTAB runs (3 events × 8 corners) were evaluated against the same Sentinel-scar reference label as §3.1. The headline event-ranking pattern, Pohang ROC-AUC highest among the three events, survives in 6 of the 8 corners (75 %); the two failing corners are both at low friction angle combined with low cohesion ($\phi_{lo}$ + c_lo), where Yecheon's ROC briefly exceeds Pohang's. Within each event the across-corner ROC range is small (Pohang 0.441 – 0.485, Yecheon 0.401 – 0.514, Chuncheon 0.458 – 0.479), and Yecheon and Chuncheon stay at or below 0.55 in every corner tested. The headline finding "rainfall typology more explanatory than AOI for SHALSTAB skill" is therefore robust against parameter-corner variation in the ($\phi$, c, T) box, conditional on parameters being above the lower bound on cohesion or friction angle. ROC absolute values differ from §3.1 because Axis 4 uses the single default-lithology fallback rather than the per-pixel lithology array.
 
 ## 5.5 Scar-threshold sensitivity (Axis 5, deferred)
 
@@ -298,6 +380,8 @@ Code, per-event traces and logs (Pohang: dry-run JSON + executed log; Yecheon an
 
 # Declarations
 
+**Funding.** This work was supported by the National Research Foundation of Korea (NRF) grant funded by the Korea government (Ministry of Science and ICT, MSIT) under Grant RS-2023-002772264.
+
 Funding. Not applicable.
 
 Competing interests. The author declares no competing financial or non-financial interests relevant to the content of this article.
@@ -332,125 +416,3 @@ Park, E. (2026). WildfireKR: An LLM-agent-orchestrated reproducible wildfire-spr
 
 
 ---
-
-# Manuscript Tables
-
-Tables verified against the executed-run artifacts.
-
-## Table 1. Event and data configuration
-
-| Field | Pohang 2022 | Yecheon 2023 | Chuncheon 2020 |
-|---|---|---|---|
-| Rainfall type | Typhoon Hinnamnor | 2023 Central Korea Monsoon | 2020 Gangwon Monsoon |
-| Event window | 2022-09-05 – 2022-09-07 | 2023-07-13 – 2023-07-18 | 2020-08-01 – 2020-08-08 |
-| AOI bbox (lon/lat) | 129.20, 36.00, 129.50, 36.20 | 127.60, 36.30, 128.90, 37.00 | 127.60, 37.75, 127.95, 38.00 |
-| AOI area (km²) | ~597 (computed from bbox) | ~8 990 (computed from bbox) | ~850 (computed from bbox) |
-| Terrain | hillslope-dominated | mixed-terrain (floodplain + hillslope) | small mountainous |
-| Lithology mix | granite-dominated | sedimentary + metamorphic + alluvium | granite + metamorphic (per KIGAM 1:50 000) |
-| IMERG window duration (filterDate exclusive-end) | 2 days | 5 days | 7 days |
-| Station-reported rainfall | 412 mm / 24 h (Pohang station) | ~580 mm cumulative (Yecheon station) |, |
-| IMERG peak pixel over window | 96 mm | 216 mm | 461 mm |
-| IMERG AOI-mean over window | 91 mm | 188 mm | 403 mm |
-| DEM source | Local Copernicus DSM COG 30 m | Local Copernicus DSM COG 30 m | Local Copernicus DSM COG 30 m |
-| Scar scale | 10 m (AOI < 0.2 deg²) | 30 m auto-scaled (AOI > 0.2 deg²) | 10 m (AOI ≈ 0.087 deg²) |
-| Baseline §3.1 label | Sentinel-2 scar | Sentinel-2 scar | Sentinel-2 scar |
-| NIDR in §5.6 ablation | 0 in-bbox (Guryongpo east of bbox) | 273 in-bbox | 18 in-bbox |
-
-## Table 2. Baseline metrics (SHALSTAB MC, n=100 realizations/pixel)
-
-| Metric | Pohang 2022 | Yecheon 2023 | Chuncheon 2020 |
-|---|---|---|---|
-| N valid pixels | 912 384 | 11 113 520 | 1 259 904 |
-| Actual positives (scar) | 1 099 (0.120 %) | 183 507 (1.651 %) | 15 571 (1.236 %) |
-| POD (recall) | 0.9145 | 0.4838 | 0.7152 |
-| FAR (raw) | 0.9984 | 0.9855 | 0.9879 |
-| CSI | 0.0016 | 0.0143 | 0.0121 |
-| F1 | 0.0032 | 0.0281 | 0.0239 |
-| Precision | 0.0016 | 0.0145 | 0.0121 |
-| ROC-AUC (sklearn) | 0.6118 | 0.449 | 0.4992 |
-| Scar mean prob | 0.887 | 0.464 | 0.685 |
-| Non-scar mean prob | 0.688 | 0.534 | 0.679 |
-| Separation (scar − non-scar) | +0.198 | −0.070 | +0.006 |
-| Top-1 % recall | 0.692 | 0.144 | 0.290 |
-
-## Table 3. Post-hoc refinement comparison (ROC-AUC)
-
-Hillslope mask: slope > 10° ∩ local relief > 30 m in a 33-pixel window. Slope alone: Horn slope normalized to [0, 1]. Slope × relief: slope_score × (relief / relief_max).
-
-| Method | Pohang 2022 | Yecheon 2023 | Chuncheon 2020 |
-|---|---|---|---|
-| Baseline SHALSTAB MC | 0.612 | 0.449 | 0.499 |
-| Hillslope-masked | 0.520 | 0.593 | 0.550 |
-| Slope alone | 0.506 | 0.669 | 0.547 |
-| Slope × relief | 0.527 | 0.641 | 0.536 |
-
-On Yecheon the slope-alone ranking beats every SHALSTAB variant. On Pohang the baseline SHALSTAB leads. On Chuncheon the topographic predictors collectively rescue ROC-AUC from 0.499 (random) into the 0.54–0.55 range (modest); hillslope-masked SHALSTAB is the best alternative there at 0.550. The pattern across all three events: monsoon AOIs benefit from topographic-only or topographic-augmented scorings; the typhoon AOI prefers the unmodified physical model.
-
-## Table 4. Lithology-class Monte Carlo parameter bounds (literature-grounded)
-
-| Class | Friction angle φ (°) | Cohesion c (Pa) | Transmissivity T (m²/s) | Soil depth z (m) | Rationale |
-|---|---|---|---|---|---|
-| granite | 28 – 38 | 2 000 – 10 000 | 1 × 10⁻⁴ – 1 × 10⁻³ | 0.8 – 2.5 | Park et al. (2013) Pohang-area residual soil; tight φ, high-floor cohesion and transmissivity |
-| volcanic | 30 – 40 | 2 000 – 12 000 | 1 × 10⁻⁴ – 1 × 10⁻³ | 0.5 – 2.0 | Weathered volcanic (Jeju, SE Korea ridges) |
-| sedimentary | 22 – 34 | 500 – 5 000 | 2 × 10⁻⁵ – 2 × 10⁻⁴ | 1.0 – 3.0 | Mudstone / sandstone residual |
-| metamorphic | 26 – 36 | 1 500 – 8 000 | 3 × 10⁻⁵ – 3 × 10⁻⁴ | 0.8 – 2.5 | Gneiss / schist residual |
-| alluvium | 25 – 35 | 500 – 3 000 | 5 × 10⁻⁴ – 5 × 10⁻³ | 1.5 – 5.0 | Colluvium / fluvial, stable on low slopes |
-| default (fallback) | 28 – 36 | 1 000 – 6 000 | 5 × 10⁻⁵ – 5 × 10⁻⁴ | 0.8 – 2.5 | Used when lithology layer unavailable |
-
-Soil density is uniform across classes at 1 600 – 2 000 kg m⁻³. Transmissivity is sampled in log-space; all other parameters are sampled uniformly within the stated bounds. n = 100 realizations per pixel.
-
-## Table 5. Label provenance (executed vs planned)
-
-| Event | Planned label | Executed label | Reason for gap |
-|---|---|---|---|
-| Pohang 2022 | NIDR 30 m point buffer ∪ Sentinel-2 scar | Sentinel-2 scar (baseline) | NIDR records do not fall within the published bbox; §5.6 ablation excludes Pohang |
-| Yecheon 2023 | NIDR 30 m point buffer ∪ Sentinel-2 scar | Sentinel-2 scar (baseline) | NIDR-augmented label-layer ablation in §5.6 (273 in-bbox points) |
-| Chuncheon 2020 | NIDR 30 m point buffer ∪ Sentinel-2 scar | Sentinel-2 scar only | NIDR records joined in the §5.6 (Axis 6) NIDR-augmented ablation; the §3.1 Table 2 baseline retains the Sentinel-only label for cross-event comparability |
-
-## Table 6. FAR-filter precision-lift (source: the FAR-filter results (Online Resource 1))
-
-Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is structurally pinned near 99 %; we report precision lift over base rate jointly with POD and kept-fraction.
-
-### Pohang 2022 (base rate 0.1205 %)
-
-| Filter | POD | Precision | Lift | Kept-fraction |
-|---|---|---|---|---|
-| F0 baseline | 0.914 | 0.00158 | 1.31× | 69.6 % |
-| F1 hillslope | 0.208 | 0.00174 | 1.44× | 14.4 % |
-| F2 prob top-10 % | 0.692 | 0.00156 | 1.30× | 53.3 % |
-| F3 prob top-5 % | 0.692 | 0.00156 | 1.30× | 53.3 % |
-| F4 prob top-1 % | 0.692 | 0.00156 | 1.30× | 53.3 % |
-| F5 F1 ∩ top-10 % | 0.065 | 0.00188 | 1.56× | 4.15 % |
-| F6 F1 ∩ top-5 % | 0.065 | 0.00188 | 1.56× | 4.15 % |
-| F7 slope > 20° | 0.049 | 0.00120 | 1.00× | 4.93 % |
-| F8 F1 ∩ slope > 20° ∩ prob > 0.9 | 0.023 | 0.00090 | 0.75× | 3.04 % |
-
-### Yecheon 2023 (base rate 1.6512 %)
-
-| Filter | POD | Precision | Lift | Kept-fraction |
-|---|---|---|---|---|
-| F0 baseline | 0.484 | 0.01448 | 0.88× | 55.2 % |
-| F1 hillslope | 0.417 | 0.02115 | 1.28× | 32.5 % |
-| F2 prob top-10 % | 0.144 | 0.00968 | 0.59× | 24.5 % |
-| F3 prob top-5 % | 0.144 | 0.00968 | 0.59× | 24.5 % |
-| F4 prob top-1 % | 0.144 | 0.00968 | 0.59× | 24.5 % |
-| F5 F1 ∩ top-10 % | 0.097 | 0.01913 | 1.16× | 8.37 % |
-| F6 F1 ∩ top-5 % | 0.097 | 0.01913 | 1.16× | 8.37 % |
-| F7 slope > 20° | 0.268 | 0.02339 | 1.42× | 18.9 % |
-| F8 F1 ∩ slope > 20° ∩ prob > 0.9 | 0.122 | 0.02246 | 1.36× | 8.95 % |
-
-### Chuncheon 2020 (base rate 1.2359 %)
-
-| Filter | POD | Precision | Lift | Kept-fraction |
-|---|---|---|---|---|
-| F0 baseline | 0.715 | 0.01207 | 0.98× | 72.82 % |
-| F1 hillslope | 0.581 | 0.01338 | 1.08× | 53.66 % |
-| F2 prob top-10 % | 0.290 | 0.01153 | 0.93× | 31.20 % |
-| F3 prob top-5 % | 0.290 | 0.01153 | 0.93× | 31.20 % |
-| F4 prob top-1 % | 0.290 | 0.01153 | 0.93× | 31.20 % |
-| F5 F1 ∩ top-10 % | 0.180 | 0.01346 | 1.09× | 16.61 % |
-| F6 F1 ∩ top-5 % | 0.180 | 0.01346 | 1.09× | 16.61 % |
-| F7 slope > 20° | 0.426 | 0.01371 | 1.11× | 38.44 % |
-| F8 F1 ∩ slope > 20° ∩ prob > 0.9 | 0.195 | 0.01307 | 1.06× | 18.39 % |
-
-Note: F2 / F3 / F4 are identical per event because the SHALSTAB MC probability distribution is bimodal (peaks at p = 0 and p = 1); the top-1 / 5 / 10 % quantile thresholds all collapse to the p = 1.0 tier. This is reported as a calibration limitation in §5.8.
