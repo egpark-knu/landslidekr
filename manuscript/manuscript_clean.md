@@ -1,5 +1,13 @@
 # Event-type-dependent applicability of a steady-state physical landslide model: a three-event Korean retrospective benchmark with reproducible execution traces
 
+**Eungyu Park**$^{1,2,*}$, **Taeyu Kim**$^{1,2}$, and **Jangwon Park**$^{1,2}$
+
+$^{1}$ School of Earth System Sciences, Kyungpook National University, Daegu 41566, Republic of Korea
+$^{2}$ GeoAI Alignment, Inc., Daegu 41544, Republic of Korea
+
+$^{*}$ Corresponding author: Eungyu Park (e-mail: egpark@knu.ac.kr)
+
+
 ## Abstract
 
 We report a three-event Korean retrospective benchmark of a lithology-conditional Monte Carlo SHALSTAB ensemble across one typhoon (Pohang 2022, ~600 km$^{2}$, hillslope-dominated) and two monsoon events (Yecheon 2023, ~9 000 km$^{2}$, mixed-terrain; Chuncheon 2020, ~850 km$^{2}$, small mountainous) that together separate rainfall typology from area-of-interest size and terrain mix. Pre-event landslide nowcasting in monsoon-dominated East Asia depends on physical models whose hillslope-steady-state assumption is rarely tested across structurally distinct rainfall events on the same operational pipeline, and Korea has no published reproducible multi-event benchmark of this kind. We evaluate against an event-window Sentinel-2 NDVI-change scar reference, with an annual administrative-area NIDR-report augmentation reported separately as a label-source sensitivity check in §5.6 and release the eleven-step traced data-and-compute orchestrator that produces the per-event rasters and core confusion-matrix-plus-ROC-AUC evaluation outputs, with the additional decile and probability-separability statistics computed in the offline analysis bundle. SHALSTAB shows ROC-AUC 0.612 with positive scar/non-scar mean-probability separation +0.198 on the typhoon event, is rank-inverted on the large monsoon AOI (ROC-AUC 0.449, separation -0.070), and is essentially random on the small monsoon AOI (ROC-AUC 0.499, separation +0.006), while a topographic predictor (slope alone) reaches ROC-AUC 0.669 on the large monsoon AOI; raw false-alarm rate is structurally pinned near 99 % at the observed positive-class rates of 0.12–1.65 % so we report precision lift over base rate jointly with recall and kept-fraction. The three-event divergence motivates an agentic model-selection layer as future work, but the executed contribution of this paper is the open benchmark and the disclosed re-executable infrastructure, not a demonstrated agent capability.
@@ -123,13 +131,13 @@ Pohang shows positive discrimination (ROC-AUC 0.612, separation +0.198, top-1 % 
 
 ## 3.2 Root-cause analysis of the Yecheon rank inversion
 
-We diagnose the negative Yecheon separation by stratifying the AOI into ten equal-count elevation deciles and reporting the mean SHALSTAB Monte Carlo probability alongside the observed Sentinel-2 scar rate per decile (Figure 3a–c, top row).
+We diagnose the negative Yecheon separation by stratifying the AOI into ten equal-count elevation deciles and reporting the mean SHALSTAB Monte Carlo probability alongside the observed Sentinel-2 scar rate per decile (Fig. 3a–c, top row).
 
 Scar-population statistics make the inversion concrete: scars cluster at higher elevation (mean 455 m, median 343 m) than non-scars (mean 280 m, median 240 m), the model's mean SHALSTAB probability decreases monotonically with elevation (from 0.794 below 89 m to 0.346 above 538 m), and the observed scar rate increases monotonically with elevation (from 0.2 % below 89 m to 4.9 % above 538 m).
 
 The model and the observations therefore sort the Yecheon AOI in opposite directions by elevation. A consistent working hypothesis for this pattern, which we offer as a mechanism consistent with the data but not as a directly demonstrated cause, is that the upslope-area term in SHALSTAB's $q_{cr}/T$ inflates probability on low-elevation valley pixels because the steady-state hillslope assumption is weakly satisfied there, while the actual Sentinel-scar layer carries landslide-labelled pixels clustered on steep higher-elevation slopes plus a non-landslide floodplain component at low elevation. Under this working hypothesis a predictor that does not carry the upslope-area term (raw slope, §3.3) would be expected to beat the physical model on a large mixed-terrain monsoon AOI, which is what is observed. Discriminating this mechanism from alternative label-noise or rainfall-distribution explanations is not possible with three events; the Axis 6 label-layer ablation (§5.6) provides indirect support (NIDR-only ROC-AUC on Yecheon recovers to 0.608) but does not isolate the upslope-area mechanism.
 
-We do not repeat this diagnosis for Pohang (where the ranking is positive) or Chuncheon (where the ranking is essentially random) in the main text; the stratified figures for those events are in Figure 3a and 3c respectively for reader inspection (Figure 3 top-row panel order: Pohang / Yecheon / Chuncheon).
+We do not repeat this diagnosis for Pohang (where the ranking is positive) or Chuncheon (where the ranking is essentially random) in the main text; the stratified figures for those events are in Fig. 3a and 3c respectively for reader inspection (Fig. 3 top-row panel order: Pohang / Yecheon / Chuncheon).
 
 ## 3.3 Post-hoc refinement with alternative scorings
 
@@ -149,15 +157,21 @@ The ranking is event-type dependent. On the typhoon event Pohang, the baseline S
 
 ## 3.4 Event-wise maps and probability separability histograms
 
-Figures 1 and 2 show the three-panel per-event summary (probability raster, binary prediction with Sentinel-2 scars dilated 2 px for visibility, probability separability histogram) for Pohang 2022 and Yecheon 2023. The corresponding Chuncheon 2020 panel is not included in the main text; the equivalent Chuncheon raster artifacts are released in the code repository for reader inspection (see Code availability), and the matching numeric metrics are in Online Resource 1. All panels are in lat/lon (EPSG:4326) with legends for predicted-unstable (grey), predicted-stable (white), and Sentinel-2 scar (firebrick). Histograms show the scar and non-scar probability distributions overlaid with the mean-separation value annotated.
+Figs. 1 and 2 show the three-panel per-event summary (probability raster, binary prediction with Sentinel-2 scars dilated 2 px for visibility, probability separability histogram) for Pohang 2022 and Yecheon 2023. The corresponding Chuncheon 2020 panel is not included in the main text; the equivalent Chuncheon raster artifacts are released in the code repository for reader inspection (see Code availability), and the matching numeric metrics are in Online Resource 1. All panels are in lat/lon (EPSG:4326) with legends for predicted-unstable (grey), predicted-stable (white), and Sentinel-2 scar (firebrick). Histograms show the scar and non-scar probability distributions overlaid with the mean-separation value annotated.
 
-![Pohang 2022 (Typhoon Hinnamnor): (a) SHALSTAB Monte Carlo probability raster, (b) binary prediction (p $\geq 0.5$) with Sentinel-2 scars dilated 2 px for visibility, (c) probability separability histogram (scar vs non-scar). ROC-AUC 0.612, scar/non-scar mean-probability separation +0.198.](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig1_pohang_2022.png){#fig:1 width=95%}
+![](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig1_pohang_2022.png){#fig:1 width=95%}
 
-![Yecheon 2023 (central-Korea monsoon): same three-panel layout as Figure 1. ROC-AUC 0.449 (rank-inverted); scar/non-scar mean-probability separation -0.070; top-1 % recall 14 %. The rank inversion is visible as the overlap between scar and non-scar histograms with the scar distribution shifted lower.](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig2_yecheon_2023.png){#fig:2 width=95%}
+**Fig. 1.** Pohang 2022 (Typhoon Hinnamnor): (a) SHALSTAB Monte Carlo probability raster, (b) binary prediction (p $\geq 0.5$) with Sentinel-2 scars dilated 2 px for visibility, (c) probability separability histogram (scar vs non-scar). ROC-AUC 0.612, scar/non-scar mean-probability separation +0.198.
+
+![](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig2_yecheon_2023.png){#fig:2 width=95%}
+
+**Fig. 2.** Yecheon 2023 (central-Korea monsoon): same three-panel layout as Fig. 1. ROC-AUC 0.449 (rank-inverted); scar/non-scar mean-probability separation -0.070; top-1 % recall 14 %. The rank inversion is visible as the overlap between scar and non-scar histograms with the scar distribution shifted lower.
 
 Figure 3 is the three-event contrast composite: panels (a–c) report mean SHALSTAB probability and Sentinel-2 scar rate across elevation deciles for each event; panels (d–f) report ROC curves for the four scoring methods per event (baseline, hillslope-masked, slope alone, slope $\times$ relief). The rank inversion on Yecheon and the near-diagonal ROC on Chuncheon are both visible as visual signatures of the underlying numerical findings.
 
-![Three-event contrast composite. Top row (a–c): mean SHALSTAB Monte Carlo probability (blue) and observed Sentinel-2 scar rate (orange) across ten equal-count elevation deciles, per event (Pohang / Yecheon / Chuncheon). Bottom row (d–f): ROC curves for the four scoring methods (baseline SHALSTAB MC, hillslope-masked SHALSTAB, slope alone, slope $\times$ relief), per event.](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig3_event_contrast.png){#fig:3 width=98%}
+![](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig3_event_contrast.png){#fig:3 width=98%}
+
+**Fig. 3.** Three-event contrast composite. Top row (a–c): mean SHALSTAB Monte Carlo probability (blue) and observed Sentinel-2 scar rate (orange) across ten equal-count elevation deciles, per event (Pohang / Yecheon / Chuncheon). Bottom row (d–f): ROC curves for the four scoring methods (baseline SHALSTAB MC, hillslope-masked SHALSTAB, slope alone, slope $\times$ relief), per event.
 
 ## 3.5 False-alarm reduction via post-hoc filters
 
@@ -194,14 +208,16 @@ AP and precision-lift give the same qualitative reading per event, Pohang above 
 
 Figure 4 shows the precision-lift landscape across the nine filter configurations per event; bars above the dashed 1$\times$ line indicate above-base-rate precision.
 
-![Precision-lift over base rate across the nine post-hoc filters (F0–F8) per event. Dashed horizontal line at 1$\times$ marks parity with the event-specific base rate; bars above 1$\times$ indicate above-base-rate precision. Kept-fraction (the proportion of AOI pixels passing the filter) is overlaid for each bar to flag filters whose lift gains are offset by heavy recall loss. On both monsoon events F7 (slope > 20$^\circ$) gives the highest or near-highest single-knob lift (Yecheon 1.42$\times$, Chuncheon 1.11$\times$), narrowly edging Chuncheon F1 (hillslope mask) at 1.08$\times$; on the typhoon event (Pohang) F7 collapses to 1.00$\times$ because the hillslope-dominated AOI is already effectively filtered at baseline.](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig6_precision_lift.png){#fig:4 width=95%}
+![](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig6_precision_lift.png){#fig:4 width=95%}
+
+**Fig. 4.** Precision-lift over base rate across the nine post-hoc filters (F0–F8) per event. Dashed horizontal line at 1$\times$ marks parity with the event-specific base rate; bars above 1$\times$ indicate above-base-rate precision. Kept-fraction (the proportion of AOI pixels passing the filter) is overlaid for each bar to flag filters whose lift gains are offset by heavy recall loss. On both monsoon events F7 (slope > 20$^\circ$) gives the highest or near-highest single-knob lift (Yecheon 1.42$\times$, Chuncheon 1.11$\times$), narrowly edging Chuncheon F1 (hillslope mask) at 1.08$\times$; on the typhoon event (Pohang) F7 collapses to 1.00$\times$ because the hillslope-dominated AOI is already effectively filtered at baseline.
 
 
 ## Table 6. FAR-filter precision-lift (source: the FAR-filter results (Online Resource 1))
 
 Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is structurally pinned near 99 %; we report precision lift over base rate jointly with POD and kept-fraction.
 
-### Pohang 2022 (base rate 0.1205 %)
+**Table 6a.** Pohang 2022 (base rate 0.1205 %)
 
 | Filter | POD | Precision | Lift | Kept-fraction |
 |---|---|---|---|---|
@@ -215,7 +231,7 @@ Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is stru
 | F7 slope > 20$^\circ$ | 0.049 | 0.00120 | 1.00$\times$ | 4.93 % |
 | F8 F1 $\cap$ slope > 20$^\circ$ $\cap$ prob > 0.9 | 0.023 | 0.00090 | 0.75$\times$ | 3.04 % |
 
-### Yecheon 2023 (base rate 1.6512 %)
+**Table 6b.** Yecheon 2023 (base rate 1.6512 %)
 
 | Filter | POD | Precision | Lift | Kept-fraction |
 |---|---|---|---|---|
@@ -229,7 +245,7 @@ Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is stru
 | F7 slope > 20$^\circ$ | 0.268 | 0.02339 | 1.42$\times$ | 18.9 % |
 | F8 F1 $\cap$ slope > 20$^\circ$ $\cap$ prob > 0.9 | 0.122 | 0.02246 | 1.36$\times$ | 8.95 % |
 
-### Chuncheon 2020 (base rate 1.2359 %)
+**Table 6c.** Chuncheon 2020 (base rate 1.2359 %)
 
 | Filter | POD | Precision | Lift | Kept-fraction |
 |---|---|---|---|---|
@@ -286,7 +302,9 @@ Against the obvious question of why this work is called an agent paper rather th
 
 # 5. Agent Robustness Evaluation
 
-![Seven-axis robustness evaluation framework. Hub-and-spoke conceptual diagram of the seven axes that probe different sources of variability in physical-model prediction quality. Color code reflects execution status in this release: green = executed (Axes 3, 4, 6), peach = partially executed (Axis 2), gray = deferred to follow-on work (Axes 1, 5, 7). Axes 3, 4, and 6 are reported in §5.3, §5.4, and §5.6 respectively; deferred axes are described in Online Resource 3.](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig5_axes_overview.png){#fig:5 width=85%}
+![](/Users/eungyupark/Dropbox/myproj/dev_260414_nowcasting/figures/fig5_axes_overview.png){#fig:5 width=85%}
+
+**Fig. 5.** Seven-axis robustness evaluation framework. Hub-and-spoke conceptual diagram of the seven axes that probe different sources of variability in physical-model prediction quality. Color code reflects execution status in this release: green = executed (Axes 3, 4, 6), peach = partially executed (Axis 2), gray = deferred to follow-on work (Axes 1, 5, 7). Axes 3, 4, and 6 are reported in §5.3, §5.4, and §5.6 respectively; deferred axes are described in Online Resource 3.
 
 Figure 5 visualises the seven axes, their dependencies, and which were executed in this release.
 
@@ -399,7 +417,7 @@ Code availability. The full LandslideKR orchestrator code, per-event configurati
 
 Materials availability. Not applicable, no new physical materials were generated.
 
-Author contributions. E.P. conceived the study, designed the benchmark, implemented the LandslideKR orchestrator and analysis code, executed the three-event runs, prepared the figures and tables, and wrote the manuscript.
+Author contributions. E.P. conceived the study, designed the benchmark, implemented the LandslideKR orchestrator and analysis code, executed the three-event runs, prepared the figures and tables, wrote the manuscript, and is the corresponding author. T.K. and J.P. contributed to code review, analysis discussion, and manuscript revision. All authors read and approved the final manuscript.
 
 
 # References
