@@ -227,7 +227,7 @@ Figure 4 shows the precision-lift landscape across the nine filter configuration
 
 Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is structurally pinned near 99 %; we report precision lift over base rate jointly with POD and kept-fraction.
 
-**Table 6a.** Pohang 2022 (base rate 0.1205 %)
+### Table 6a. Pohang 2022 (base rate 0.1205 %)
 
 \nopagebreak
 
@@ -243,7 +243,7 @@ Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is stru
 | F7 slope > 20$^\circ$ | 0.049 | 0.00120 | 1.00$\times$ | 4.93 % |
 | F8 F1 $\cap$ slope > 20$^\circ$ $\cap$ prob > 0.9 | 0.023 | 0.00090 | 0.75$\times$ | 3.04 % |
 
-**Table 6b.** Yecheon 2023 (base rate 1.6512 %)
+### Table 6b. Yecheon 2023 (base rate 1.6512 %)
 
 | Filter | POD | Precision | Lift | Kept-fraction |
 |---|---|---|---|---|
@@ -257,7 +257,7 @@ Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is stru
 | F7 slope > 20$^\circ$ | 0.268 | 0.02339 | 1.42$\times$ | 18.9 % |
 | F8 F1 $\cap$ slope > 20$^\circ$ $\cap$ prob > 0.9 | 0.122 | 0.02246 | 1.36$\times$ | 8.95 % |
 
-**Table 6c.** Chuncheon 2020 (base rate 1.2359 %)
+### Table 6c. Chuncheon 2020 (base rate 1.2359 %)
 
 | Filter | POD | Precision | Lift | Kept-fraction |
 |---|---|---|---|---|
