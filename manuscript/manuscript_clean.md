@@ -191,9 +191,9 @@ We evaluate nine filter configurations per event:
 
 - F0 baseline (p $\geq 0.5$); F1 hillslope mask; F2/F3/F4 probability top-10/5/1 % quantile gates; F5/F6 compound hillslope $\cap$ top-quantile; F7 slope > 20$^\circ$ gate; F8 compound hillslope $\cap$ slope > 20$^\circ$ $\cap$ p > 0.9.
 
-Headline precision-lift results across events are summarised in Table 7; full per-filter rows are in the FAR-filter results (Online Resource 1) and the per-event Tables 6a–6c.
+Headline precision-lift results across events are summarised in Table 6; full per-filter rows are in the FAR-filter results (Online Resource 1) and the per-event Tables 8a–8c.
 
-## Table 7. Headline precision-lift and POD by filter and event (summary view of Tables 6a–6c).
+## Table 6. Headline precision-lift and POD by filter and event (summary view of Tables 8a–8c).
 
 | Filter | Pohang lift | Pohang POD | Yecheon lift | Yecheon POD | Chuncheon lift | Chuncheon POD |
 |---|---|---|---|---|---|---|
@@ -208,9 +208,9 @@ Two additional observations hold across all three events:
 1. Probability quantile gating is degenerate. The SHALSTAB Monte Carlo probability distribution is bimodal (peaks at p = 0 and p = 1); more than 10 % of pixels saturate at p = 1.0 per event, so the top-10 %, top-5 %, and top-1 % quantile thresholds collapse to the same p = 1.0 tier and produce identical metrics. Post-hoc isotonic calibration (§5.8, executed) is a within-sample diagnostic (fit and scored on the same per-event Sentinel labels) with material within-sample ROC uplift on the monsoon events but no effect on the upper-tail degeneracy.
 2. On both monsoon events, slope > 20$^\circ$ as a standalone gate gives the best or second-best single-knob lift. On Yecheon (large mixed-terrain, 9 000 km$^{2}$) F7 delivers 1.42$\times$ at POD 0.268; on Chuncheon (small mountainous, 850 km$^{2}$) F7 delivers 1.11$\times$ at POD 0.426. On the typhoon event (Pohang, small hillslope-dominated) F7 lift collapses to 1.00$\times$ (pure random) because the hillslope-dominated terrain has already been effectively filtered by the baseline prediction. The F7 pattern across the three events mirrors the ROC-level finding that slope-alone beats SHALSTAB on the monsoon-side AOIs but not on the typhoon-side AOI.
 
-Standard precision-recall view (augmenting, not replacing, precision lift). We additionally compute Average Precision (AP) using scikit-learn's `average_precision_score` function for each event; per-event values are in Table 8 (the PR-AUC summary is in Online Resource 1; the precision-recall curves themselves are regenerable from the code repository).
+Standard precision-recall view (augmenting, not replacing, precision lift). We additionally compute Average Precision (AP) using scikit-learn's `average_precision_score` function for each event; per-event values are in Table 7 (the PR-AUC summary is in Online Resource 1; the precision-recall curves themselves are regenerable from the code repository).
 
-## Table 8. Average Precision per event versus base rate.
+## Table 7. Average Precision per event versus base rate.
 
 | Event | Base rate | AP (sklearn) | AP / base rate |
 |---|---|---|---|
@@ -227,11 +227,11 @@ Figure 4 shows the precision-lift landscape across the nine filter configuration
 **Fig. 4.** Precision-lift over base rate across the nine post-hoc filters (F0–F8) per event. Dashed horizontal line at 1$\times$ marks parity with the event-specific base rate; bars above 1$\times$ indicate above-base-rate precision. Kept-fraction (the proportion of AOI pixels passing the filter) is overlaid for each bar to flag filters whose lift gains are offset by heavy recall loss. On both monsoon events F7 (slope > 20$^\circ$) gives the highest or near-highest single-knob lift (Yecheon 1.42$\times$, Chuncheon 1.11$\times$), narrowly edging Chuncheon F1 (hillslope mask) at 1.08$\times$; on the typhoon event (Pohang) F7 collapses to 1.00$\times$ because the hillslope-dominated AOI is already effectively filtered at baseline.
 
 
-## Table 6. FAR-filter precision-lift (source: the FAR-filter results (Online Resource 1))
+## Table 8. FAR-filter precision-lift (source: the FAR-filter results (Online Resource 1))
 
-Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is structurally pinned near 99 %; we report precision lift over base rate jointly with POD and kept-fraction. Per-event filter rows are split into Table 6a (Pohang 2022), Table 6b (Yecheon 2023), and Table 6c (Chuncheon 2020) below.
+Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is structurally pinned near 99 %; we report precision lift over base rate jointly with POD and kept-fraction. Per-event filter rows are split into Table 8a (Pohang 2022), Table 8b (Yecheon 2023), and Table 8c (Chuncheon 2020) below.
 
-### Table 6a. Pohang 2022 (base rate 0.1205 %)
+### Table 8a. Pohang 2022 (base rate 0.1205 %)
 
 \nopagebreak
 
@@ -247,7 +247,7 @@ Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is stru
 | F7 slope > 20$^\circ$ | 0.049 | 0.00120 | 1.00$\times$ | 4.93 % |
 | F8 F1 $\cap$ slope > 20$^\circ$ $\cap$ prob > 0.9 | 0.023 | 0.00090 | 0.75$\times$ | 3.04 % |
 
-### Table 6b. Yecheon 2023 (base rate 1.6512 %)
+### Table 8b. Yecheon 2023 (base rate 1.6512 %)
 
 | Filter | POD | Precision | Lift | Kept-fraction |
 |---|---|---|---|---|
@@ -261,7 +261,7 @@ Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is stru
 | F7 slope > 20$^\circ$ | 0.268 | 0.02339 | 1.42$\times$ | 18.9 % |
 | F8 F1 $\cap$ slope > 20$^\circ$ $\cap$ prob > 0.9 | 0.122 | 0.02246 | 1.36$\times$ | 8.95 % |
 
-### Table 6c. Chuncheon 2020 (base rate 1.2359 %)
+### Table 8c. Chuncheon 2020 (base rate 1.2359 %)
 
 | Filter | POD | Precision | Lift | Kept-fraction |
 |---|---|---|---|---|
@@ -295,7 +295,7 @@ Status of the Chuncheon contrast. Chuncheon 2020 was designed to disambiguate ra
 
 ## 4.2 Why a simpler slope-based ranking outperforms SHALSTAB on the monsoon events
 
-On Yecheon, the slope-alone ROC-AUC (0.669) beats every SHALSTAB variant tested (§3.3 Table 5). The precision-lift table (§3.5 Table 6) shows the same pattern at the pixel-level operating regime: slope > 20$^\circ$ is the best single-knob lift (1.42$\times$) on Yecheon, and F7 lift on Chuncheon (1.11$\times$) is also the highest single-knob lift among the nine filters for that event. On Pohang the F7 gate collapses to lift 1.00$\times$ because the hillslope-dominated AOI is already effectively filtered at baseline.
+On Yecheon, the slope-alone ROC-AUC (0.669) beats every SHALSTAB variant tested (§3.3 Table 5). The precision-lift table (§3.5 Table 8) shows the same pattern at the pixel-level operating regime: slope > 20$^\circ$ is the best single-knob lift (1.42$\times$) on Yecheon, and F7 lift on Chuncheon (1.11$\times$) is also the highest single-knob lift among the nine filters for that event. On Pohang the F7 gate collapses to lift 1.00$\times$ because the hillslope-dominated AOI is already effectively filtered at baseline.
 
 The mechanism is mechanical, not mysterious. SHALSTAB's $q_{cr}/T$ inversely depends on $(a/b)$; at the large AOI scale where $a/b$ includes floodplain pixels, a high $a/b$ no longer indicates hydrologic concentration onto a potentially unstable hillslope, it indicates that the pixel is a low-elevation drainage point. The model's own output penalizes these pixels' stability ($q_{cr}/T$ low $\to$ stability low $\to$ classification as unstable), which is the opposite of what the scar distribution requires. A predictor that ignores upslope-area entirely, raw slope, or a slope $\times$ relief product, cannot be confounded by this artifact because the product of slope and relief does not integrate drainage.
 
@@ -409,7 +409,7 @@ We state the limitations we consider most likely to shape how a reviewer interpr
 
 The most consequential limitation is that no field-verified ground truth is available. All three events are evaluated against a positive-evidence proxy (event-window Sentinel-2 NDVI-change scars for the §3.1 baseline; annual administrative-area NIDR reports added in the §5.6 ablation only). The §5.6 ablation is a label-source sensitivity check, not an event-window validation: NIDR is annual (§2.3) and Pohang has zero in-bbox NIDR points. Under NIDR labels the monsoon-event ROC-AUCs recover to 0.608 (Yecheon) and 0.635 (Chuncheon), with small-N caveats (231 and 17 NIDR pixels; town-centroid + 30 m buffer geometry). This means the Sentinel-label monsoon deficit partly reflects Sentinel-specific false positives rather than pure model failure; we therefore hold the §4.1 typology claim at working-hypothesis strength and avoid stronger causal language.
 
-Three events are also three events. The Pohang / Yecheon / Chuncheon contrast is sufficient to disambiguate one binary factor, rainfall typology versus AOI size and terrain, and insufficient to establish a regime law for typhoon-versus-monsoon SHALSTAB applicability; the mapping in §4.3 is a working hypothesis for future validation, not a regime claim, and the Chuncheon outcome is retrospective-diagnostic rather than preregistered (qualitative predictions pre-committed, numeric cutoffs added after execution; see the released case configuration). Within this release the agent additionally does not select among physical models: every event is run under one uniformly configured SHALSTAB Monte Carlo ensemble, and the post-hoc comparisons to hillslope-masked, slope-only, and slope $\times$ relief scorings are offline diagnostic analyses rather than in-pipeline agent behavior, with an in-pipeline model-selection layer proposed as future work. The Monte Carlo probability output is also bimodal, 54.5 / 25.9 / 32.8 % of pixels per event saturate at p = 1.0 under the current lithology-conditional bounds and the top-1 %, top-5 %, and top-10 % probability quantile filters collapse to the same p = 1.0 tier (§3.5 Table 6); the executed within-sample isotonic calibration in §5.8 does not break this upper-tail degeneracy (and its ROC-uplift is a within-sample tie-handling artifact, not an out-of-sample generalization claim), so operational top-decile filtering remains limited by the bimodality rather than by calibration skill.
+Three events are also three events. The Pohang / Yecheon / Chuncheon contrast is sufficient to disambiguate one binary factor, rainfall typology versus AOI size and terrain, and insufficient to establish a regime law for typhoon-versus-monsoon SHALSTAB applicability; the mapping in §4.3 is a working hypothesis for future validation, not a regime claim, and the Chuncheon outcome is retrospective-diagnostic rather than preregistered (qualitative predictions pre-committed, numeric cutoffs added after execution; see the released case configuration). Within this release the agent additionally does not select among physical models: every event is run under one uniformly configured SHALSTAB Monte Carlo ensemble, and the post-hoc comparisons to hillslope-masked, slope-only, and slope $\times$ relief scorings are offline diagnostic analyses rather than in-pipeline agent behavior, with an in-pipeline model-selection layer proposed as future work. The Monte Carlo probability output is also bimodal, 54.5 / 25.9 / 32.8 % of pixels per event saturate at p = 1.0 under the current lithology-conditional bounds and the top-1 %, top-5 %, and top-10 % probability quantile filters collapse to the same p = 1.0 tier (§3.5 Table 8); the executed within-sample isotonic calibration in §5.8 does not break this upper-tail degeneracy (and its ROC-uplift is a within-sample tie-handling artifact, not an out-of-sample generalization claim), so operational top-decile filtering remains limited by the bimodality rather than by calibration skill.
 
 The seven-axis agent-robustness evaluation is not fully executed in this release. Section 5 reports the axes executed to date and clearly marks those deferred; the robustness plan in the released robustness plan (Online Resource 3) is the design document, not a completed evidence package, and readers relying on the robustness argument for submission-readiness decisions should check §5 for the deferred-axis list before assuming an axis is executed. Sentinel-1 SAR is likewise not integrated, the SAR-based label augmentation plan in the SAR-integration plan (Online Resource 4) is future work, not part of the released benchmark, so reviewers expecting SAR-augmented labels will not find them here. Finally, the LLM-backend robustness test (Axis 1) covers commercial APIs only because the Model Context Protocol tool-calling interface used by the orchestrator is not uniformly supported across open-source endpoints (Llama, Mistral, Qwen at comparable tool-calling maturity) as of April 2026; this scope limitation is inherited from the WildfireKR Axis 1 precedent (IEEE Access, 2026).
 
