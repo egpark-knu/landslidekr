@@ -57,7 +57,13 @@ Discovered via Semantic Scholar reverse-citation lookup on the manuscript's exis
 
 **Recommendation:** Include #1–#4 (strong) + optionally #5–#8 (good) → ref count 11 → 15–19, comfortably in the lower half of the 25–40 envelope. #9 only if you want a strict 20+ count.
 
-**To trigger insertion**, message me: `OK B 1,2,3,4` (or any subset of {1..9}). Claude will atomically insert each cite at its pre-staged anchor + add to References (alphabetical) + rebuild DOCX/PDF + push as v8.2.
+**To trigger insertion**, message me: `OK B 1,2,3,4` (or any subset of {1..9}). Claude will execute the pre-tested script `workspace/temp/insert_refs.py` which:
+1. inserts each cite at its unique anchor (verified, single-match required)
+2. adds the full reference entry to the References section in alphabetical order (Çömert correctly folded as 'C', Notti 2024 placed after Notti 2023 by year)
+3. rebuilds DOCX + PDF preview
+4. commits and pushes as v8.2
+
+Dry-run (`--dry-run --all`) verified all 9 insert+sort operations work without manual intervention.
 
 ### 2. Cover letter — ORCID placeholder
 `COVER_LETTER.md:52` reads `ORCID: [to be inserted at submission]`. Provide your ORCID id and Claude will fill it.
