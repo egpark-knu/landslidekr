@@ -19,9 +19,41 @@ v8.1 manuscript pushed to `egpark-knu/landslidekr` (HEAD `2e51619`). DOCX + PDF 
 - **Fresh Crossref topic search** of 5 alternative queries (cycle 6) returned 20 real DOIs but **0 strong matches** — Korea-specific Sentinel-2 + SHALSTAB-applicability literature is genuinely sparse
   - Raw search log: `workspace/temp/crossref_search_fresh.json`
 - **Choose one:**
-  - **A.** Submit with 11 refs as-is (Claude's recommendation; defensible "niche literature is sparse" stance)
-  - **B.** Spend 2–3 h doing manual Semantic Scholar search by author/topic combinations Claude didn't try
+  - **A.** Submit with 11 refs as-is (Claude's prior recommendation)
+  - **B.** Add 4–10 of the **vetted shortlist below** (Claude can insert any subset on your `OK B [list]` instruction)
   - **C.** Drop the typology framing slightly to make the existing 11 refs feel sufficient (would require §1 + §4 light edit)
+
+### Vetted shortlist (10 candidates, all Crossref-verified ✅)
+
+Discovered via Semantic Scholar reverse-citation lookup on the manuscript's existing core refs (Montgomery & Dietrich 1994, Notti 2023, Park 2013) — so all are by-construction topically aligned. **Author/year/journal verified individually via Crossref API; zero false-attribution risk** (raw log: `workspace/temp/verified_shortlist.json`).
+
+**Strong topical match (4):**
+1. **Berti et al. (2026)** *Landslides* 23(4):969–988. *"Testing NDVI and U-Net for automated mapping of multiple-occurrence regional landslide events."* DOI 10.1007/s10346-025-02671-z
+   — extends §2.3 Sentinel-2 method (Notti 2023 follow-up); same target journal
+2. **Çömert et al. (2025)** *Engineering Geology* 355:108258. *"An open event-inventory database of rainfall-induced landslides..."* DOI 10.1016/j.enggeo.2025.108258
+   — supports §2.3 open event-inventory precedent; speaks to LandslideKR's reproducibility framing
+3. **Notti et al. (2024)** *Int. J. Appl. Earth Obs. Geoinf.* 129:103806. *"The unsuPervised shAllow laNdslide rapiD mApping: PANDA method..."* DOI 10.1016/j.jag.2024.103806
+   — Notti's own NDVI-method follow-up; supports §2.3
+4. **Fumagalli et al. (2025)** *Nat. Hazards Earth Syst. Sci.* 25(11):4405–4422. *"Shaping shallow landslide susceptibility as a function of rainfall events."* DOI 10.5194/nhess-25-4405-2025
+   — supports §3.5 / §4.1 event-rainfall-shape framing; same NHESS family as Notti
+
+**Good topical match (4):**
+5. **Niyokwiringirwa et al. (2024)** *Landslides* 21(6):1403–1424. *"Event-based rainfall-induced landslide inventories and rainfall thresholds for Malawi."* DOI 10.1007/s10346-023-02203-7
+   — supports §3 event-based methodology (caveat: Malawi geography)
+6. **Asurza et al. (2026)** *Bull. Eng. Geol. Environ.* 85(1). *"Calibration scenarios for physically based rainfall-induced landslide modelling at regional [scale]..."* DOI 10.1007/s10064-025-04697-y
+   — supports §2.2 SHALSTAB-family calibration discussion
+7. **Xia et al. (2026)** *Bull. Eng. Geol. Environ.* 85(1). *"Comparative analysis of rainfall thresholds for landslide pre- and post- the 2011 Sikkim earthquake."* DOI 10.1007/s10064-025-04670-9
+   — supports §3.5 rainfall threshold comparison
+8. **de Vugt et al. (2024)** *Earth Surf. Process. Landforms* 49(4):1330–1347. *"Spatial transferability of the physically based model TRIGRS using parameter ensembles."* DOI 10.1002/esp.5770
+   — supports §4.5 TRIGRS spatial transferability discussion
+
+**Marginal (2 — include only if you want to thicken refs):**
+9. **He et al. (2025)** *Geomat. Nat. Haz. Risk* 16(1). *"Effects of rainfall patterns on occurrence of shallow landslides..."* DOI 10.1080/19475705.2025.2568147
+10. **Mandaglio et al. (2026)** *Env. Earth Sci.* 85(7). *"Application of a physically based methodology to define the input data of geotechnical slope [analysis]..."* DOI 10.1007/s12665-026-12926-0
+
+**Recommendation:** Include #1–#4 (strong) + optionally #5–#8 (good) → ref count goes from 11 → 15–19, comfortably in the 25–40 envelope's lower half. Marginal #9–#10 only if you want strict 20+ count.
+
+**To trigger insertion**, message me: `OK B 1,2,3,4` (or any subset) and Claude will insert each into the existing sentence its USE_FOR field points to, then rebuild DOCX/PDF and push as v8.2.
 
 ### 2. Cover letter — ORCID placeholder
 `COVER_LETTER.md:52` reads `ORCID: [to be inserted at submission]`. Provide your ORCID id and Claude will fill it.
