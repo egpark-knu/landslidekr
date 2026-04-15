@@ -191,7 +191,9 @@ We evaluate nine filter configurations per event:
 
 - F0 baseline (p $\geq 0.5$); F1 hillslope mask; F2/F3/F4 probability top-10/5/1 % quantile gates; F5/F6 compound hillslope $\cap$ top-quantile; F7 slope > 20$^\circ$ gate; F8 compound hillslope $\cap$ slope > 20$^\circ$ $\cap$ p > 0.9.
 
-Headline precision-lift results (Table 6; full numbers in the FAR-filter results (Online Resource 1)):
+Headline precision-lift results across events are summarised in Table 7; full per-filter rows are in the FAR-filter results (Online Resource 1) and the per-event Tables 6a–6c.
+
+## Table 7. Headline precision-lift and POD by filter and event (summary view of Tables 6a–6c).
 
 | Filter | Pohang lift | Pohang POD | Yecheon lift | Yecheon POD | Chuncheon lift | Chuncheon POD |
 |---|---|---|---|---|---|---|
@@ -206,7 +208,9 @@ Two additional observations hold across all three events:
 1. Probability quantile gating is degenerate. The SHALSTAB Monte Carlo probability distribution is bimodal (peaks at p = 0 and p = 1); more than 10 % of pixels saturate at p = 1.0 per event, so the top-10 %, top-5 %, and top-1 % quantile thresholds collapse to the same p = 1.0 tier and produce identical metrics. Post-hoc isotonic calibration (§5.8, executed) is a within-sample diagnostic (fit and scored on the same per-event Sentinel labels) with material within-sample ROC uplift on the monsoon events but no effect on the upper-tail degeneracy.
 2. On both monsoon events, slope > 20$^\circ$ as a standalone gate gives the best or second-best single-knob lift. On Yecheon (large mixed-terrain, 9 000 km$^{2}$) F7 delivers 1.42$\times$ at POD 0.268; on Chuncheon (small mountainous, 850 km$^{2}$) F7 delivers 1.11$\times$ at POD 0.426. On the typhoon event (Pohang, small hillslope-dominated) F7 lift collapses to 1.00$\times$ (pure random) because the hillslope-dominated terrain has already been effectively filtered by the baseline prediction. The F7 pattern across the three events mirrors the ROC-level finding that slope-alone beats SHALSTAB on the monsoon-side AOIs but not on the typhoon-side AOI.
 
-Standard precision-recall view (augmenting, not replacing, precision lift). We additionally compute Average Precision (AP) using scikit-learn's `average_precision_score` function for each event (the PR-AUC summary is in Online Resource 1; the precision-recall curves themselves are regenerable from the code repository):
+Standard precision-recall view (augmenting, not replacing, precision lift). We additionally compute Average Precision (AP) using scikit-learn's `average_precision_score` function for each event; per-event values are in Table 8 (the PR-AUC summary is in Online Resource 1; the precision-recall curves themselves are regenerable from the code repository).
+
+## Table 8. Average Precision per event versus base rate.
 
 | Event | Base rate | AP (sklearn) | AP / base rate |
 |---|---|---|---|
@@ -332,7 +336,9 @@ Partially executed. The orchestrator handles non-fatal external-API failures by 
 
 ## 5.3 Stochastic repeatability (Axis 3, executed)
 
-Status: executed. The SHALSTAB Monte Carlo ensemble was re-run under five RNG seeds per event (15 runs total). The repeatability script uses the default-lithology fallback for a reproducible parameter-space check, which shifts absolute ROC-AUC from §3.1 by a few percentage points but preserves the across-seed CV% that Axis 3 targets.
+Status: executed. The SHALSTAB Monte Carlo ensemble was re-run under five RNG seeds per event (15 runs total). The repeatability script uses the default-lithology fallback for a reproducible parameter-space check, which shifts absolute ROC-AUC from §3.1 by a few percentage points but preserves the across-seed CV% that Axis 3 targets. Per-event mean ± std and CV% are in Table 9.
+
+## Table 9. Axis 3 stochastic repeatability — ROC-AUC, separation, POD, AP across 5 RNG seeds per event.
 
 | Event | ROC-AUC mean $\pm$ std | CV% | Separation mean $\pm$ std | CV% | POD CV% | AP CV% |
 |---|---|---|---|---|---|---|
@@ -352,7 +358,9 @@ Deferred. Design (sweeping the Sentinel-2 scar gate over (dNDVI, post-NDVI cap, 
 
 ## 5.6 Label-layer ablation (Axis 6, executed)
 
-Status: executed. The annual NIDR record (§2.3) was geocoded to yield 273, 18, and 0 in-bbox points for Yecheon, Chuncheon, and Pohang respectively. Because NIDR is annual, the rasterized NIDR layer is a full-year footprint: this is a label-source sensitivity check, not an event-window validation. Four variants per event, A (Sentinel-only), B (NIDR-only), C (union), D (intersection), are reported; Pohang has no in-bbox NIDR points and is excluded from variants B–D.
+Status: executed. The annual NIDR record (§2.3) was geocoded to yield 273, 18, and 0 in-bbox points for Yecheon, Chuncheon, and Pohang respectively. Because NIDR is annual, the rasterized NIDR layer is a full-year footprint: this is a label-source sensitivity check, not an event-window validation. Four variants per event, A (Sentinel-only), B (NIDR-only), C (union), D (intersection), are reported in Table 10; Pohang has no in-bbox NIDR points and is excluded from variants B–D.
+
+## Table 10. Axis 6 label-layer ablation — ROC-AUC and separation under four NIDR/Sentinel variants per event.
 
 | Event | Variant | n_pos (px) | base rate | ROC-AUC | separation |
 |---|---|---|---|---|---|
@@ -377,6 +385,10 @@ Deferred. Design (NE/SW AOI half-splits per event, threshold calibration on one 
 Status: executed observation. The SHALSTAB MC probability distribution is bimodal (54.5 % / 25.9 % / 32.8 % of valid pixels saturate at p $\approx 1.0$ for Pohang / Yecheon / Chuncheon), which is why the top-1 %, top-5 %, and top-10 % quantile filters in §3.5 collapse to the same p = 1.0 tier. A within-sample isotonic regression of the raw probability against the Sentinel-scar label produces monsoon-side ROC-AUC uplift (Yecheon 0.449 $\to 0.502$; Chuncheon 0.499 $\to 0.538$) that is a tie-handling artifact of collapsing the p $\approx 1$ tie block, not an out-of-sample ranking gain; the upper-tail degeneracy remains, so operational top-decile filtering is limited by ensemble bimodality rather than by calibration skill.
 
 ## 5.9 Summary of executed versus deferred axes
+
+Table 11 summarises which of the seven robustness axes are executed in this release and which are deferred to follow-on work.
+
+## Table 11. Robustness axes execution status (axes 1–7 plus Axis 8 calibration observation).
 
 | Axis | Status |
 |---|---|
