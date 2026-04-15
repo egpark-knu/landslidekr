@@ -225,7 +225,7 @@ Figure 4 shows the precision-lift landscape across the nine filter configuration
 
 ## Table 6. FAR-filter precision-lift (source: the FAR-filter results (Online Resource 1))
 
-Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is structurally pinned near 99 %; we report precision lift over base rate jointly with POD and kept-fraction.
+Interpretation: At these positive-class rates (0.12 – 1.65 %), raw FAR is structurally pinned near 99 %; we report precision lift over base rate jointly with POD and kept-fraction. Per-event filter rows are split into Table 6a (Pohang 2022), Table 6b (Yecheon 2023), and Table 6c (Chuncheon 2020) below.
 
 ### Table 6a. Pohang 2022 (base rate 0.1205 %)
 
