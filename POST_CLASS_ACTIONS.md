@@ -47,13 +47,17 @@ Discovered via Semantic Scholar reverse-citation lookup on the manuscript's exis
 8. **de Vugt et al. (2024)** *Earth Surf. Process. Landforms* 49(4):1330–1347. *"Spatial transferability of the physically based model TRIGRS using parameter ensembles."* DOI 10.1002/esp.5770
    — supports §4.5 TRIGRS spatial transferability discussion
 
-**Marginal (2 — include only if you want to thicken refs):**
+**Marginal (1 — include only if you want to thicken refs):**
 9. **He et al. (2025)** *Geomat. Nat. Haz. Risk* 16(1). *"Effects of rainfall patterns on occurrence of shallow landslides..."* DOI 10.1080/19475705.2025.2568147
-10. **Mandaglio et al. (2026)** *Env. Earth Sci.* 85(7). *"Application of a physically based methodology to define the input data of geotechnical slope [analysis]..."* DOI 10.1007/s12665-026-12926-0
 
-**Recommendation:** Include #1–#4 (strong) + optionally #5–#8 (good) → ref count goes from 11 → 15–19, comfortably in the 25–40 envelope's lower half. Marginal #9–#10 only if you want strict 20+ count.
+**Dropped (after staging):**
+- ~~Mandaglio et al. (2026)~~ — no natural body anchor for an inserted parenthetical (only ref-section context match); excluded honestly rather than forced.
 
-**To trigger insertion**, message me: `OK B 1,2,3,4` (or any subset) and Claude will insert each into the existing sentence its USE_FOR field points to, then rebuild DOCX/PDF and push as v8.2.
+**Insertion-ready: 9/10** — every remaining candidate has a unique target sentence in the manuscript; raw mapping in `workspace/temp/insertion_plan.json`. Insertion mode for each is "extend existing sentence with `; Author, Year`" (no new sentences, no scope widening — per HP's "thin not bloat" guidance).
+
+**Recommendation:** Include #1–#4 (strong) + optionally #5–#8 (good) → ref count 11 → 15–19, comfortably in the lower half of the 25–40 envelope. #9 only if you want a strict 20+ count.
+
+**To trigger insertion**, message me: `OK B 1,2,3,4` (or any subset of {1..9}). Claude will atomically insert each cite at its pre-staged anchor + add to References (alphabetical) + rebuild DOCX/PDF + push as v8.2.
 
 ### 2. Cover letter — ORCID placeholder
 `COVER_LETTER.md:52` reads `ORCID: [to be inserted at submission]`. Provide your ORCID id and Claude will fill it.
