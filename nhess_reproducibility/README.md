@@ -9,8 +9,8 @@ Repository: https://github.com/egpark-knu/landslidekr
 ## What This Package Reproduces
 
 - The protocol/label-source skill matrix used in the revised manuscript.
-- The Phase 3b elimination table showing that simple perturbations do not rescue the baseline failure.
-- The exploratory Phase 4 terrain and aggregate diagnostic summaries.
+- The perturbation-screen table showing that simple model/input changes do not rescue the baseline failure.
+- The manuscript terrain and aggregate diagnostic summaries.
 - The frozen input tables behind the revised Figure 1 to Figure 4 summaries.
 
 The package intentionally does not redistribute large raster inputs, raw Earth Engine exports,
