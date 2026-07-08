@@ -1,0 +1,8 @@
+variable,positive_n,negative_n,positive_mean,negative_mean,difference_positive_minus_negative,standardized_difference
+mean_prob,4,201,0.3152,0.5590,-0.2437,-1.0830
+p90_prob,4,201,1.0000,0.9684,0.0316,0.1956
+unit_area_m2,4,201,59609552.3569,61497841.1908,-1888288.8338,-0.0448
+log_unit_area_m2,4,201,17.8647,17.5014,0.3633,0.2927
+pixel_count,4,201,66158.5000,53974.5572,12183.9428,0.3034
+mean_elevation_m,4,201,348.2779,224.9801,123.2978,0.9534
+relief_m,4,201,728.9632,529.5308,199.4324,0.6548

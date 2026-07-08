@@ -1,0 +1,308 @@
+{
+  "package": "NHESS lightweight reproducibility assets",
+  "created_at": "2026-07-08T14:22:29+09:00",
+  "repository": "https://github.com/egpark-knu/landslidekr",
+  "scope": "Frozen-table audit and reviewer-facing summary regeneration; large rasters and credentials are excluded.",
+  "path_sanitization": "Machine-local /Users/.../0_Landslides/ prefixes were replaced with REPO_ROOT/.",
+  "tables": [
+    {
+      "path": "data/frozen_tables/aggregate_reversal_anatomy_stats.csv",
+      "source_original": "round_2/phase4_exploratory_diagnosis/aggregate_reversal_anatomy_stats.csv",
+      "sha256": "9f9574b47f46c16ef16bab23f949ff6b08f29fbdc86fd914dc6eb3abf111f04b",
+      "bytes": 1065,
+      "rows": 7,
+      "columns": [
+        "variable",
+        "positive_n",
+        "negative_n",
+        "positive_mean",
+        "negative_mean",
+        "positive_median",
+        "negative_median",
+        "difference_positive_minus_negative",
+        "standardized_difference",
+        "status"
+      ],
+      "required_columns": [
+        "variable",
+        "positive_n",
+        "negative_n",
+        "standardized_difference"
+      ]
+    },
+    {
+      "path": "data/frozen_tables/aggregate_sentinel_unit_stats.csv",
+      "source_original": "round_2/phase4_exploratory_diagnosis/aggregate_sentinel_unit_stats.csv",
+      "sha256": "69cbd314733e632d604d96c650e7b33cc7c49a6e81c9a0ce1413837b8efec486",
+      "bytes": 30583,
+      "rows": 268,
+      "columns": [
+        "event",
+        "ADM_CD",
+        "SIDO",
+        "SIGUNGU",
+        "EMD",
+        "label_source",
+        "positive",
+        "mean_prob",
+        "pixel_count"
+      ],
+      "required_columns": [
+        "event",
+        "ADM_CD",
+        "positive",
+        "mean_prob"
+      ]
+    },
+    {
+      "path": "data/frozen_tables/balt_event_metrics.csv",
+      "source_original": "round_2/phase2_scout_balt/balt_event_metrics.csv",
+      "sha256": "b62aba0b5bdc3fbbc44a15307f570f9faa8b93819f6cab3a9464ce22b77d2ba6",
+      "bytes": 551,
+      "rows": 3,
+      "columns": [
+        "event_id",
+        "event_name",
+        "n_valid_pixels",
+        "aoi_area_km2",
+        "raw_rho_log_upslope_area_slope",
+        "n_hillslope_pixels_slope_gt_10",
+        "hillslope_area_km2_slope_gt_10",
+        "raw_rho_hillslope_slope_gt_10",
+        "gate1_pass",
+        "gate2_pass",
+        "gate3_pass"
+      ],
+      "required_columns": [
+        "event_id",
+        "event_name",
+        "raw_rho_log_upslope_area_slope"
+      ]
+    },
+    {
+      "path": "data/frozen_tables/balt_gates.csv",
+      "source_original": "round_2/phase2_scout_balt/balt_gates.csv",
+      "sha256": "8f3b39e712e21aab6f9c8850c8855f7fe41af7343a0b9e4cd544489e7eda4d3a",
+      "bytes": 1610,
+      "rows": 4,
+      "columns": [
+        "gate_id",
+        "gate_name",
+        "predeclared_pass_condition",
+        "pass",
+        "evaluated_result",
+        "fail_reason"
+      ],
+      "required_columns": [
+        "gate_id",
+        "gate_name",
+        "pass"
+      ]
+    },
+    {
+      "path": "data/frozen_tables/discriminant_candidates.csv",
+      "source_original": "round_2/phase1_discriminant/discriminant_candidates.csv",
+      "sha256": "e5a1eea599fce0302c04e125b48c9a8fb32472bc0ccd730d0be21bb324c95e68",
+      "bytes": 1225,
+      "rows": 3,
+      "columns": [
+        "event_id",
+        "event_name",
+        "delta",
+        "separation_sign",
+        "n_valid_pixels",
+        "log_upslope_area_q75",
+        "C1_valley_floor_fraction",
+        "C1_selection_score",
+        "C2_spearman_log_area_slope",
+        "C2_direction_score",
+        "C3_spearman_elevation_log_area",
+        "C3_direction_score",
+        "C4_convergent_low_slope_fraction",
+        "C4_selection_score",
+        "topo_backend",
+        "dem_sha256"
+      ],
+      "required_columns": [
+        "event_id",
+        "event_name",
+        "delta",
+        "separation_sign"
+      ]
+    },
+    {
+      "path": "data/frozen_tables/elevation_decile_table.csv",
+      "source_original": "round_2/phase4_writing/figures/elevation_decile_table.csv",
+      "sha256": "12125cbc2ab9cbbc49d66724c347234fc13ea7d18a2e7d3948c21a1e634110a8",
+      "bytes": 11881,
+      "rows": 30,
+      "columns": [
+        "event_id",
+        "event",
+        "label_source",
+        "decile",
+        "elevation_min_m",
+        "elevation_max_m",
+        "elevation_mean_m",
+        "mean_model_probability",
+        "observed_scar_rate",
+        "pixel_count",
+        "binning_rule",
+        "probability_raster",
+        "label_raster",
+        "elevation_raster"
+      ],
+      "required_columns": [
+        "event",
+        "label_source",
+        "decile",
+        "mean_model_probability",
+        "observed_scar_rate"
+      ]
+    },
+    {
+      "path": "data/frozen_tables/elimination_table.csv",
+      "source_original": "round_2/phase3b_elimination/elimination_table.csv",
+      "sha256": "1c7bd9c677c91d5e51491ffe5507c558d907cdb82280b31f16d3c86c757f0ab0",
+      "bytes": 3777,
+      "rows": 9,
+      "columns": [
+        "perturbation_type",
+        "yecheon_roc_auc",
+        "chuncheon_roc_auc",
+        "separation_sign",
+        "persisted_or_moved_classification",
+        "movement_magnitude",
+        "source_path",
+        "notes"
+      ],
+      "required_columns": [
+        "perturbation_type",
+        "yecheon_roc_auc",
+        "chuncheon_roc_auc"
+      ]
+    },
+    {
+      "path": "data/frozen_tables/pixel_quadrant_terrain_table.csv",
+      "source_original": "round_2/phase4_writing/figures/pixel_quadrant_terrain_table.csv",
+      "sha256": "bc5fcb53365fb879a34dec1b2f3ba6dd0f44f8f1c2009f885efbc524811197d9",
+      "bytes": 14709,
+      "rows": 40,
+      "columns": [
+        "event_id",
+        "event",
+        "label_source",
+        "threshold",
+        "quadrant",
+        "variable",
+        "units",
+        "probability_raster",
+        "label_raster",
+        "terrain_source",
+        "n",
+        "mean",
+        "median",
+        "q05",
+        "q10",
+        "q25",
+        "q75",
+        "q90",
+        "q95"
+      ],
+      "required_columns": [
+        "event",
+        "label_source",
+        "quadrant",
+        "variable",
+        "median"
+      ]
+    },
+    {
+      "path": "data/frozen_tables/terrain_contrast_stats.csv",
+      "source_original": "round_2/phase4_exploratory_diagnosis/terrain_contrast_stats.csv",
+      "sha256": "53e5fade9f797e7206c983f84e443b380733c3c886268816dfdbf3b02da6ddda",
+      "bytes": 4256,
+      "rows": 20,
+      "columns": [
+        "status",
+        "n_correct",
+        "n_misranked",
+        "correct_mean",
+        "misranked_mean",
+        "correct_median",
+        "misranked_median",
+        "mean_difference_correct_minus_misranked",
+        "standardized_difference",
+        "mannwhitney_p_descriptive_only",
+        "event_id",
+        "event",
+        "label_source",
+        "variable",
+        "rule_status",
+        "threshold",
+        "note"
+      ],
+      "required_columns": [
+        "event",
+        "label_source",
+        "variable",
+        "standardized_difference"
+      ]
+    },
+    {
+      "path": "data/frozen_tables/unified_skill_table.csv",
+      "source_original": "round_2/phase4_exploratory_diagnosis/unified_skill_table.csv",
+      "sha256": "87a44ff9c18dff0bea13e71cc2ed1c31914c6cc98b5e70cef377e5751760c9e9",
+      "bytes": 2904,
+      "rows": 12,
+      "columns": [
+        "event_id",
+        "event",
+        "scale",
+        "label_source",
+        "roc_auc",
+        "separation_sign",
+        "n_positive",
+        "n_negative",
+        "n_valid_or_units",
+        "power_note",
+        "source_status",
+        "method_note"
+      ],
+      "required_columns": [
+        "event",
+        "scale",
+        "label_source",
+        "roc_auc"
+      ]
+    },
+    {
+      "path": "data/frozen_tables/yecheon_aggregate_unit_anatomy.csv",
+      "source_original": "round_2/phase4_exploratory_diagnosis/yecheon_aggregate_unit_anatomy.csv",
+      "sha256": "7238bb82c0d2d5f846bf496ecad41c9f4fba995bd92cab2e072995089791ff4d",
+      "bytes": 35280,
+      "rows": 205,
+      "columns": [
+        "event",
+        "ADM_CD",
+        "SIDO",
+        "SIGUNGU",
+        "EMD",
+        "positive",
+        "mean_prob",
+        "p90_prob",
+        "unit_area_m2",
+        "pixel_count",
+        "mean_elevation_m",
+        "relief_m",
+        "log_unit_area_m2"
+      ],
+      "required_columns": [
+        "event",
+        "ADM_CD",
+        "positive",
+        "mean_prob"
+      ]
+    }
+  ]
+}

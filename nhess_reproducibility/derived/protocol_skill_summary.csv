@@ -1,0 +1,13 @@
+event,scale,label_source,roc_auc,n_positive,n_negative,source_status
+Pohang 2022,pixel,Sentinel scar label,0.6118,1099.0,911285.0,existing Phase 3b/label-paired table
+Pohang 2022,pixel,NIDR-only pixel label,,,,missing/not constructible
+Yecheon 2023,pixel,Sentinel scar label,0.4490,183507.0,10930013.0,existing Phase 3b/label-paired table
+Yecheon 2023,pixel,NIDR-only pixel label,0.6077,231.0,11113289.0,existing Phase 3b/label-paired table
+Chuncheon 2020,pixel,Sentinel scar label,0.4992,15571.0,1244333.0,existing Phase 3b/label-paired table
+Chuncheon 2020,pixel,NIDR-only pixel label,0.6346,17.0,1259887.0,existing Phase 3b/label-paired table
+Pohang 2022,EMD aggregate,KFS administrative landslide record,0.5181,6.0,23.0,existing Phase 3c frozen geocode+spatial-join aggregate result
+Yecheon 2023,EMD aggregate,KFS administrative landslide record,0.1480,4.0,201.0,existing Phase 3c frozen geocode+spatial-join aggregate result
+Chuncheon 2020,EMD aggregate,KFS administrative landslide record,0.5060,6.0,28.0,existing Phase 3c frozen geocode+spatial-join aggregate result
+Pohang 2022,EMD aggregate,Sentinel scar label,0.5217,23.0,6.0,computed in Phase 4 from existing probability and consensus-label rasters
+Yecheon 2023,EMD aggregate,Sentinel scar label,0.3721,176.0,29.0,computed in Phase 4 from existing probability and consensus-label rasters
+Chuncheon 2020,EMD aggregate,Sentinel scar label,0.4231,26.0,8.0,computed in Phase 4 from existing probability and consensus-label rasters

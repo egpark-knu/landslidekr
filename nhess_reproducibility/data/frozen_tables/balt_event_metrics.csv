@@ -1,0 +1,4 @@
+event_id,event_name,n_valid_pixels,aoi_area_km2,raw_rho_log_upslope_area_slope,n_hillslope_pixels_slope_gt_10,hillslope_area_km2_slope_gt_10,raw_rho_hillslope_slope_gt_10,gate1_pass,gate2_pass,gate3_pass
+pohang,Pohang typhoon,912384,821.1456,0.5706438807343743,293137,263.8233,0.05452759346554872,True,False,True
+yecheon,Yecheon monsoon,11113520,10002.168,0.03554782318532177,7804166,7023.7494,0.03780758212259985,True,False,True
+chuncheon,Chuncheon monsoon,1259904,1133.9136,0.11403997098833936,971273,874.1457,-0.0019845847595409793,True,False,True
