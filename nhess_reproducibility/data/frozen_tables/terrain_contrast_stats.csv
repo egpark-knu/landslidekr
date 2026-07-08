@@ -1,0 +1,21 @@
+status,n_correct,n_misranked,correct_mean,misranked_mean,correct_median,misranked_median,mean_difference_correct_minus_misranked,standardized_difference,mannwhitney_p_descriptive_only,event_id,event,label_source,variable,rule_status,threshold,note
+computed,426095.0,486289.0,14.101635717490321,2.384448344468601,13.618380763164671,0.0,11.71718737302172,1.1111074792854831,0.0,pohang_2022,Pohang 2022,Sentinel scar label,slope_degrees,computed,1.0,
+computed,426095.0,486289.0,148.1239776611328,28.36870574951172,97.78771209716797,0.0,119.7552719116211,0.8950449724579405,0.0,pohang_2022,Pohang 2022,Sentinel scar label,elevation_m,computed,1.0,
+missing_layer,,,,,,,,,,pohang_2022,Pohang 2022,Sentinel scar label,log_upslope_area,,,No local upslope-area or flow-accumulation raster was found in the bounded source inventory.
+missing_layer,,,,,,,,,,pohang_2022,Pohang 2022,Sentinel scar label,valley_floor_indicator,,,No valley-floor indicator raster was found in the bounded source inventory.
+computed,8260909.0,2852611.0,19.467178088923326,9.591063654164984,19.593926887327815,4.9872747082599584,9.876114434758342,0.9182508236004492,0.0,yecheon_2023,Yecheon 2023,Sentinel scar label,slope_degrees,computed,1.0,
+computed,8260909.0,2852611.0,308.99932861328125,208.92320251464844,265.83306884765625,163.44776916503906,100.07612609863281,0.5282656762131762,0.0,yecheon_2023,Yecheon 2023,Sentinel scar label,elevation_m,computed,1.0,
+missing_layer,,,,,,,,,,yecheon_2023,Yecheon 2023,Sentinel scar label,log_upslope_area,,,No local upslope-area or flow-accumulation raster was found in the bounded source inventory.
+missing_layer,,,,,,,,,,yecheon_2023,Yecheon 2023,Sentinel scar label,valley_floor_indicator,,,No valley-floor indicator raster was found in the bounded source inventory.
+computed,8391651.0,2721869.0,19.564053023823238,8.818005289579233,19.708249075809213,4.3086228174346894,10.746047734244005,0.9991345531286107,0.0,yecheon_2023,Yecheon 2023,NIDR-only pixel label,slope_degrees,computed,1.0,
+computed,8391651.0,2721869.0,312.1307067871094,194.4613037109375,267.4282531738281,156.42222595214844,117.66940307617188,0.6211342226054046,0.0,yecheon_2023,Yecheon 2023,NIDR-only pixel label,elevation_m,computed,1.0,
+missing_layer,,,,,,,,,,yecheon_2023,Yecheon 2023,NIDR-only pixel label,log_upslope_area,,,No local upslope-area or flow-accumulation raster was found in the bounded source inventory.
+missing_layer,,,,,,,,,,yecheon_2023,Yecheon 2023,NIDR-only pixel label,valley_floor_indicator,,,No valley-floor indicator raster was found in the bounded source inventory.
+computed,860290.0,399614.0,22.459337000237657,14.144358599514334,22.945807502513738,12.651782670202417,8.314978400723323,0.6973713373466116,0.0,chuncheon_2020,Chuncheon 2020,Sentinel scar label,slope_degrees,computed,1.0,
+computed,860290.0,399614.0,326.43426513671875,251.56149291992188,303.2520751953125,212.95245361328125,74.87277221679688,0.438108453954194,0.0,chuncheon_2020,Chuncheon 2020,Sentinel scar label,elevation_m,computed,1.0,
+missing_layer,,,,,,,,,,chuncheon_2020,Chuncheon 2020,Sentinel scar label,log_upslope_area,,,No local upslope-area or flow-accumulation raster was found in the bounded source inventory.
+missing_layer,,,,,,,,,,chuncheon_2020,Chuncheon 2020,Sentinel scar label,valley_floor_indicator,,,No valley-floor indicator raster was found in the bounded source inventory.
+computed,866818.0,393086.0,22.512602200059785,13.888812960699056,22.990197771340373,12.020151737353848,8.623789239360729,0.7232710832207515,0.0,chuncheon_2020,Chuncheon 2020,NIDR-only pixel label,slope_degrees,computed,1.0,
+computed,866818.0,393086.0,327.6300048828125,247.68116760253906,304.5887756347656,207.89398193359375,79.94883728027344,0.4678103996854316,0.0,chuncheon_2020,Chuncheon 2020,NIDR-only pixel label,elevation_m,computed,1.0,
+missing_layer,,,,,,,,,,chuncheon_2020,Chuncheon 2020,NIDR-only pixel label,log_upslope_area,,,No local upslope-area or flow-accumulation raster was found in the bounded source inventory.
+missing_layer,,,,,,,,,,chuncheon_2020,Chuncheon 2020,NIDR-only pixel label,valley_floor_indicator,,,No valley-floor indicator raster was found in the bounded source inventory.

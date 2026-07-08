@@ -1,0 +1,2 @@
+# The verification and summary scripts use only the Python standard library.
+# Python 3.9+ is recommended.
