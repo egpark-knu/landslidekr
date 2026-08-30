@@ -1,14 +1,19 @@
 # Brief communication reproducibility package
 
-This directory is the brief communication reproducibility package. It contains the confirmed public data artifacts and Figure 2 renderers listed below; excluded inputs are not distributed. Sizes and SHA-256 identities allow the listed artifacts to be verified.
+This directory is the brief communication reproducibility package. It contains the evaluated data artifacts and Figure 2 renderers listed below. Sizes and SHA-256 identities allow the listed artifacts to be verified.
 
 ## Published artifacts
 
 | Artifact | Repository path | Size (bytes) | SHA-256 |
 |---|---|---:|---|
+| Pohang 2022 stored SHALSTAB probability | `brief_communication_reproducibility/data/pohang_2022/prob_unstable.tif` | 556,133 | `67197fad73920f1d717f0d5600f3dc2976d9c6b19c09775d12a86d9784695b69` |
+| Yecheon 2023 stored SHALSTAB probability | `brief_communication_reproducibility/data/yecheon_2023/prob_unstable.tif` | 11,822,740 | `01e817a0f67b723db708c56a20decd4353e85ab48515c9bfbda70868844598f3` |
+| Chuncheon 2020 stored SHALSTAB probability | `brief_communication_reproducibility/data/chuncheon_2020/prob_unstable.tif` | 1,425,363 | `fed086a314dac222639be3a9f29002c70efc3c5c16591ce091078de1abc11b1f` |
 | Pohang 2022 evaluated Sentinel pixel labels | `brief_communication_reproducibility/data/pohang_2022/consensus_label.tif` | 3,438 | `de937e341b5783c54e0b4781c2c17e7fb65a074a13d1fbf0766692a79563d29c` |
 | Yecheon 2023 evaluated Sentinel pixel labels | `brief_communication_reproducibility/data/yecheon_2023/consensus_label.tif` | 126,195 | `f1d78212dc5a47c55d2a032a5ccd9e1d0ef287e16b62c9b33de9bbe820c8e233` |
 | Chuncheon 2020 evaluated Sentinel pixel labels | `brief_communication_reproducibility/data/chuncheon_2020/consensus_label.tif` | 18,321 | `1c3dc03d5fb993c09374321460520a85688c23154474d19ea8836d0f9d9cec89` |
+| Yecheon 2023 evaluated national-inventory Variant-B labels | `brief_communication_reproducibility/data/yecheon_2023/consensus_label_variant_B.tif` | 55,104 | `f2c14512cfa65e35340ed23702cc6f09d013ed6e3179e33636cc7016e2eae4d9` |
+| Chuncheon 2020 evaluated national-inventory Variant-B labels | `brief_communication_reproducibility/data/chuncheon_2020/consensus_label_variant_B.tif` | 6,507 | `34c18ed9bae2b8302ef7c010074dde4be21f62da59b05c7fec70ae9c66b296dc` |
 | Forest-service unit statistics | `brief_communication_reproducibility/data/frozen_tables/unit_level_stats.csv` | 31,335 | `273aff475d5b264e2ce8e4fe04da9ad1a8d45a3f99b0df9afccb69a88ef1def7` |
 | Eleven-cell Figure 1 result ledger | `brief_communication_reproducibility/data/frozen_tables/figure1_reproduction.json` | 18,766 | `39d622d6993d07ca8cbd3f77a29de06ebf86ab41b0f82910de0bf5422a68a1b8` |
 | Turn 07a-2 Figure 2 renderer | `brief_communication_reproducibility/scripts/render_figure2_turn07a2.py` | 74,531 | `1f781c138e9b0f322d22c93e7fe1c7c25e4f860ee57fb211ccf9fc1d2729ba2a` |
@@ -19,6 +24,8 @@ The following frozen table was already public and is referenced rather than dupl
 | Artifact | Repository path | Size (bytes) | SHA-256 |
 |---|---|---:|---|
 | Sentinel administrative-unit statistics | `nhess_reproducibility/data/frozen_tables/aggregate_sentinel_unit_stats.csv` | 30,583 | `69cbd314733e632d604d96c650e7b33cc7c49a6e81c9a0ce1413837b8efec486` |
+
+The three probability rasters and their five available pixel-label counterparts reproduce the five filled pixel cells. The two frozen unit-statistics tables reproduce the six administrative-unit cells. Together with `figure1_reproduction.json`, these inputs support direct checking of all eleven filled Figure 1 cells without `emd_all.gpkg`.
 
 ## Copernicus GLO-30 acquisition for Figure 2
 
@@ -50,10 +57,10 @@ python -m landslide_kr.preprocess.dem_mosaic \
 
 - `dem_utm.tif` is not distributed. The acquisition and preprocessing route above identifies its source and construction.
 - `emd_all.gpkg` is not distributed. Its frozen local identity is 143,622,144 bytes with SHA-256 `9c4f3697f7fab5ed556d77efb28caf353cc2b47a201e93d0609491b50efe075c`; its provider, release, version, and license remain unresolved.
-- The Yecheon and Chuncheon national-inventory Variant-B rasters are not distributed.
+- The two national-inventory Variant-B rasters are included as frozen evaluated artifacts; their upstream source and terms remain unconfirmed.
 - The package does not distribute or regenerate the administrative boundary file.
 - The package supports evaluation of the stored artifacts and documents the terrain acquisition route. It does not claim universal regeneration or software-version-independent byte reproduction of the excluded derived DEM.
 
 ## File-specific licences and notices
 
-The repository-root `LICENSE` applies CC BY-NC 4.0 only to its explicitly named data paths and PolyForm Noncommercial 1.0.0 only to its explicitly named renderer paths. It also records the Sentinel, Korea Forest Service, and Copernicus DEM notices. No other repository file or absent input is licensed by that file.
+The repository-root `LICENSE` applies CC BY-NC 4.0 only to its explicitly named data paths and PolyForm Noncommercial 1.0.0 only to its explicitly named renderer paths. The national-inventory Variant-B rasters are outside those grants because their upstream source and terms remain unconfirmed. The file also records the Sentinel, Korea Forest Service, and Copernicus DEM notices. No other repository file or absent input is licensed by that file.

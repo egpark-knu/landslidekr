@@ -8,7 +8,9 @@ paths named in this file and only to rights that the licensor is authorized to
 grant. They do not replace, relax, or widen any third-party source condition.
 No other repository file is covered by this file.
 
-The national-inventory Variant-B rasters and `emd_all.gpkg` are not included in this repository.
+The two national-inventory Variant-B rasters are included as frozen evaluated artifacts; their upstream source and terms remain unconfirmed.
+
+`emd_all.gpkg` is not included in this repository.
 
 ## 1. Data: CC BY-NC 4.0
 
@@ -18,6 +20,9 @@ Attribution-NonCommercial 4.0 International licence (CC BY-NC 4.0):
 - `brief_communication_reproducibility/data/pohang_2022/consensus_label.tif`
 - `brief_communication_reproducibility/data/yecheon_2023/consensus_label.tif`
 - `brief_communication_reproducibility/data/chuncheon_2020/consensus_label.tif`
+- `brief_communication_reproducibility/data/pohang_2022/prob_unstable.tif`
+- `brief_communication_reproducibility/data/yecheon_2023/prob_unstable.tif`
+- `brief_communication_reproducibility/data/chuncheon_2020/prob_unstable.tif`
 - `brief_communication_reproducibility/data/frozen_tables/unit_level_stats.csv`
 - `brief_communication_reproducibility/data/frozen_tables/figure1_reproduction.json`
 - `nhess_reproducibility/data/frozen_tables/aggregate_sentinel_unit_stats.csv`
