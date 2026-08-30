@@ -1,17 +1,18 @@
 # Brief communication reproducibility package
 
-This directory publishes six frozen research artifacts used by the brief communication. The artifacts are stored byte-for-byte; the sizes and SHA-256 identities below are the verification authority for this package.
+This directory is the brief communication reproducibility package. It contains the confirmed public data artifacts and Figure 2 renderers listed below; excluded inputs are not distributed. Sizes and SHA-256 identities allow the listed artifacts to be verified.
 
 ## Published artifacts
 
 | Artifact | Repository path | Size (bytes) | SHA-256 |
 |---|---|---:|---|
+| Pohang 2022 evaluated Sentinel pixel labels | `brief_communication_reproducibility/data/pohang_2022/consensus_label.tif` | 3,438 | `de937e341b5783c54e0b4781c2c17e7fb65a074a13d1fbf0766692a79563d29c` |
 | Yecheon 2023 evaluated Sentinel pixel labels | `brief_communication_reproducibility/data/yecheon_2023/consensus_label.tif` | 126,195 | `f1d78212dc5a47c55d2a032a5ccd9e1d0ef287e16b62c9b33de9bbe820c8e233` |
-| Yecheon 2023 stored national-inventory pixel labels | `brief_communication_reproducibility/data/yecheon_2023/consensus_label_variant_B.tif` | 55,104 | `f2c14512cfa65e35340ed23702cc6f09d013ed6e3179e33636cc7016e2eae4d9` |
-| Chuncheon 2020 stored national-inventory pixel labels | `brief_communication_reproducibility/data/chuncheon_2020/consensus_label_variant_B.tif` | 6,507 | `34c18ed9bae2b8302ef7c010074dde4be21f62da59b05c7fec70ae9c66b296dc` |
+| Chuncheon 2020 evaluated Sentinel pixel labels | `brief_communication_reproducibility/data/chuncheon_2020/consensus_label.tif` | 18,321 | `1c3dc03d5fb993c09374321460520a85688c23154474d19ea8836d0f9d9cec89` |
 | Forest-service unit statistics | `brief_communication_reproducibility/data/frozen_tables/unit_level_stats.csv` | 31,335 | `273aff475d5b264e2ce8e4fe04da9ad1a8d45a3f99b0df9afccb69a88ef1def7` |
 | Eleven-cell Figure 1 result ledger | `brief_communication_reproducibility/data/frozen_tables/figure1_reproduction.json` | 18,766 | `39d622d6993d07ca8cbd3f77a29de06ebf86ab41b0f82910de0bf5422a68a1b8` |
-| Figure 2 renderer | `brief_communication_reproducibility/scripts/render_figure2_turn07a2.py` | 74,531 | `1f781c138e9b0f322d22c93e7fe1c7c25e4f860ee57fb211ccf9fc1d2729ba2a` |
+| Turn 07a-2 Figure 2 renderer | `brief_communication_reproducibility/scripts/render_figure2_turn07a2.py` | 74,531 | `1f781c138e9b0f322d22c93e7fe1c7c25e4f860ee57fb211ccf9fc1d2729ba2a` |
+| Turn 11 Figure 2 renderer | `brief_communication_reproducibility/scripts/render_figure2_turn11.py` | 94,041 | `6346b2b612ef924dd22839951da976a5f865e3307adec4980f5fc70e875d9b94` |
 
 The following frozen table was already public and is referenced rather than duplicated:
 
@@ -43,15 +44,16 @@ python -m landslide_kr.preprocess.dem_mosaic \
   <output-dem.tif>
 ```
 
-`landslide_kr/preprocess/dem_mosaic.py` selects the intersecting tiles, mosaics the AOI with a 0.02-degree buffer, reprojects it to UTM zone 52N (EPSG:32652), and writes a 30 m raster using bilinear resampling. The published renderer is intentionally preserved at its recorded hash and contains original absolute source paths; running it elsewhere requires mapping those dependencies to local paths without treating a modified script as the frozen artifact.
+`landslide_kr/preprocess/dem_mosaic.py` selects the intersecting tiles, mosaics the AOI with a 0.02-degree buffer, reprojects it to UTM zone 52N (EPSG:32652), and writes a 30 m raster using bilinear resampling. The renderers are preserved at their recorded hashes. Running them elsewhere requires mapping their recorded dependencies to local paths without treating a locally modified script as the frozen artifact.
 
 ## Scope and non-redistributed inputs
 
 - `dem_utm.tif` is not distributed. The acquisition and preprocessing route above identifies its source and construction.
 - `emd_all.gpkg` is not distributed. Its frozen local identity is 143,622,144 bytes with SHA-256 `9c4f3697f7fab5ed556d77efb28caf353cc2b47a201e93d0609491b50efe075c`; its provider, release, version, and license remain unresolved.
-- The national-inventory label rasters in this package are public held artifacts. This package does not claim to regenerate their upstream national-inventory lineage or the administrative boundary file.
+- The Yecheon and Chuncheon national-inventory Variant-B rasters are not distributed.
+- The package does not distribute or regenerate the administrative boundary file.
 - The package supports evaluation of the stored artifacts and documents the terrain acquisition route. It does not claim universal regeneration or software-version-independent byte reproduction of the excluded derived DEM.
 
-## Repository license status
+## File-specific licences and notices
 
-No tracked `LICENSE` or `COPYING` file existed in this repository when this package was published. Public visibility is not a grant of reuse rights. Consult the relevant rights holder and upstream source terms for each artifact; for Copernicus GLO-30, use the official product page linked above. No repository license is selected or implied by this README.
+The repository-root `LICENSE` applies CC BY-NC 4.0 only to its explicitly named data paths and PolyForm Noncommercial 1.0.0 only to its explicitly named renderer paths. It also records the Sentinel, Korea Forest Service, and Copernicus DEM notices. No other repository file or absent input is licensed by that file.

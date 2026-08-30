@@ -1,0 +1,98 @@
+# File-specific licences and upstream notices
+
+The file-specific grants below are offered only to the extent that the
+repository licensor is authorized to grant them.
+
+This repository uses file-specific terms. The grants below apply only to the
+paths named in this file and only to rights that the licensor is authorized to
+grant. They do not replace, relax, or widen any third-party source condition.
+No other repository file is covered by this file.
+
+The national-inventory Variant-B rasters and `emd_all.gpkg` are not included in this repository.
+
+## 1. Data: CC BY-NC 4.0
+
+The following files are licensed under the Creative Commons
+Attribution-NonCommercial 4.0 International licence (CC BY-NC 4.0):
+
+- `brief_communication_reproducibility/data/pohang_2022/consensus_label.tif`
+- `brief_communication_reproducibility/data/yecheon_2023/consensus_label.tif`
+- `brief_communication_reproducibility/data/chuncheon_2020/consensus_label.tif`
+- `brief_communication_reproducibility/data/frozen_tables/unit_level_stats.csv`
+- `brief_communication_reproducibility/data/frozen_tables/figure1_reproduction.json`
+- `nhess_reproducibility/data/frozen_tables/aggregate_sentinel_unit_stats.csv`
+
+Official legal code:
+https://creativecommons.org/licenses/by-nc/4.0/legalcode.en
+
+Under that licence, attribution and the licence link must be retained, changes
+must be indicated, and sharing or adaptation is permitted for non-commercial
+purposes only. Upstream notices in section 3 remain applicable.
+
+## 2. Code: PolyForm Noncommercial 1.0.0
+
+The following files are licensed under the PolyForm Noncommercial License
+1.0.0:
+
+- `brief_communication_reproducibility/scripts/render_figure2_turn07a2.py`
+- `brief_communication_reproducibility/scripts/render_figure2_turn11.py`
+
+Official licence text:
+https://polyformproject.org/licenses/noncommercial/1.0.0
+
+The licence permits use, distribution, changes, and new works for the
+non-commercial purposes it defines. Recipients must also receive the terms or
+the authoritative URL above.
+
+## 3. Required source notices
+
+### Copernicus Sentinel-derived label data
+
+The three `consensus_label.tif` files are modified Sentinel-2 Level-2A-derived
+labels. The source notices are:
+
+- `Contains modified Copernicus Sentinel data 2022` (Pohang)
+- `Contains modified Copernicus Sentinel data 2023` (Yecheon)
+- `Contains modified Copernicus Sentinel data 2020` (Chuncheon)
+
+Official legal notice:
+https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice
+
+### Forest-service administrative-unit statistics
+
+`brief_communication_reproducibility/data/frozen_tables/unit_level_stats.csv`
+is derived from `산림청_과거산사태 정보`, provided by the Korea Forest
+Service through data.go.kr, dataset ID 15074816:
+
+https://www.data.go.kr/data/15074816/openapi.do
+
+The official dataset page states `이용허락범위 제한 없음`. It does not show a
+dataset-specific Kogl mark or a mandatory attribution sentence; none is
+invented here.
+
+### Copernicus DEM GLO-30 regeneration route
+
+The source DEM tiles and the derived terrain raster are not distributed in the
+file set licensed above. For regeneration, the applicable modified-data notice
+is:
+
+`produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved`
+
+The required no-liability sentence is:
+
+`The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM-30`.
+
+No official endorsement by the provider, licensor, European Union, ESA, or any
+other entity in charge of the Copernicus programme is expressed or implied.
+
+The Copernicus WorldDEM-30 is made available to the Users 'as is'. The User
+uses it under its own responsibility.
+
+Official GLO-30 licence:
+https://documentation.dataspace.copernicus.eu/APIs/SentinelHub/Data/DEM/resources/license/License-COPDEM-30.pdf
+
+## 4. No additional grant
+
+Names, factual source references, hashes, and public URLs do not expand these
+file-specific grants. Third-party rights, trademarks, privacy rights, patents,
+and other rights not held by the licensor are not licensed here.
