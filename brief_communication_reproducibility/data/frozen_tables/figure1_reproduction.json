@@ -1,0 +1,372 @@
+{
+  "generated_at": "2026-08-29T15:55:37.447575+09:00",
+  "command_contract": "no parameters",
+  "python": "/Users/eungyupark/anaconda3/bin/python",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "filled_cell_count": 11,
+  "expected_filled_cell_count": 11,
+  "explicit_na_cell": {
+    "event": "Pohang 2022",
+    "scale": "pixel",
+    "label_source": "NIDR-only pixel label",
+    "reason": "source NIDR label is empty/not constructible; not one of the 11 filled cells"
+  },
+  "pass_count": 11,
+  "mismatch_count": 0,
+  "spine_cells": [
+    {
+      "event_id": "yecheon_2023",
+      "event": "Yecheon 2023",
+      "scale": "pixel",
+      "label_source": "NIDR-only pixel label",
+      "roc_auc": 0.6077288601700142,
+      "n_positive": 231,
+      "n_negative": 11113289,
+      "n_valid_or_units": 11113520,
+      "expected_roc_auc": 0.6077288601700142,
+      "expected_n_positive": 231,
+      "expected_n_valid_or_units": 11113520,
+      "auc_delta": 0.0,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "landslides_rejection_threshold_label_audit.py process_label/safe_auc semantics on frozen consensus_label_variant_B.tif",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/consensus_label_variant_B.tif"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/prob_unstable.tif": "01e817a0f67b723db708c56a20decd4353e85ab48515c9bfbda70868844598f3",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/consensus_label_variant_B.tif": "f2c14512cfa65e35340ed23702cc6f09d013ed6e3179e33636cc7016e2eae4d9"
+      }
+    },
+    {
+      "event_id": "yecheon_2023",
+      "event": "Yecheon 2023",
+      "scale": "EMD aggregate",
+      "label_source": "Sentinel scar label",
+      "roc_auc": 0.3720611285266458,
+      "n_positive": 176,
+      "n_negative": 29,
+      "n_valid_or_units": 205,
+      "expected_roc_auc": 0.3720611285266458,
+      "expected_n_positive": 176,
+      "expected_n_valid_or_units": 205,
+      "auc_delta": 0.0,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "phase4_exploratory_diagnosis.py aggregate_by_emd semantics",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/consensus_label.tif",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/prob_unstable.tif": "01e817a0f67b723db708c56a20decd4353e85ab48515c9bfbda70868844598f3",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/consensus_label.tif": "f1d78212dc5a47c55d2a032a5ccd9e1d0ef287e16b62c9b33de9bbe820c8e233",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg": "9c4f3697f7fab5ed556d77efb28caf353cc2b47a201e93d0609491b50efe075c"
+      }
+    }
+  ],
+  "rows": [
+    {
+      "event_id": "pohang_2022",
+      "event": "Pohang 2022",
+      "scale": "EMD aggregate",
+      "label_source": "KFS administrative landslide record",
+      "roc_auc": 0.5181159420289855,
+      "n_positive": 6,
+      "n_negative": 23,
+      "n_valid_or_units": 29,
+      "expected_roc_auc": 0.5181159420289855,
+      "expected_n_positive": 6,
+      "expected_n_valid_or_units": 29,
+      "auc_delta": 0.0,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "phase3c_aggregate_validation_run.py zonal_stats_for_event/summarize_metric semantics with frozen preregistration positive units",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/pohang_2022/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/round_2/phase3c_aggregate_validation/preregistration.json"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/pohang_2022/prob_unstable.tif": "67197fad73920f1d717f0d5600f3dc2976d9c6b19c09775d12a86d9784695b69",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg": "9c4f3697f7fab5ed556d77efb28caf353cc2b47a201e93d0609491b50efe075c",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/round_2/phase3c_aggregate_validation/preregistration.json": "9c0f675a1a3611d096d48075b10a332e4a95c488ee289cf55e53f6be24161b2b"
+      }
+    },
+    {
+      "event_id": "pohang_2022",
+      "event": "Pohang 2022",
+      "scale": "EMD aggregate",
+      "label_source": "Sentinel scar label",
+      "roc_auc": 0.5217391304347826,
+      "n_positive": 23,
+      "n_negative": 6,
+      "n_valid_or_units": 29,
+      "expected_roc_auc": 0.5217391304347826,
+      "expected_n_positive": 23,
+      "expected_n_valid_or_units": 29,
+      "auc_delta": 0.0,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "phase4_exploratory_diagnosis.py aggregate_by_emd semantics",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/pohang_2022/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/pohang_2022/consensus_label.tif",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/pohang_2022/prob_unstable.tif": "67197fad73920f1d717f0d5600f3dc2976d9c6b19c09775d12a86d9784695b69",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/pohang_2022/consensus_label.tif": "de937e341b5783c54e0b4781c2c17e7fb65a074a13d1fbf0766692a79563d29c",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg": "9c4f3697f7fab5ed556d77efb28caf353cc2b47a201e93d0609491b50efe075c"
+      }
+    },
+    {
+      "event_id": "pohang_2022",
+      "event": "Pohang 2022",
+      "scale": "pixel",
+      "label_source": "Sentinel scar label",
+      "roc_auc": 0.6117835945075769,
+      "n_positive": 1099,
+      "n_negative": 911285,
+      "n_valid_or_units": 912384,
+      "expected_roc_auc": 0.6117835945075769,
+      "expected_n_positive": 1099,
+      "expected_n_valid_or_units": 912384,
+      "auc_delta": 0.0,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "threshold_operating_points.py load_case/analyze_case semantics",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/pohang_2022/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/pohang_2022/consensus_label.tif"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/pohang_2022/prob_unstable.tif": "67197fad73920f1d717f0d5600f3dc2976d9c6b19c09775d12a86d9784695b69",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/pohang_2022/consensus_label.tif": "de937e341b5783c54e0b4781c2c17e7fb65a074a13d1fbf0766692a79563d29c"
+      }
+    },
+    {
+      "event_id": "yecheon_2023",
+      "event": "Yecheon 2023",
+      "scale": "EMD aggregate",
+      "label_source": "KFS administrative landslide record",
+      "roc_auc": 0.14800995024875624,
+      "n_positive": 4,
+      "n_negative": 201,
+      "n_valid_or_units": 205,
+      "expected_roc_auc": 0.1480099502487562,
+      "expected_n_positive": 4,
+      "expected_n_valid_or_units": 205,
+      "auc_delta": 2.7755575615628914e-17,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "phase3c_aggregate_validation_run.py zonal_stats_for_event/summarize_metric semantics with frozen preregistration positive units",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/round_2/phase3c_aggregate_validation/preregistration.json"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/prob_unstable.tif": "01e817a0f67b723db708c56a20decd4353e85ab48515c9bfbda70868844598f3",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg": "9c4f3697f7fab5ed556d77efb28caf353cc2b47a201e93d0609491b50efe075c",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/round_2/phase3c_aggregate_validation/preregistration.json": "9c0f675a1a3611d096d48075b10a332e4a95c488ee289cf55e53f6be24161b2b"
+      }
+    },
+    {
+      "event_id": "yecheon_2023",
+      "event": "Yecheon 2023",
+      "scale": "EMD aggregate",
+      "label_source": "Sentinel scar label",
+      "roc_auc": 0.3720611285266458,
+      "n_positive": 176,
+      "n_negative": 29,
+      "n_valid_or_units": 205,
+      "expected_roc_auc": 0.3720611285266458,
+      "expected_n_positive": 176,
+      "expected_n_valid_or_units": 205,
+      "auc_delta": 0.0,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "phase4_exploratory_diagnosis.py aggregate_by_emd semantics",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/consensus_label.tif",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/prob_unstable.tif": "01e817a0f67b723db708c56a20decd4353e85ab48515c9bfbda70868844598f3",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/consensus_label.tif": "f1d78212dc5a47c55d2a032a5ccd9e1d0ef287e16b62c9b33de9bbe820c8e233",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg": "9c4f3697f7fab5ed556d77efb28caf353cc2b47a201e93d0609491b50efe075c"
+      }
+    },
+    {
+      "event_id": "yecheon_2023",
+      "event": "Yecheon 2023",
+      "scale": "pixel",
+      "label_source": "NIDR-only pixel label",
+      "roc_auc": 0.6077288601700142,
+      "n_positive": 231,
+      "n_negative": 11113289,
+      "n_valid_or_units": 11113520,
+      "expected_roc_auc": 0.6077288601700142,
+      "expected_n_positive": 231,
+      "expected_n_valid_or_units": 11113520,
+      "auc_delta": 0.0,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "landslides_rejection_threshold_label_audit.py process_label/safe_auc semantics on frozen consensus_label_variant_B.tif",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/consensus_label_variant_B.tif"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/prob_unstable.tif": "01e817a0f67b723db708c56a20decd4353e85ab48515c9bfbda70868844598f3",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/consensus_label_variant_B.tif": "f2c14512cfa65e35340ed23702cc6f09d013ed6e3179e33636cc7016e2eae4d9"
+      }
+    },
+    {
+      "event_id": "yecheon_2023",
+      "event": "Yecheon 2023",
+      "scale": "pixel",
+      "label_source": "Sentinel scar label",
+      "roc_auc": 0.44896136247508744,
+      "n_positive": 183507,
+      "n_negative": 10930013,
+      "n_valid_or_units": 11113520,
+      "expected_roc_auc": 0.4489613624750874,
+      "expected_n_positive": 183507,
+      "expected_n_valid_or_units": 11113520,
+      "auc_delta": 5.551115123125783e-17,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "threshold_operating_points.py load_case/analyze_case semantics",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/consensus_label.tif"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/prob_unstable.tif": "01e817a0f67b723db708c56a20decd4353e85ab48515c9bfbda70868844598f3",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/extreme_rainfall_2023/consensus_label.tif": "f1d78212dc5a47c55d2a032a5ccd9e1d0ef287e16b62c9b33de9bbe820c8e233"
+      }
+    },
+    {
+      "event_id": "chuncheon_2020",
+      "event": "Chuncheon 2020",
+      "scale": "EMD aggregate",
+      "label_source": "KFS administrative landslide record",
+      "roc_auc": 0.5059523809523809,
+      "n_positive": 6,
+      "n_negative": 28,
+      "n_valid_or_units": 34,
+      "expected_roc_auc": 0.5059523809523809,
+      "expected_n_positive": 6,
+      "expected_n_valid_or_units": 34,
+      "auc_delta": 0.0,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "phase3c_aggregate_validation_run.py zonal_stats_for_event/summarize_metric semantics with frozen preregistration positive units",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/round_2/phase3c_aggregate_validation/preregistration.json"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/prob_unstable.tif": "fed086a314dac222639be3a9f29002c70efc3c5c16591ce091078de1abc11b1f",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg": "9c4f3697f7fab5ed556d77efb28caf353cc2b47a201e93d0609491b50efe075c",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/round_2/phase3c_aggregate_validation/preregistration.json": "9c0f675a1a3611d096d48075b10a332e4a95c488ee289cf55e53f6be24161b2b"
+      }
+    },
+    {
+      "event_id": "chuncheon_2020",
+      "event": "Chuncheon 2020",
+      "scale": "EMD aggregate",
+      "label_source": "Sentinel scar label",
+      "roc_auc": 0.42307692307692313,
+      "n_positive": 26,
+      "n_negative": 8,
+      "n_valid_or_units": 34,
+      "expected_roc_auc": 0.42307692307692313,
+      "expected_n_positive": 26,
+      "expected_n_valid_or_units": 34,
+      "auc_delta": 0.0,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "phase4_exploratory_diagnosis.py aggregate_by_emd semantics",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/consensus_label.tif",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/prob_unstable.tif": "fed086a314dac222639be3a9f29002c70efc3c5c16591ce091078de1abc11b1f",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/consensus_label.tif": "1c3dc03d5fb993c09374321460520a85688c23154474d19ea8836d0f9d9cec89",
+        "/Users/eungyupark/Dropbox/GeoAI/01_2026_project/00_demo/dev_nie_korea/geodata/emd_all.gpkg": "9c4f3697f7fab5ed556d77efb28caf353cc2b47a201e93d0609491b50efe075c"
+      }
+    },
+    {
+      "event_id": "chuncheon_2020",
+      "event": "Chuncheon 2020",
+      "scale": "pixel",
+      "label_source": "NIDR-only pixel label",
+      "roc_auc": 0.6346411132389603,
+      "n_positive": 17,
+      "n_negative": 1259887,
+      "n_valid_or_units": 1259904,
+      "expected_roc_auc": 0.6346411132389603,
+      "expected_n_positive": 17,
+      "expected_n_valid_or_units": 1259904,
+      "auc_delta": 0.0,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "landslides_rejection_threshold_label_audit.py process_label/safe_auc semantics on frozen consensus_label_variant_B.tif",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/consensus_label_variant_B.tif"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/prob_unstable.tif": "fed086a314dac222639be3a9f29002c70efc3c5c16591ce091078de1abc11b1f",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/consensus_label_variant_B.tif": "34c18ed9bae2b8302ef7c010074dde4be21f62da59b05c7fec70ae9c66b296dc"
+      }
+    },
+    {
+      "event_id": "chuncheon_2020",
+      "event": "Chuncheon 2020",
+      "scale": "pixel",
+      "label_source": "Sentinel scar label",
+      "roc_auc": 0.499200241042151,
+      "n_positive": 15571,
+      "n_negative": 1244333,
+      "n_valid_or_units": 1259904,
+      "expected_roc_auc": 0.499200241042151,
+      "expected_n_positive": 15571,
+      "expected_n_valid_or_units": 1259904,
+      "auc_delta": 0.0,
+      "auc_match_abs_le_1e_15": true,
+      "counts_match_exact": true,
+      "status": "PASS",
+      "evaluator": "threshold_operating_points.py load_case/analyze_case semantics",
+      "input_paths": [
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/prob_unstable.tif",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/consensus_label.tif"
+      ],
+      "input_sha256": {
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/prob_unstable.tif": "fed086a314dac222639be3a9f29002c70efc3c5c16591ce091078de1abc11b1f",
+        "/Users/eungyupark/Dropbox/Manuscripts/0_Landslides/out/chuncheon_2020/consensus_label.tif": "1c3dc03d5fb993c09374321460520a85688c23154474d19ea8836d0f9d9cec89"
+      }
+    }
+  ]
+}
